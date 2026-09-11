@@ -91,11 +91,21 @@ banner("install, before anything imports what it checks for")
 #                      own requirements.txt did not bring it
 #   huggingface_hub    unpinned so pip may raise it: llm-compressor wants a symbol
 #                      (_validate_relative_filename) the image's version lacks
+#   llmcompressor      in the SAME command, which is the whole point: it was
+#                      installed separately last session "to isolate it" and
+#                      silently lifted the transformers pin to 5.14, under which
+#                      its own AST tracer cannot rewrite Qwen2's forward. A pin
+#                      only binds the resolver pass it takes part in.
 PKGS = ["servseal>=0.2.1", "transformers>=4.50,<5", "accelerate", "bitsandbytes",
-        "gguf>=0.10.0", "datasets", "huggingface_hub"]
-sh([sys.executable, "-m", "pip", "install", "-q", *PKGS], check=True)
-# separately, and allowed to fail: it pins hardest and is the least essential row
-LLMC = sh([sys.executable, "-m", "pip", "install", "-q", "llmcompressor"]).returncode
+        "gguf>=0.10.0", "datasets", "huggingface_hub", "llmcompressor"]
+if sh([sys.executable, "-m", "pip", "install", "-q", *PKGS]).returncode != 0:
+    # llmcompressor is the least essential row; if the set will not resolve with
+    # it, drop it rather than lose the six that do not need it
+    print("the full set did not resolve; retrying without llmcompressor", flush=True)
+    LLMC = 1
+    sh([sys.executable, "-m", "pip", "install", "-q", *PKGS[:-1]], check=True)
+else:
+    LLMC = 0
 
 banner("environment")
 import torch                                                       # noqa: E402
@@ -125,6 +135,11 @@ from servseal.verdict import classify                              # noqa: E402
 
 print(f"servseal {servseal.__version__}  transformers {transformers.__version__}",
       flush=True)
+if not transformers.__version__.startswith("4."):
+    sys.exit(f"transformers {transformers.__version__}: the pin did not hold. Every "
+             f"row must be measured under one framework version, and the quantisers "
+             f"need 4.x. Stopping now rather than producing a table whose rows were "
+             f"measured under different transformers.")
 for mod in ("bitsandbytes", "gguf", "huggingface_hub", "llmcompressor"):
     try:
         m = __import__(mod)
@@ -141,10 +156,21 @@ TOK = AutoTokenizer.from_pretrained(MODEL)
 # --------------------------------------------------------------------- measuring
 
 def probe(model, device="cpu", cast_fp32=True):
-    """The product's own measurement path, on the device the candidate belongs to."""
+    """The product's own measurement path, on the device the candidate belongs to.
+
+    A quantised model may refuse to be moved -- an 8-bit bitsandbytes model raises
+    "`.to` is not supported for `8-bit` models", because device_map already placed
+    it and its kernels are bound to that placement. Asking is fine; insisting is
+    what lost that row. servseal 0.2.1 sends the probe ids to `model.device`, so
+    wherever the model already sits is where the measurement happens.
+    """
     if cast_fp32:
         model = model.to(torch.float32)
-    model = model.to(device).eval()
+    try:
+        model = model.to(device)
+    except (ValueError, NotImplementedError) as e:
+        print(f"  the model declines .to({device}): {str(e)[:90]}", flush=True)
+    model = model.eval()
     P, ppl = softmax_over_probes(model, TOK, TEXTS, max_positions=POSITIONS,
                                  max_length=MAXLEN)
     return P, ppl
@@ -290,7 +316,14 @@ def compressed(scheme):
     from datasets import load_dataset
     from llmcompressor import oneshot
     from llmcompressor.modifiers.quantization import GPTQModifier
-    from llmcompressor.modifiers.awq import AWQModifier
+    # The deprecated path first, deliberately. `modifiers.transform.awq.AWQModifier`
+    # is not a renamed class but a different one: it rejects targets, scheme and
+    # ignore outright ("Extra inputs are not permitted"). The old one takes them and
+    # only warns, so the warning is the cheaper problem.
+    try:
+        from llmcompressor.modifiers.awq import AWQModifier
+    except ImportError:
+        from llmcompressor.modifiers.transform.awq import AWQModifier
 
     out = os.path.join(WORK, f"qwen-{scheme}")
     shutil.rmtree(out, ignore_errors=True)
@@ -317,22 +350,71 @@ def compressed(scheme):
     calib = ds.filter(lambda r: len(r["text"]) > 200).select(range(128))
     assert not (set(t[:80] for t in TEXTS) & set(r[:80] for r in calib["text"])), \
         "the calibration set overlaps the probe set"
-    mod = (AWQModifier(targets="Linear", scheme="W4A16", ignore=["lm_head"])
-           if scheme == "awq" else
-           GPTQModifier(targets="Linear", scheme="W4A16", ignore=["lm_head"]))
+    def fresh():
+        """A modifier per attempt: oneshot initialises it, and a second pass over
+        the same object raises "Cannot initialize a modifier that has already been
+        initialized" -- so the fallback pipeline never got a chance to run."""
+        return (AWQModifier(targets="Linear", scheme="W4A16", ignore=["lm_head"])
+                if scheme == "awq" else
+                GPTQModifier(targets="Linear", scheme="W4A16", ignore=["lm_head"]))
+
     m = AutoModelForCausalLM.from_pretrained(MODEL, dtype=torch.float16,
                                              device_map="cuda")
-    oneshot(model=m, dataset=calib, recipe=mod, max_seq_length=512,
-            num_calibration_samples=128, output_dir=out)
+    # The default pipeline rewrites the model's forward through an AST pass to trace
+    # it layer by layer. That pass is version-sensitive -- it failed on Qwen2 with
+    # "name 'Union' is not defined", its own recompiled source missing the module's
+    # typing imports. "basic" skips tracing entirely and keeps the whole model
+    # resident, which a 0.5B on a T4 can afford, so a tracer that will not run is a
+    # slower path rather than a missing row.
+    last = None
+    for pipe in (None, "basic"):
+        try:
+            kw = {} if pipe is None else {"pipeline": pipe}
+            oneshot(model=m, dataset=calib, recipe=fresh(), max_seq_length=512,
+                    num_calibration_samples=128, output_dir=out, **kw)
+            print(f"  quantised with the "
+                  f"{pipe or 'default (sequential)'} pipeline", flush=True)
+            last = None
+            break
+        except Exception as e:
+            last = e
+            print(f"  {pipe or 'default'} pipeline failed: "
+                  f"{type(e).__name__}: {str(e)[:160]}", flush=True)
+            shutil.rmtree(out, ignore_errors=True)
+    if last is not None:
+        raise last
     del m
     gc.collect()
     torch.cuda.empty_cache()
+    # What grid did it actually use? The naive baseline is 4-bit group-128 by
+    # construction; a W4A16 preset is *documented* as the same, and the comparison
+    # rests on it, so it is read back from the checkpoint rather than asserted in a
+    # sentence. Whatever it says goes into the row.
+    grid = "grid unread"
+    try:
+        cfg = json.load(open(os.path.join(out, "config.json"), encoding="utf-8"))
+        qc = cfg.get("quantization_config", {})
+        groups = qc.get("config_groups") or {}
+        for g in groups.values():
+            w = g.get("weights", {})
+            grid = (f"{w.get('num_bits')}-bit, group {w.get('group_size')}, "
+                    f"{'symmetric' if w.get('symmetric') else 'asymmetric'}")
+            break
+        print(f"  checkpoint says: {grid}", flush=True)
+        if str(w.get("group_size")) != str(GROUP):
+            print(f"  NOTE: group {w.get('group_size')} != the baseline's {GROUP}; "
+                  f"the 'same grid' comparison is not exact for this row",
+                  flush=True)
+    except Exception as e:
+        print(f"  could not read the checkpoint's grid: {type(e).__name__}",
+              flush=True)
+
     q = AutoModelForCausalLM.from_pretrained(out, device_map="cuda")
     P, ppl = probe(q, "cuda", cast_fp32=False)
     del q
     gc.collect()
     torch.cuda.empty_cache()
-    return P, ppl, "cuda", f"{scheme.upper()} W4A16, group {GROUP}, 128 calib samples"
+    return P, ppl, "cuda", f"{scheme.upper()} {grid}, 128 calibration samples"
 
 
 def gguf(qtype):
@@ -380,7 +462,13 @@ def gguf(qtype):
 
 # ------------------------------------------------------------------------- run
 
-ONLY = [m.strip() for m in os.environ.get("SERVSEAL_ONLY", "").split(",") if m.strip()]
+# Empty by default: every row in one session under one pin, because a table whose
+# rows were measured under different framework versions is the exact defect this
+# study reports about perplexity. Set SERVSEAL_ONLY="bnb int8,AWQ W4A16" in the
+# editor to re-measure a subset once a coherent baseline exists.
+DEFAULT_ONLY = ""
+ONLY = [m.strip() for m in os.environ.get("SERVSEAL_ONLY", DEFAULT_ONLY).split(",")
+        if m.strip()]
 ALL = [("int8 per-channel", int8_per_channel),
        ("naive int4 g128", naive_int4),
        ("bnb NF4", lambda: bnb("nf4")),

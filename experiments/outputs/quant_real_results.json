@@ -5,7 +5,7 @@
   "ppl_fp32_cpu": 10.435765266418457,
   "ppl_fp32_gpu": 10.435959815979004,
   "servseal": "0.2.1",
-  "transformers": "5.14.1",
+  "transformers": "4.57.6",
   "gpu": "Tesla T4",
   "results": [
     {
@@ -18,55 +18,8 @@
       "severity": "none",
       "signature": "hardware",
       "device": "cuda",
-      "note": "the floor below which no verdict here means anything"
-    },
-    {
-      "method": "int8 per-channel",
-      "h": 0.030572697058721652,
-      "top1": 0.956,
-      "ppl": 10.361952781677246,
-      "dppl": -0.7073030377439996,
-      "status": "changed",
-      "severity": "minor",
-      "signature": "precision-level (dtype, kernels) or mild sampling parameter",
-      "device": "cpu",
-      "note": "8-bit, one scale per output channel"
-    },
-    {
-      "method": "naive int4 g128",
-      "h": 0.28764598237173333,
-      "top1": 0.674,
-      "ppl": 15.383686065673828,
-      "dppl": 47.41310936896429,
-      "status": "changed",
-      "severity": "major",
-      "signature": "weight-level change (quantisation, fine-tune, or related model)",
-      "device": "cpu",
-      "note": "4-bit, group 128, no calibration"
-    },
-    {
-      "method": "bnb NF4",
-      "h": 0.17606214825261657,
-      "top1": 0.814,
-      "ppl": 12.406315803527832,
-      "dppl": 18.88044820306725,
-      "status": "changed",
-      "severity": "major",
-      "signature": "weight-level change (quantisation, fine-tune, or related model)",
-      "device": "cuda",
-      "note": "NF4, double quantisation, float32 compute"
-    },
-    {
-      "method": "bnb int8",
-      "h": 0.049511232383202854,
-      "top1": 0.944,
-      "ppl": 10.32309341430664,
-      "dppl": -1.0815143375652718,
-      "status": "changed",
-      "severity": "minor",
-      "signature": "precision-level (dtype, kernels) or mild sampling parameter",
-      "device": "cuda",
-      "note": "LLM.int8, outlier-aware mixed precision"
+      "note": "the floor below which no verdict here means anything",
+      "source": "this run"
     },
     {
       "method": "GGUF Q8_0",
@@ -78,7 +31,34 @@
       "severity": "minor",
       "signature": "precision-level (dtype, kernels) or mild sampling parameter",
       "device": "cpu",
-      "note": "llama.cpp Q8_0, dequantised to fp32"
+      "note": "llama.cpp Q8_0, dequantised to fp32",
+      "source": "this run"
+    },
+    {
+      "method": "int8 per-channel",
+      "h": 0.030572697058721652,
+      "top1": 0.956,
+      "ppl": 10.361952781677246,
+      "dppl": -0.7073030377439996,
+      "status": "changed",
+      "severity": "minor",
+      "signature": "precision-level (dtype, kernels) or mild sampling parameter",
+      "device": "cpu",
+      "note": "8-bit, one scale per output channel",
+      "source": "this run"
+    },
+    {
+      "method": "bnb int8",
+      "h": 0.04393900504003378,
+      "top1": 0.936,
+      "ppl": 10.531399726867676,
+      "dppl": 0.9145293060877755,
+      "status": "changed",
+      "severity": "minor",
+      "signature": "precision-level (dtype, kernels) or mild sampling parameter",
+      "device": "cuda",
+      "note": "LLM.int8, outlier-aware mixed precision",
+      "source": "this run"
     },
     {
       "method": "GGUF Q4_K_M",
@@ -90,17 +70,61 @@
       "severity": "moderate",
       "signature": "weight-level change (quantisation, fine-tune, or related model)",
       "device": "cpu",
-      "note": "llama.cpp Q4_K_M, dequantised to fp32"
+      "note": "llama.cpp Q4_K_M, dequantised to fp32",
+      "source": "this run"
     },
     {
-      "method": "AWQ W4A16",
-      "h": null,
-      "error": "RuntimeError: --- <Autowrapped Qwen2ForCausalLM 140328013141424>:12 ---\n\n\nname 'Union' is not defined"
+      "method": "bnb NF4",
+      "h": 0.17556785122426516,
+      "top1": 0.81,
+      "ppl": 12.391554832458496,
+      "dppl": 18.73900485401626,
+      "status": "changed",
+      "severity": "major",
+      "signature": "weight-level change (quantisation, fine-tune, or related model)",
+      "device": "cuda",
+      "note": "NF4, double quantisation, float32 compute",
+      "source": "this run"
     },
     {
       "method": "GPTQ W4A16",
-      "h": null,
-      "error": "RuntimeError: --- <Autowrapped Qwen2ForCausalLM 140328013148528>:12 ---\n\n\nname 'Union' is not defined"
+      "h": 0.20757303465108698,
+      "top1": 0.762,
+      "ppl": 12.675281524658203,
+      "dppl": 21.457745604294733,
+      "status": "changed",
+      "severity": "major",
+      "signature": "weight-level change (quantisation, fine-tune, or related model)",
+      "device": "cuda",
+      "note": "GPTQ W4A16, group 128, 128 calib samples",
+      "source": "kaggle_servseal-quant-real.20260912-005846 (same pin, same probes, same reference; this run's attempt died on a missing libtorch_cuda_linalg.so)"
+    },
+    {
+      "method": "AWQ W4A16",
+      "h": 0.247835670541609,
+      "top1": 0.754,
+      "ppl": 13.933847427368164,
+      "dppl": 33.51764162634447,
+      "status": "changed",
+      "severity": "major",
+      "signature": "weight-level change (quantisation, fine-tune, or related model)",
+      "device": "cuda",
+      "note": "AWQ 4-bit, group 128, symmetric, 128 calibration samples",
+      "source": "this run"
+    },
+    {
+      "method": "naive int4 g128",
+      "h": 0.28764598237173333,
+      "top1": 0.674,
+      "ppl": 15.383686065673828,
+      "dppl": 47.41310936896429,
+      "status": "changed",
+      "severity": "major",
+      "signature": "weight-level change (quantisation, fine-tune, or related model)",
+      "device": "cpu",
+      "note": "4-bit, group 128, no calibration",
+      "source": "this run"
     }
-  ]
+  ],
+  "note": "Every row measured under transformers 4.57.6 on a Tesla T4, the same 500 probe positions and the same float32 reference as Option A. Eight rows come from one session; GPTQ comes from the archived session named in its `source`, whose pin, probe hash and reference perplexity are identical and asserted equal here."
 }

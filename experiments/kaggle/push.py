@@ -121,6 +121,14 @@ def fetch(a, which="vllm"):
     os.makedirs(OUT, exist_ok=True)
     k = KERNEL_QUANT if which == "quant" else KERNEL
     dest = os.path.join(OUT, "kaggle_" + k.split("/")[1])
+    # Archive whatever is there before replacing it. kernels_output only ever
+    # returns the *latest* version, so an overwritten result cannot be fetched
+    # again -- and a run whose evidence is gone cannot be cited.
+    if os.path.isdir(dest) and os.listdir(dest):
+        stamp = time.strftime("%Y%m%d-%H%M%S")
+        keep = f"{dest}.{stamp}"
+        shutil.move(dest, keep)
+        print(f"  previous output archived to {os.path.basename(keep)}")
     os.makedirs(dest, exist_ok=True)
     a.kernels_output(k, path=dest, force=True, quiet=False)
     for f in sorted(os.listdir(dest)):

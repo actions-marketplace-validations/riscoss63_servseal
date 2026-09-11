@@ -1,0 +1,60 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B",
+  "positions": 500,
+  "probe": "0622744ec759498ab157735adc7e945c",
+  "ppl_fp32_cpu": 10.435765266418457,
+  "ppl_fp32_gpu": 10.435959815979004,
+  "servseal": "0.2.1",
+  "transformers": "4.57.6",
+  "gpu": "Tesla T4",
+  "results": [
+    {
+      "method": "control: fp32 gpu vs cpu",
+      "h": 2.3409074299257516e-06,
+      "top1": 1.0,
+      "ppl": 10.435959815979004,
+      "dppl": 0.001864257728878988,
+      "status": "sealed",
+      "severity": "none",
+      "signature": "hardware",
+      "device": "cuda",
+      "note": "the floor below which no verdict here means anything"
+    },
+    {
+      "method": "bnb int8",
+      "h": 0.04393900504003378,
+      "top1": 0.936,
+      "ppl": 10.531399726867676,
+      "dppl": 0.9145293060877755,
+      "status": "changed",
+      "severity": "minor",
+      "signature": "precision-level (dtype, kernels) or mild sampling parameter",
+      "device": "cuda",
+      "note": "LLM.int8, outlier-aware mixed precision"
+    },
+    {
+      "method": "AWQ W4A16",
+      "h": 0.24787954859207612,
+      "top1": 0.75,
+      "ppl": 14.0353364944458,
+      "dppl": 34.490135473266356,
+      "status": "changed",
+      "severity": "major",
+      "signature": "weight-level change (quantisation, fine-tune, or related model)",
+      "device": "cuda",
+      "note": "AWQ W4A16, group 128, 128 calib samples"
+    },
+    {
+      "method": "GPTQ W4A16",
+      "h": 0.20757303465108698,
+      "top1": 0.762,
+      "ppl": 12.675281524658203,
+      "dppl": 21.457745604294733,
+      "status": "changed",
+      "severity": "major",
+      "signature": "weight-level change (quantisation, fine-tune, or related model)",
+      "device": "cuda",
+      "note": "GPTQ W4A16, group 128, 128 calib samples"
+    }
+  ]
+}
