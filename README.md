@@ -279,7 +279,7 @@ Everything above is one command each, on models small enough for a laptop CPU:
 
 ```bash
 pip install -e .[model,dev]
-pytest                                    # 67 tests: units, CLI, HTTP transport
+pytest                                    # 71 tests: units, CLI, HTTP transport
 cd experiments
 python e2e_real_models.py                 # the verdict battery, ~12 min CPU
 python sampling_power.py                  # the API-mode power table, ~1 min

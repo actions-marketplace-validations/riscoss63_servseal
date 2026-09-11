@@ -30,18 +30,27 @@ def softmax_over_probes(model, tokenizer, texts, *, max_positions=1500,
     log-probabilities for perplexity. One forward pass per probe text."""
     import torch
 
+    # The probes must reach the model wherever it lives. Snapshotting on CPU is the
+    # recommendation and was the only path exercised, so a model on a GPU used to
+    # fail here on the first embedding lookup -- `device=` has been a parameter of
+    # snapshot_model since the start and did not work for anything but "cpu".
+    try:
+        device = model.device
+    except AttributeError:
+        device = next(model.parameters()).device
+
     rows, logprobs = [], []
     for t in texts:
         if sum(r.shape[0] for r in rows) >= max_positions:
             break
         text = template.replace("{text}", t) if template else t
         ids = tokenizer(text, return_tensors="pt", truncation=True,
-                        max_length=max_length).input_ids
+                        max_length=max_length).input_ids.to(device)
         with torch.no_grad():
             logits = model(ids).logits[0].float()
-        p = torch.softmax(logits, -1).numpy().astype(np.float32)
+        p = torch.softmax(logits, -1).cpu().numpy().astype(np.float32)
         rows.append(p)
-        tg = ids[0, 1:].numpy()
+        tg = ids[0, 1:].cpu().numpy()
         n = min(len(tg), p.shape[0] - 1)
         logprobs.append(np.log(np.clip(p[np.arange(n), tg[:n]], 1e-300, None)))
     P = np.concatenate(rows)[:max_positions]

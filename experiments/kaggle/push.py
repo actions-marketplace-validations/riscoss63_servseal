@@ -1,13 +1,18 @@
-"""Package the working tree as a Kaggle dataset and push the probe kernel.
+"""Push and collect the two Kaggle kernels this repository runs on a GPU.
 
-The kernel needs a servseal that PyPI does not have yet -- API mode is unreleased --
-so the source travels as a dataset rather than as a version number. Everything here is
-private by default and matches the layout the other kernels in this account use.
+    --which vllm   the API-mode interoperability probe. It predates the release, so
+                   servseal travels to it as a private dataset.
+    --which quant  the real-toolchain quantisation study. Takes servseal from PyPI
+                   and needs no dataset at all.
 
-    python push.py --dry-run     # build the payload, print what would be sent
-    python push.py               # create/version the dataset, then push the kernel
-    python push.py --status      # where the last run got to
-    python push.py --fetch       # pull the log and artifacts into outputs/
+    python push.py --which quant --dry-run
+    python push.py --which quant             # push and run
+    python push.py --which quant --status
+    python push.py --which quant --fetch     # log and artifacts into outputs/
+
+The accelerator type is not in the API: ApiSaveKernelRequest carries enable_gpu and
+enable_tpu only, so every push here reverts the kernel to Kaggle's default GPU (a
+P100). Anything needing a T4 must be started from the editor after the push.
 """
 from __future__ import annotations
 
@@ -26,6 +31,7 @@ OUT = os.path.join(os.path.dirname(HERE), "outputs")
 USER = "abderrahmanesghairi"
 DATASET = f"{USER}/servseal-api-kit"
 KERNEL = f"{USER}/servseal-vllm-probe"
+KERNEL_QUANT = f"{USER}/servseal-quant-real"
 
 PAYLOAD = ["servseal", "pyproject.toml", "README.md", "LICENSE"]
 
@@ -78,18 +84,19 @@ def push_dataset(a, files):
         a.dataset_create_new(BUILD, dir_mode="zip", public=False, quiet=False)
 
 
-def push_kernel(a):
+def push_kernel(a, which="vllm"):
     meta = {
-        "id": KERNEL,
-        "title": "servseal-vllm-probe",
-        "code_file": "vllm_probe.py",
+        "id": KERNEL_QUANT if which == "quant" else KERNEL,
+        "title": "servseal-quant-real" if which == "quant" else "servseal-vllm-probe",
+        "code_file": "quant_real.py" if which == "quant" else "vllm_probe.py",
         "language": "python",
         "kernel_type": "script",
         "is_private": True,
         "enable_gpu": True,
         "enable_tpu": False,
         "enable_internet": True,
-        "dataset_sources": [DATASET],
+        # the quantisation kernel takes servseal from PyPI, so it needs no dataset
+        "dataset_sources": [] if which == "quant" else [DATASET],
         "competition_sources": [],
         "kernel_sources": [],
         "model_sources": [],
@@ -97,32 +104,36 @@ def push_kernel(a):
     stage = os.path.join(HERE, "_kernel")
     shutil.rmtree(stage, ignore_errors=True)
     os.makedirs(stage)
-    shutil.copy2(os.path.join(HERE, "vllm_probe.py"), stage)
+    shutil.copy2(os.path.join(HERE, meta["code_file"]), stage)
     json.dump(meta, open(os.path.join(stage, "kernel-metadata.json"), "w"), indent=2)
-    print(f"  pushing {KERNEL} (private, GPU, internet)")
+    print(f"  pushing {meta['id']} (private, GPU, internet"
+          + (", no dataset)" if which == "quant" else f", dataset {DATASET})"))
     print(a.kernels_push(stage))
 
 
-def status(a):
-    s = a.kernels_status(KERNEL)
+def status(a, which="vllm"):
+    s = a.kernels_status(
+        KERNEL_QUANT if which == 'quant' else KERNEL)
     print(json.dumps(s if isinstance(s, dict) else s.__dict__, default=str, indent=2))
 
 
-def fetch(a):
+def fetch(a, which="vllm"):
     os.makedirs(OUT, exist_ok=True)
-    dest = os.path.join(OUT, "kaggle_vllm_probe")
+    k = KERNEL_QUANT if which == "quant" else KERNEL
+    dest = os.path.join(OUT, "kaggle_" + k.split("/")[1])
     os.makedirs(dest, exist_ok=True)
-    a.kernels_output(KERNEL, path=dest, force=True, quiet=False)
+    a.kernels_output(k, path=dest, force=True, quiet=False)
     for f in sorted(os.listdir(dest)):
         print("  " + f)
-    log = os.path.join(dest, "servseal-vllm-probe.log")
+    log = os.path.join(dest, k.split("/")[1] + ".log")
     if os.path.exists(log):
         try:
             entries = json.load(open(log, encoding="utf-8"))
             text = "\n".join(e.get("data", "") for e in entries)
-            open(os.path.join(OUT, "vllm_probe_output.txt"), "w",
-                 encoding="utf-8").write(text)
-            print(f"\n  log flattened to outputs/vllm_probe_output.txt "
+            flat = os.path.join(OUT, k.split("/")[1].replace("servseal-", "")
+                                .replace("-", "_") + "_output.txt")
+            open(flat, "w", encoding="utf-8").write(text)
+            print(f"\n  log flattened to outputs/{os.path.basename(flat)} "
                   f"({len(text)} chars)")
         except Exception as e:
             print(f"  could not flatten the log: {e}")
@@ -134,28 +145,34 @@ def main():
     p.add_argument("--status", action="store_true")
     p.add_argument("--fetch", action="store_true")
     p.add_argument("--kernel-only", action="store_true")
+    p.add_argument("--which", default="vllm", choices=["vllm", "quant"],
+                   help="which kernel to push, watch or fetch")
     a_ = p.parse_args()
 
     if a_.status:
-        return status(api())
+        return status(api(), a_.which)
     if a_.fetch:
-        return fetch(api())
+        return fetch(api(), a_.which)
 
     print("building payload")
     files = build()
     if a_.dry_run:
         for f in sorted(files)[:40]:
             print("   ", f)
-        print(f"\nwould push dataset {DATASET} and kernel {KERNEL} (both private)")
+        tgt = KERNEL_QUANT if a_.which == "quant" else KERNEL
+        print(f"\nwould push kernel {tgt} (private)"
+              + ("" if a_.which == "quant" else f", and dataset {DATASET}"))
         return 0
     a = api()
-    if not a_.kernel_only:
+    if not a_.kernel_only and a_.which != "quant":
         push_dataset(a, files)
         print("  waiting for the dataset to finish processing")
         time.sleep(20)
-    push_kernel(a)
-    print(f"\nwatch: https://www.kaggle.com/code/{KERNEL}")
-    print("then:  python push.py --status   /   python push.py --fetch")
+    push_kernel(a, a_.which)
+    tgt = KERNEL_QUANT if a_.which == "quant" else KERNEL
+    w = "" if a_.which == "vllm" else f" --which {a_.which}"
+    print(f"\nwatch: https://www.kaggle.com/code/{tgt}")
+    print(f"then:  python push.py{w} --status   /   python push.py{w} --fetch")
     return 0
 
 

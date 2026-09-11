@@ -1,0 +1,51 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B",
+  "positions": 500,
+  "probe": "0622744ec759498ab157735adc7e945c",
+  "ppl_fp32": 10.435765266418457,
+  "servseal": "0.2.0",
+  "results": [
+    {
+      "method": "int8 per-channel",
+      "h": 0.030572697058721652,
+      "top1": 0.956,
+      "ppl": 10.361952781677246,
+      "dppl": -0.7073030377439996,
+      "status": "changed",
+      "severity": "minor",
+      "signature": "precision-level (dtype, kernels) or mild sampling parameter",
+      "note": "8-bit, one scale per output channel"
+    },
+    {
+      "method": "naive int4 g128",
+      "h": 0.28764598237173333,
+      "top1": 0.674,
+      "ppl": 15.383686065673828,
+      "dppl": 47.41310936896429,
+      "status": "changed",
+      "severity": "major",
+      "signature": "weight-level change (quantisation, fine-tune, or related model)",
+      "note": "4-bit, group 128, no calibration"
+    },
+    {
+      "method": "AWQ 4-bit",
+      "h": null,
+      "error": "AttributeError: 'Catcher' object has no attribute 'attention_type'"
+    },
+    {
+      "method": "GPTQ 4-bit",
+      "h": null,
+      "error": "ImportError: cannot import name 'create_recurrent_attention_mask' from 'transformers.masking_utils' (/usr/local/lib/python3.12/dist-packages/transformers/masking_utils.py)"
+    },
+    {
+      "method": "GGUF Q4_K_M",
+      "h": null,
+      "error": "TypeError: subprocess.run() got multiple values for keyword argument 'shell'"
+    },
+    {
+      "method": "GGUF Q8_0",
+      "h": null,
+      "error": "FileNotFoundError: [Errno 2] No such file or directory: '/kaggle/working/llama.cpp/build/bin/llama-quantize'"
+    }
+  ]
+}

@@ -15,7 +15,7 @@ bands, which can only be computed while its distributions exist:
     servseal snapshot MODEL -o ref.seal.npz --api-budget 5000     # needs the weights
     servseal verify ref.seal.npz --endpoint URL --served-model NAME   # needs neither
 """
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
 from .probes import load_probes, probe_id          # noqa: E402
 from .snapshot import Snapshot                     # noqa: E402
