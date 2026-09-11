@@ -1,0 +1,107 @@
+{
+  "mode": "endpoint",
+  "s1": 0.49128305885292683,
+  "s2": 0.3756,
+  "bands": {
+    "s1": [
+      0.4817820308650281,
+      0.4976899476989485
+    ],
+    "s2": [
+      0.35679,
+      0.3815025
+    ],
+    "total": 5000,
+    "reps": 200,
+    "alpha": 0.05,
+    "through_wire": false,
+    "dropped_per_run": 0.0
+  },
+  "endpoint": {
+    "url": "http://127.0.0.1:45272/v1",
+    "model": "gpt2"
+  },
+  "wire": {
+    "convention": "piece",
+    "logprobs_available": true,
+    "requests": 48,
+    "retries": 0,
+    "returned": 5000,
+    "resolved": 5000,
+    "unresolved": 0,
+    "unresolved_fraction": 0.0,
+    "unresolved_examples": []
+  },
+  "ref_meta": {
+    "model": "gpt2@fp32",
+    "D": 256,
+    "seed": 0,
+    "vocab_size": 50257,
+    "n_positions": 1500,
+    "probe": "0622744ec759498ab157735adc7e945c",
+    "template": null,
+    "dtype": "float32",
+    "created_utc": "2026-09-01T15:39:31Z",
+    "modelseal": "0.1.0",
+    "perplexity": 27.8302,
+    "probe_file": "default-v1",
+    "model_id": "gpt2",
+    "api": {
+      "wiremap": {
+        "vocab_size": 50257,
+        "piece_collisions": 0,
+        "exact": 49913,
+        "wrong": 327,
+        "split": 17,
+        "padded": 0,
+        "exact_fraction": 0.993155
+      },
+      "text_convention": {
+        "wrong_mass": 0.00010115023328683616,
+        "split_mass": 3.7274783845187095e-07,
+        "worst_position_wrong_mass": 0.0214200337025542
+      },
+      "bands": {
+        "5000": {
+          "exact": {
+            "s1": [
+              0.4817820308650281,
+              0.4976899476989485
+            ],
+            "s2": [
+              0.35679,
+              0.3815025
+            ],
+            "total": 5000,
+            "reps": 200,
+            "alpha": 0.05,
+            "through_wire": false,
+            "dropped_per_run": 0.0
+          },
+          "text": {
+            "s1": [
+              0.4817820308650281,
+              0.4976899476989485
+            ],
+            "s2": [
+              0.35679,
+              0.3815025
+            ],
+            "total": 5000,
+            "reps": 200,
+            "alpha": 0.05,
+            "through_wire": true,
+            "dropped_per_run": 0.005
+          }
+        }
+      }
+    }
+  },
+  "verdict": {
+    "status": "sealed",
+    "severity": "none",
+    "signature": "behaviour within the unchanged endpoint's band",
+    "explanation": "Both sampled statistics fall inside the bands the unchanged reference produces at this budget: S1 0.4913 (band 0.4818-0.4977), S2 0.3756 (band 0.3568-0.3815) at 5000 sampled tokens. Absence of evidence at this budget is not proof of identity -- the power of this test is the measured power at the budget you spent, not certainty.",
+    "exit_code": 0
+  }
+}

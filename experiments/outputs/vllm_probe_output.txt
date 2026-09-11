@@ -1,0 +1,1085 @@
+
+
+==============================================================================
+
+environment
+
+==============================================================================
+
+torch 2.10.0+cu128  cuda=True
+
+GPU: Tesla T4 (sm_75)
+
+
+
+==============================================================================
+
+wire format, read from vLLM's own source (no GPU, no dataset needed)
+
+==============================================================================
+
+$ /usr/bin/python3 -m pip install -q vllm
+
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.9/87.9 kB 4.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 316.0/316.0 MB 5.8 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 88.2 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 211.7/211.7 kB 16.6 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.3/18.3 MB 88.0 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 322.7/322.7 kB 23.7 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 111.0/111.0 kB 9.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.4/45.4 kB 3.2 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 90.3 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 83.8 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.2/43.2 MB 47.6 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 728.5/728.5 kB 46.9 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.5/50.5 MB 33.7 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 755.8/755.8 kB 34.9 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 526.6/526.6 MB 3.4 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 45.8 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.7/7.7 MB 58.0 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.2/90.2 MB 18.8 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 55.0 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 366.2/366.2 MB 3.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 170.1/170.1 MB 5.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.8/2.8 MB 45.3 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 88.5/88.5 MB 18.6 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 88.0/88.0 MB 17.7 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.0/206.0 MB 5.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.4/60.4 MB 27.9 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 197.7/197.7 MB 9.2 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 423.1/423.1 MB 2.4 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.7/10.7 MB 9.2 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 214.1/214.1 MB 8.4 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 52.0 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.5/59.5 MB 28.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.9/200.9 MB 3.2 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 145.9/145.9 MB 12.3 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 772.4/772.4 kB 42.1 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 148.0/148.0 kB 12.7 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 48.6 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 53.1 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 798.3/798.3 kB 42.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.9/5.9 MB 74.3 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 68.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 74.8 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.7/125.7 kB 9.9 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.7/5.7 MB 73.0 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 65.3 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 6.3 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.2/137.2 kB 10.7 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.0/60.0 kB 4.4 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 204.6/204.6 kB 15.9 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 323.4/323.4 kB 25.2 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 43.2 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 76.0/76.0 kB 5.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.5/9.5 MB 74.1 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.3/12.3 MB 71.2 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 516.0/516.0 kB 33.1 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 71.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 52.8 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 461.2/461.2 kB 28.8 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 149.8/149.8 kB 11.3 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 16.9 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.7/94.7 kB 7.2 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.3/125.3 kB 8.1 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.2/7.2 MB 76.0 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 382.2/382.2 kB 27.0 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 808.1/808.1 kB 46.6 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 74.0 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 95.4/95.4 kB 8.1 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.1/83.1 kB 5.9 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.5/68.5 kB 5.6 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 30.7 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 77.1 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 6.6 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 320.7/320.7 kB 23.9 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 81.6/81.6 MB 22.2 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 29.3/29.3 MB 55.2 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.6/61.6 kB 5.4 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 28.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.7/47.7 MB 23.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 897.8/897.8 kB 43.6 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 85.8 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.6/62.6 kB 4.8 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.7/108.7 kB 8.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 123.1/123.1 kB 10.2 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 87.3 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.5/42.5 MB 42.9 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.0/8.0 MB 85.1 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 160.9/160.9 kB 14.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.6/72.6 MB 25.5 MB/s eta 0:00:00
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 927.8/927.8 kB 45.2 MB/s eta 0:00:00
+
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+
+bigframes 2.39.0 requires google-cloud-bigquery-storage<3.0.0,>=2.30.0, which is not installed.
+
+google-adk 1.29.0 requires google-cloud-bigquery-storage>=2.0.0, which is not installed.
+
+grpcio-tools 1.71.2 requires protobuf<6.0dev,>=5.26.1, but you have protobuf 6.33.6 which is incompatible.
+
+ydata-profiling 4.18.4 requires numba<0.63,>=0.60, but you have numba 0.65.0 which is incompatible.
+
+dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.2.0 which is incompatible.
+
+pylibcudf-cu12 26.2.1 requires cuda-python<13.0,>=12.9.2, but you have cuda-python 13.4.1 which is incompatible.
+
+numba-cuda 0.22.2 requires cuda-core<1.0.0,>=0.3.2, but you have cuda-core 1.2.0 which is incompatible.
+
+libcuml-cu12 26.2.0 requires cuda-toolkit[cublas,cufft,curand,cusolver,cusparse]==12.*, but you have cuda-toolkit 13.0.3.0 which is incompatible.
+
+rmm-cu12 26.2.0 requires cuda-python<13.0,>=12.9.2, but you have cuda-python 13.4.1 which is incompatible.
+
+cuml-cu12 26.2.0 requires cuda-python<13.0,>=12.9.2, but you have cuda-python 13.4.1 which is incompatible.
+
+cuml-cu12 26.2.0 requires cuda-toolkit[cublas,cufft,curand,cusolver,cusparse]==12.*, but you have cuda-toolkit 13.0.3.0 which is incompatible.
+
+cuml-cu12 26.2.0 requires numba<0.62.0,>=0.60.0, but you have numba 0.65.0 which is incompatible.
+
+pylibraft-cu12 26.2.0 requires cuda-python<13.0,>=12.9.2, but you have cuda-python 13.4.1 which is incompatible.
+
+cuvs-cu12 26.2.0 requires cuda-python<13.0,>=12.9.2, but you have cuda-python 13.4.1 which is incompatible.
+
+google-ai-generativelanguage 0.6.15 requires protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.2, but you have protobuf 6.33.6 which is incompatible.
+
+cudf-cu12 26.2.1 requires cuda-python<13.0,>=12.9.2, but you have cuda-python 13.4.1 which is incompatible.
+
+cudf-cu12 26.2.1 requires cuda-toolkit[nvcc,nvrtc]==12.*, but you have cuda-toolkit 13.0.3.0 which is incompatible.
+
+cudf-cu12 26.2.1 requires numba<0.62.0,>=0.60.0, but you have numba 0.65.0 which is incompatible.
+
+libcuvs-cu12 26.2.0 requires cuda-toolkit[cublas,curand,cusolver,cusparse]==12.*, but you have cuda-toolkit 13.0.3.0 which is incompatible.
+
+libraft-cu12 26.2.0 requires cuda-toolkit[cublas,curand,cusolver,cusparse]==12.*, but you have cuda-toolkit 13.0.3.0 which is incompatible.
+
+grpcio-status 1.71.2 requires protobuf<6.0dev,>=5.26.1, but you have protobuf 6.33.6 which is incompatible.
+
+google-adk 1.29.0 requires opentelemetry-api<1.39.0,>=1.36.0, but you have opentelemetry-api 1.44.0 which is incompatible.
+
+google-adk 1.29.0 requires opentelemetry-sdk<1.39.0,>=1.36.0, but you have opentelemetry-sdk 1.44.0 which is incompatible.
+
+google-adk 1.29.0 requires starlette<1.0.0,>=0.49.1, but you have starlette 1.6.0 which is incompatible.
+
+opentelemetry-exporter-gcp-logging 1.11.0a0 requires opentelemetry-sdk<1.39.0,>=1.35.0, but you have opentelemetry-sdk 1.44.0 which is incompatible.
+
+gradio 5.50.0 requires starlette<1.0,>=0.40.0, but you have starlette 1.6.0 which is incompatible.
+
+vllm dev at /usr/local/lib/python3.12/dist-packages/vllm
+
+scanning 2512 files under the installed package, most relevant first
+
+
+
+--- entrypoints/openai/completion/protocol.py   ['return_tokens_as_token_ids', 'class CompletionLogProbs']
+
+  156          ),
+
+  157      )
+
+  158  
+
+  159      return_tokens_as_token_ids: bool | None = Field(
+
+  160          default=None,
+
+  161          description=(
+
+  162              "If specified with 'logprobs', tokens are represented "
+
+  163              " as strings of the form 'token_id:{token_id}' so that tokens "
+
+  164              "that are not JSON-encodable can be identified."
+
+  165          ),
+
+  166      )
+
+  167      return_token_ids: bool | None = Field(
+
+  168          default=None,
+
+  169          description=(
+
+  170              "If specified, the result will include token IDs alongside the "
+
+  171              "generated text. In streaming mode, prompt_token_ids is included "
+
+  172              "only in the first chunk, and token_ids contains the delta tokens "
+
+  173              "for each chunk. This is useful for debugging or when you "
+
+  174              "need to map generated text back to input tokens."
+
+       ...
+
+  608          return data
+
+  609  
+
+  610  
+
+  611  class CompletionLogProbs(OpenAIBaseModel):
+
+  612      text_offset: list[int] = Field(default_factory=list)
+
+  613      token_logprobs: list[float | None] = Field(default_factory=list)
+
+  614      tokens: list[str] = Field(default_factory=list)
+
+  615      top_logprobs: list[dict[str, float] | None] = Field(default_factory=list)
+
+  616  
+
+  617  
+
+  618  class CompletionResponseChoice(OpenAIBaseModel):
+
+  619      index: int
+
+  620      text: str
+
+  621      logprobs: CompletionLogProbs | None = None
+
+  622      finish_reason: str | None = None
+
+  623      stop_reason: int | str | None = Field(
+
+  624          default=None,
+
+  625          description=(
+
+  626              "The stop string or token id that caused the completion "
+
+       ...
+
+
+
+--- entrypoints/openai/completion/serving.py   ['return_tokens_as_token_ids']
+
+   60          *,
+
+   61          online_renderer: "OnlineRenderer",
+
+   62          request_logger: RequestLogger | None,
+
+   63          return_tokens_as_token_ids: bool = False,
+
+   64          enable_prompt_tokens_details: bool = False,
+
+   65          enable_force_include_usage: bool = False,
+
+   66          enable_per_request_metrics: bool = False,
+
+   67      ):
+
+   68          super().__init__(
+
+   69              engine_client=engine_client,
+
+   70              models=models,
+
+   71              request_logger=request_logger,
+
+   72              return_tokens_as_token_ids=return_tokens_as_token_ids,
+
+   73          )
+
+   74  
+
+   75          self.online_renderer = online_renderer
+
+   76          self.enable_prompt_tokens_details = enable_prompt_tokens_details
+
+   77          self.enable_force_include_usage = enable_force_include_usage
+
+   78          self.enable_per_request_metrics = enable_per_request_metrics
+
+       ...
+
+   69              engine_client=engine_client,
+
+   70              models=models,
+
+   71              request_logger=request_logger,
+
+   72              return_tokens_as_token_ids=return_tokens_as_token_ids,
+
+   73          )
+
+   74  
+
+   75          self.online_renderer = online_renderer
+
+   76          self.enable_prompt_tokens_details = enable_prompt_tokens_details
+
+   77          self.enable_force_include_usage = enable_force_include_usage
+
+   78          self.enable_per_request_metrics = enable_per_request_metrics
+
+   79  
+
+   80          self.default_sampling_params = self.model_config.get_diff_sampling_param()
+
+   81          mc = self.model_config
+
+   82          self.override_max_tokens = (
+
+   83              self.default_sampling_params.get("max_tokens")
+
+   84              if mc.generation_config not in ("auto", "vllm")
+
+   85              else getattr(mc, "override_generation_config", {}).get("max_new_tokens")
+
+   86          )
+
+   87  
+
+       ...
+
+  387                              tokenizer=tokenizer,
+
+  388                              logprob_token_ids=request.logprob_token_ids,
+
+  389                              initial_text_offset=previous_text_lens[i],
+
+  390                              return_as_token_id=request.return_tokens_as_token_ids,
+
+  391                          )
+
+  392                      else:
+
+  393                          logprobs = None
+
+  394  
+
+  395                      previous_text_lens[i] += len(delta_text)
+
+  396                      previous_num_tokens[i] += len(output.token_ids)
+
+  397                      finish_reason = output.finish_reason
+
+  398                      stop_reason = output.stop_reason
+
+  399  
+
+  400                      self._raise_if_error(finish_reason, request_id)
+
+  401  
+
+  402                      chunk = CompletionStreamResponse(
+
+  403                          id=request_id,
+
+  404                          object="text_completion",
+
+  405                          created=created_time,
+
+       ...
+
+  565                          tokenizer=tokenizer,
+
+  566                          num_output_top_logprobs=request.logprobs,
+
+  567                          logprob_token_ids=request.logprob_token_ids,
+
+  568                          return_as_token_id=request.return_tokens_as_token_ids,
+
+  569                      )
+
+  570                  else:
+
+  571                      logprobs = None
+
+  572  
+
+  573                  routed_experts_b64 = (
+
+  574                      numpy2base64(output.routed_experts)
+
+  575                      if output.routed_experts is not None
+
+  576                      else None
+
+  577                  )
+
+  578  
+
+  579                  choice_data = CompletionResponseChoice(
+
+  580                      index=len(choices),
+
+  581                      text=output_text,
+
+  582                      logprobs=logprobs,
+
+  583                      finish_reason=output.finish_reason,
+
+       ...
+
+  670          should_return_as_token_id = (
+
+  671              return_as_token_id
+
+  672              if return_as_token_id is not None
+
+  673              else self.return_tokens_as_token_ids
+
+  674          )
+
+  675          for i, token_id in enumerate(token_ids):
+
+  676              step_top_logprobs = top_logprobs[i]
+
+  677              if step_top_logprobs is None:
+
+  678                  if should_return_as_token_id:
+
+  679                      token = format_token_id_placeholder(token_id)
+
+  680                  else:
+
+  681                      if tokenizer is None:
+
+  682                          raise VLLMValidationError(
+
+  683                              "Unable to get tokenizer because "
+
+  684                              "`skip_tokenizer_init=True`",
+
+  685                              parameter="skip_tokenizer_init",
+
+  686                              value=True,
+
+  687                          )
+
+  688  
+
+       ...
+
+
+
+--- logprobs.py   ['decoded_token=']
+
+  114                  self.token_ids[i]: Logprob(
+
+  115                      logprob=self.logprobs[i],
+
+  116                      rank=self.ranks[i],
+
+  117                      decoded_token=self.decoded_tokens[i],
+
+  118                  )
+
+  119                  for i in range(self.start_indices[index], self.end_indices[index])
+
+  120              }
+
+  121          elif isinstance(index, slice):
+
+  122              selected_starts = self.start_indices[index]
+
+  123              selected_ends = self.end_indices[index]
+
+  124              # Empty slices have no source offset to normalize.
+
+  125              if not selected_starts:
+
+  126                  return FlatLogprobs()
+
+  127              min_index = selected_starts[0]
+
+  128              max_index = selected_ends[-1]
+
+  129              return FlatLogprobs(
+
+  130                  # Shift updated start_indices and end_indices to
+
+  131                  # be 0-indexed
+
+  132                  start_indices=[i - min_index for i in selected_starts],
+
+       ...
+
+  202                  token_id: Logprob(
+
+  203                      logprob=logprob,
+
+  204                      rank=rank,
+
+  205                      decoded_token=token,
+
+  206                  )
+
+  207                  for token_id, logprob, rank, token in zip(
+
+  208                      token_ids, logprobs, ranks, decoded_tokens
+
+  209                  )
+
+  210              }
+
+  211          )
+
+       ...
+
+
+
+--- entrypoints/generate/base/serving.py   ['def format_token_id_placeholder', 'def _get_decoded_token', 'return_tokens_as_token_ids']
+
+  142          models: OpenAIServingModels,
+
+  143          *,
+
+  144          request_logger: RequestLogger | None,
+
+  145          return_tokens_as_token_ids: bool = False,
+
+  146      ):
+
+  147          super().__init__(
+
+  148              models=models,
+
+  149              model_config=engine_client.model_config,
+
+  150              request_logger=request_logger,
+
+  151          )
+
+  152  
+
+  153          self.engine_client = engine_client
+
+  154          self.return_tokens_as_token_ids = return_tokens_as_token_ids
+
+  155          self.renderer = engine_client.renderer
+
+  156          self.input_processor = engine_client.input_processor
+
+  157          vllm_config = getattr(engine_client, "vllm_config", None)
+
+  158          kv_transfer_config = getattr(vllm_config, "kv_transfer_config", None)
+
+  159          self.has_kv_connector = kv_transfer_config is not None
+
+  160  
+
+       ...
+
+  151          )
+
+  152  
+
+  153          self.engine_client = engine_client
+
+  154          self.return_tokens_as_token_ids = return_tokens_as_token_ids
+
+  155          self.renderer = engine_client.renderer
+
+  156          self.input_processor = engine_client.input_processor
+
+  157          vllm_config = getattr(engine_client, "vllm_config", None)
+
+  158          kv_transfer_config = getattr(vllm_config, "kv_transfer_config", None)
+
+  159          self.has_kv_connector = kv_transfer_config is not None
+
+  160  
+
+  161          # Computed once at startup (cached by ``vllm_config`` identity) and
+
+  162          # stamped on non-streaming responses. Streaming chunks deliberately
+
+  163          # omit it to avoid per-chunk overhead.
+
+  164          from vllm.entrypoints.serve.utils.fingerprint import get_system_fingerprint
+
+  165  
+
+  166          try:
+
+  167              self.system_fingerprint: str | None = get_system_fingerprint(
+
+  168                  engine_client.vllm_config
+
+  169              )
+
+       ...
+
+  321                      )
+
+  322  
+
+  323      @staticmethod
+
+  324      def _get_decoded_token(
+
+  325          logprob: Logprob,
+
+  326          token_id: int,
+
+  327          tokenizer: TokenizerLike | None,
+
+  328          return_as_token_id: bool = False,
+
+  329      ) -> str:
+
+  330          if return_as_token_id:
+
+  331              return format_token_id_placeholder(token_id)
+
+  332  
+
+  333          if logprob.decoded_token is not None:
+
+  334              return logprob.decoded_token
+
+  335  
+
+  336          if tokenizer is None:
+
+  337              raise ValueError(
+
+  338                  "Unable to get tokenizer because `skip_tokenizer_init=True`"
+
+  339              )
+
+       ...
+
+  341          return tokenizer.decode([token_id])
+
+  342  
+
+  343  
+
+  344  def format_token_id_placeholder(token_id: int) -> str:
+
+  345      return f"token_id:{token_id}"
+
+  346  
+
+  347  
+
+  348  def resolve_token_id_placeholder(
+
+  349      token: str, tokenizer: TokenizerLike
+
+  350  ) -> tuple[str, list[int] | None]:
+
+  351      """Decode a 'token_id:N' placeholder back to a token string and UTF-8 bytes.
+
+  352  
+
+  353      Returns (token, None) unchanged if token is not a placeholder.
+
+  354      This is the inverse of format_token_id_placeholder / _get_decoded_token
+
+  355      when return_as_token_id=True.
+
+  356      """
+
+  357      suffix = token.removeprefix("token_id:")
+
+  358      if suffix == token:
+
+  359          return token, None
+
+       ...
+
+
+
+--- entrypoints/openai/chat_completion/batch_serving.py   ['return_tokens_as_token_ids']
+
+  259                          num_output_top_logprobs=request.top_logprobs,
+
+  260                          logprob_token_ids=request.logprob_token_ids,
+
+  261                          tokenizer=tokenizer,
+
+  262                          return_as_token_id=request.return_tokens_as_token_ids,
+
+  263                      )
+
+  264                  else:
+
+  265                      logprobs = None
+
+  266  
+
+  267                  if parser is not None:
+
+  268                      reasoning, content, _ = parser.parse(
+
+  269                          output.text,
+
+  270                          request=request,  # type: ignore[arg-type]
+
+  271                          model_output_token_ids=output.token_ids,
+
+  272                      )
+
+  273                      if not request.include_reasoning:
+
+  274                          reasoning = None
+
+  275                  else:
+
+  276                      reasoning = None
+
+  277                      content = output.text
+
+       ...
+
+
+
+--- entrypoints/openai/chat_completion/protocol.py   ['return_tokens_as_token_ids']
+
+
+
+--- entrypoints/openai/chat_completion/serving.py   ['return_tokens_as_token_ids']
+
+
+
+--- entrypoints/openai/responses/serving.py   ['return_tokens_as_token_ids']
+
+
+
+--- entrypoints/anthropic/serving.py   ['return_tokens_as_token_ids']
+
+
+
+--- entrypoints/cohere/serving.py   ['return_tokens_as_token_ids']
+
+
+
+--- entrypoints/generate/api_router.py   ['return_tokens_as_token_ids']
+
+
+
+--- entrypoints/launchers/cli_args.py   ['return_tokens_as_token_ids']
+
+
+
+--- entrypoints/pooling/base/serving.py   ['return_tokens_as_token_ids']
+
+
+
+--- entrypoints/scale_out/factories.py   ['return_tokens_as_token_ids']
+
+
+
+--- entrypoints/scale_out/token_in_token_out/serving.py   ['return_tokens_as_token_ids']
+
+
+
+--- entrypoints/speech_to_text/base/serving.py   ['return_tokens_as_token_ids']
+
+
+
+--- entrypoints/speech_to_text/transcription/serving.py   ['return_tokens_as_token_ids']
+
+
+
+--- entrypoints/speech_to_text/translation/serving.py   ['return_tokens_as_token_ids']
+
+
+
+==============================================================================
+
+inputs
+
+==============================================================================
+
+  /kaggle/input: ['datasets'] []
+
+  /kaggle/input/datasets: ['abderrahmanesghairi'] []
+
+  /kaggle/input/datasets/abderrahmanesghairi: ['servseal-api-kit'] []
+
+  /kaggle/input/datasets/abderrahmanesghairi/servseal-api-kit: ['servseal'] ['LICENSE', 'README.md', 'pyproject.toml']
+
+kit: /kaggle/input/datasets/abderrahmanesghairi/servseal-api-kit
+
+
+
+==============================================================================
+
+install
+
+==============================================================================
+
+package: 11 files
+
+$ /usr/bin/python3 -m pip install -q sqsketch>=0.3 transformers
+
+$ /usr/bin/python3 -m pip install -q --no-deps /kaggle/working/servseal-src
+
+servseal 0.1.2
+
+
+
+==============================================================================
+
+reference snapshot (float32, with API bands)
+
+==============================================================================
+
+$ /usr/bin/python3 -m servseal.cli snapshot gpt2 -o /kaggle/working/gpt2.seal.npz --positions 1500 --api-budget 5000
+
+snapshot   /kaggle/working/gpt2.seal.npz
+
+model      gpt2  dtype=float32
+
+positions  1500  D=256  size=1508 KB
+
+probe      0622744ec759498ab157735adc7e945c  (default-v1)
+
+perplexity 27.8304
+
+api        bands at budgets 5000 (exact + text conventions)
+
+api_text   corrupted mass 0.0102 %  worst position 2.142 %   OK
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+
+
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]
+
+Loading weights: 100%|██████████| 148/148 [00:00<00:00, 2817.06it/s]
+
+
+
+[33s]
+
+
+
+==============================================================================
+
+gpt2 float32 (unchanged)
+
+==============================================================================
+
+$ /usr/bin/python3 -m vllm.entrypoints.openai.api_server --model gpt2 --port 8000 --dtype float32 --max-model-len 256 --gpu-memory-utilization 0.55 --disable-log-requests
+
+SKIP: vLLM exited with 2
+
+
+
+                     [--max-num-queued-reqs MAX_NUM_QUEUED_REQS]
+
+                     [--max-num-queued-tokens MAX_NUM_QUEUED_TOKENS]
+
+                     [--long-prefill-token-threshold LONG_PREFILL_TOKEN_THRESHOLD]
+
+                     [--scheduling-policy {fcfs,priority}]
+
+                     [--enable-chunked-prefill | --no-enable-chunked-prefill]
+
+                     [--disable-chunked-mm-input | --no-disable-chunked-mm-input]
+
+                     [--scheduler-cls SCHEDULER_CLS]
+
+                     [--scheduler-reserve-full-isl | --no-scheduler-reserve-full-isl]
+
+     
+
+
+
+==============================================================================
+
+gpt2 + provider top-p 0.95
+
+==============================================================================
+
+gpt2 taken from the local cache
+
+generation_config.json -> {'bos_token_id': 50256, 'eos_token_id': 50256, 'transformers_version': '4.26.0.dev0', '_from_model_config': True, 'do_sample': True, 'top_p': 0.95, 'temperature': 1.0}
+
+$ /usr/bin/python3 -m vllm.entrypoints.openai.api_server --model /kaggle/working/gpt2-topp --port 8000 --dtype float32 --max-model-len 256 --gpu-memory-utilization 0.55 --disable-log-requests --generation-config auto
+
+retrying without ['--generation-config', 'auto']: vLLM exited with 2
+
+$ /usr/bin/python3 -m vllm.entrypoints.openai.api_server --model /kaggle/working/gpt2-topp --port 8000 --dtype float32 --max-model-len 256 --gpu-memory-utilization 0.55 --disable-log-requests
+
+SKIP: vLLM exited with 2
+
+
+
+                     [--max-num-queued-reqs MAX_NUM_QUEUED_REQS]
+
+                     [--max-num-queued-tokens MAX_NUM_QUEUED_TOKENS]
+
+                     [--long-prefill-token-threshold LONG_PREFILL_TOKEN_THRESHOLD]
+
+                     [--scheduling-policy {fcfs,priority}]
+
+                     [--enable-chunked-prefill | --no-enable-chunked-prefill]
+
+                     [--disable-chunked-mm-input | --no-disable-chunked-mm-input]
+
+                     [--scheduler-cls SCHEDULER_CLS]
+
+                     [--scheduler-reserve-full-isl | --no-scheduler-reserve-full-isl]
+
+     
+
+
+
+==============================================================================
+
+distilgpt2 substituted
+
+==============================================================================
+
+$ /usr/bin/python3 -m vllm.entrypoints.openai.api_server --model distilgpt2 --port 8000 --dtype float32 --max-model-len 256 --gpu-memory-utilization 0.55 --disable-log-requests
+
+SKIP: vLLM exited with 2
+
+
+
+                     [--max-num-queued-reqs MAX_NUM_QUEUED_REQS]
+
+                     [--max-num-queued-tokens MAX_NUM_QUEUED_TOKENS]
+
+                     [--long-prefill-token-threshold LONG_PREFILL_TOKEN_THRESHOLD]
+
+                     [--scheduling-policy {fcfs,priority}]
+
+                     [--enable-chunked-prefill | --no-enable-chunked-prefill]
+
+                     [--disable-chunked-mm-input | --no-disable-chunked-mm-input]
+
+                     [--scheduler-cls SCHEDULER_CLS]
+
+                     [--scheduler-reserve-full-isl | --no-scheduler-reserve-full-isl]
+
+     
+
+
+
+==============================================================================
+
+vLLM INTEROPERABILITY  (gpt2, 5000 sampled tokens, 1500 positions)
+
+==============================================================================
+
+deployment                           S1       S2      wire      signature
+
+gpt2 float32 (unchanged)              -        -      None  MISS server failed
+
+gpt2 + provider top-p 0.95            -        -      None  MISS server failed
+
+distilgpt2 substituted                -        -      None  MISS server failed
+
+
+
+artifacts in /kaggle/working:
+
+
+
+  FAIL  3 case(s) did not match ground truth: ['gpt2 float32 (unchanged)', 'gpt2 + provider top-p 0.95', 'distilgpt2 substituted']
+
+  The transport is not proven against vLLM. Read the RAW WIRE lines above
+
+  first: a convention this client does not know is the likeliest cause.
+
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+
+[NbConvertApp] Converting notebook __script__.ipynb to html
+
+[NbConvertApp] Writing 367852 bytes to __results__.html

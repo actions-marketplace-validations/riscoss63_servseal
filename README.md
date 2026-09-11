@@ -99,6 +99,95 @@ position's tail is another's head; pooling erases the evidence). The shipped sta
 is per-position, against the per-position sketches the snapshot already stores, and the
 power sweep asserts bit-equality with the product code path before measuring.
 
+### Running it
+
+The bands can only be computed while the reference distributions exist, so they are
+made at snapshot time and travel inside the `.seal.npz`. A reference sealed without
+`--api-budget` is refused for API mode rather than given an invented threshold.
+
+Sealing runs the model, so it needs the weights; verifying an endpoint never does, and
+the two halves can live on different machines years apart.
+
+```bash
+# once, wherever the weights are
+pip install servseal[model]
+servseal snapshot Qwen/Qwen2.5-0.5B -o reference.seal.npz --api-budget 5000
+
+# from anywhere, for as long as you keep the seal: tokeniser only, no torch
+pip install servseal[api]
+servseal verify reference.seal.npz \
+    --endpoint https://your-provider/v1 --served-model qwen2.5-0.5b \
+    --budget 5000 --report attestation.html
+echo $?      # 0 sealed | 3 changed
+```
+
+`SERVSEAL_API_KEY` carries the bearer token. The client sends `max_tokens=1` and
+`temperature=1`, and **never sends `top_p`** — sending `top_p=1.0` would switch off a
+server-side nucleus filter, which is the single change this mode exists to catch.
+
+### Measured against vLLM
+
+Not against a mock: a real vLLM serving GPT-2 in float32, reached through the shipped
+CLI over HTTP, with the reference snapshotted separately on CPU
+(`experiments/kaggle/vllm_probe.py`, committed attestations in
+`experiments/outputs/`). 5,000 sampled tokens over 1,500 probe positions in 48
+requests, batched 32 prompts at a time with no retries.
+
+| deployment served by vLLM | S1 (band 0.4823–0.4975) | S2 (band 0.3568–0.3815) | verdict |
+|---|---:|---:|---|
+| gpt2 float32, unchanged | **0.4903** | **0.3681** | **SEALED** |
+| gpt2, provider `top_p 0.95` | 0.5091 | **0.3840** ↑ | CHANGED — serving-layer filter |
+| distilgpt2 silently substituted | 0.4308 | **0.3099** ↓ | CHANGED — head-level |
+
+The first row is the true negative that makes the rest worth reading: a float32
+reference computed on a CPU and a float32 deployment computed on a T4 land inside the
+band, so the verdict is about the deployment and not about the hardware it was sealed
+on.
+
+The two changed rows differ in the *direction* of the S2 excursion, and that is the
+whole signature. S2 is not agreement between two argmaxes — it is how often the
+endpoint emits the reference's most likely token. A nucleus filter cuts the tail,
+which concentrates the sample on the head and pushes S2 **up**; changed weights
+scatter the head and push it **down**. Reading the excursion as a magnitude rather
+than a direction names the nucleus filter as a weight change, which is the one error
+this tool cannot afford, so `tests/test_wire_and_endpoint.py` pins both directions.
+
+Note how thin the top-p margin is: 0.3840 against a bound of 0.3815. Five thousand
+tokens is the *minimum* for that filter at this vocabulary, not a comfortable budget.
+Snapshot a second, larger budget if you intend to act on a single run.
+
+### Getting the token back: ask for ids
+
+The endpoint returns text; the statistics need ids in the reference vocabulary. Three
+conventions are detected on the first response rather than configured, and one of them
+costs nothing:
+
+| what the endpoint returns | recovery | cost |
+|---|---|---|
+| `token_id:1234` (`vllm serve --return-tokens-as-token-ids`) | exact | none |
+| the raw token piece | exact — measured collision-free on GPT-2, pythia-160m, Qwen2.5 | none |
+| decoded text (**vLLM's default**) | re-encode; drop what does not resolve to one id | 0.01 % of the sampled mass on English probes |
+
+**Serve with `--return-tokens-as-token-ids` where you can.** vLLM populates
+`logprobs.tokens` from `logprob.decoded_token`, which is the *decoded text*, not the
+piece — so the default path is the third row, and the run above measured it at 0.04 %
+of returned tokens unresolved, two out of five thousand.
+
+That 0.01 % is a property of the *probe set*, not of the tokeniser: the ambiguity
+lives in byte fragments of multi-byte characters, runs of whitespace, and non-Latin
+scripts (39.9 % / 52.2 % of the ambiguous entries on Qwen2.5). So it is measured on
+your probes at snapshot time and stored in the seal, and `snapshot` prints it:
+
+```
+api_text   corrupted mass 0.0102 %  worst position 2.142 %   OK
+```
+
+On code or a non-Latin script it will be larger, the line says so, and the answer is
+an endpoint that returns ids. The full price list — vocabulary collisions, mass
+weighting, the shift in (S1, S2) against the band width, and the false-positive and
+power checks that follow — is `experiments/token_recovery.py`, whose committed output
+covers three tokenisers.
+
 ## What a verdict gives you
 
 ```
@@ -161,6 +250,12 @@ Exit codes gate the job: `0` sealed, `3` changed (job fails, attestation attache
 - **See what the probes never touch.** Coverage is the probe set's; snapshot your own
   traffic domain too (`--probes yourfile.txt`). Snapshots refuse comparison across
   probe sets by hash.
+- **Test a model whose weights you never had.** API mode calibrates its bands by
+  simulating the unchanged endpoint, which needs the reference distributions and
+  therefore the weights — available exactly once, when the reference is sealed. That
+  makes this a tool for open-weights deployments: your own serving stack, or a
+  provider you buy Llama/Qwen/Mistral inference from. A model that was never yours to
+  snapshot cannot be sealed.
 - **Weights-mode determinism is CPU-grade.** Reference snapshots here are computed in
   float32 on CPU, where re-running the same model reproduces distance exactly 0.0000.
   GPU inference can be nondeterministic; snapshot on CPU for the reference of record.
@@ -184,10 +279,12 @@ Everything above is one command each, on models small enough for a laptop CPU:
 
 ```bash
 pip install -e .[model,dev]
-pytest                                    # 24 unit + 5 CLI end-to-end tests
+pytest                                    # 67 tests: units, CLI, HTTP transport
 cd experiments
 python e2e_real_models.py                 # the verdict battery, ~12 min CPU
 python sampling_power.py                  # the API-mode power table, ~1 min
+python token_recovery.py                  # what recovering a token costs, ~2 min
+python e2e_endpoint.py                    # API mode end to end over HTTP, ~2 min
 ```
 
 The battery *asserts* every verdict against its ground truth and exits non-zero on any

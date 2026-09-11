@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "servseal"
-version = "0.1.2"
+version = "0.2.0"
 description = "Behavioural attestation for deployed language models: is the model you serve the model you validated?"
 readme = "README.md"
 license = { text = "MIT" }
@@ -25,6 +25,9 @@ dependencies = ["numpy>=1.21", "scipy>=1.7", "sqsketch>=0.3"]
 # Only snapshotting a model needs these. Verifying, reporting and testing verdict logic
 # work on saved snapshots with numpy alone.
 model = ["torch>=2.0", "transformers>=4.30"]
+# API mode samples an endpoint over stdlib HTTP and needs no weights and no torch --
+# only the tokeniser, to rebuild the probe prefixes and invert the wire.
+api = ["transformers>=4.30"]
 dev = ["pytest>=7.0"]
 
 [project.scripts]

@@ -1,0 +1,101 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>servseal attestation — sampled endpoint</title></head><body><style>
+:root {
+  --paper:#fbfaf7; --card:#ffffff; --ink:#22262d; --muted:#5c6472;
+  --line:#e5e2da; --accent:#3d566f; --mono-bg:#f2f0ea;
+  --sealed:#1b6f5f; --changed:#b03230; --incomparable:#9a6b1a;
+}
+:root:not([data-theme="light"]) { }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:#191b1f; --card:#212429; --ink:#e8e6e1; --muted:#9aa1ac;
+    --line:#33373e; --accent:#8fb0cf; --mono-bg:#26292f;
+    --sealed:#4dbfa4; --changed:#e0706c; --incomparable:#d8a94e;
+  }
+}
+:root[data-theme="dark"] {
+  --paper:#191b1f; --card:#212429; --ink:#e8e6e1; --muted:#9aa1ac;
+  --line:#33373e; --accent:#8fb0cf; --mono-bg:#26292f;
+  --sealed:#4dbfa4; --changed:#e0706c; --incomparable:#d8a94e;
+}
+body { background:var(--paper); color:var(--ink);
+  font:16px/1.55 "IBM Plex Sans", "Segoe UI", system-ui, sans-serif; margin:0; }
+.wrap { max-width:860px; margin:0 auto; padding:2.2rem 1.4rem 3rem; }
+.tool { font-size:.78rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); }
+h1 { font-size:1.65rem; margin:.25rem 0 1.2rem; text-wrap:balance; font-weight:600; }
+.banner { border-radius:8px; padding:1rem 1.25rem; color:#fff; margin:0 0 1.5rem;
+  display:flex; align-items:baseline; gap:.8rem; flex-wrap:wrap; }
+.banner .status { font-size:1.25rem; font-weight:700; letter-spacing:.02em; }
+.banner .sub { opacity:.92; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:10px; margin:0 0 1.5rem; }
+.cell { background:var(--card); border:1px solid var(--line); border-radius:8px;
+  padding:.7rem .9rem; }
+.cell .k { font-size:.74rem; text-transform:uppercase; letter-spacing:.1em;
+  color:var(--muted); }
+.cell .v { font-size:1.3rem; font-variant-numeric:tabular-nums; margin-top:.15rem; }
+.cell .n { font-size:.8rem; color:var(--muted); }
+h2 { font-size:1.02rem; margin:1.8rem 0 .6rem; }
+p { margin:.5rem 0; max-width:68ch; }
+.sig { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1rem; }
+table { border-collapse:collapse; width:100%; font-size:.9rem; }
+td, th { text-align:left; padding:.35rem .6rem .35rem 0; vertical-align:top;
+  border-bottom:1px solid var(--line); }
+th { color:var(--muted); font-weight:500; }
+code, .mono { font-family:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+  font-size:.85em; background:var(--mono-bg); border-radius:4px; padding:.08em .35em; }
+.hist { background:var(--card); border:1px solid var(--line); border-radius:8px;
+  padding: .9rem; }
+.hist svg { display:block; width:100%; height:auto; }
+.foot { margin-top:2.2rem; padding-top:1rem; border-top:1px solid var(--line);
+  color:var(--muted); font-size:.82rem; }
+.scroll { overflow-x:auto; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior:smooth; } }
+</style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono&display=swap">
+<div class="wrap">
+  <div class="tool">servseal &middot; behavioural attestation &middot; sampled endpoint</div>
+  <h1>distilgpt2 at http://127.0.0.1:8000/v1</h1>
+  <div class="banner" style="background:var(--changed)">
+    <span class="status">CHANGED</span>
+    <span class="sub">the sampled behaviour is outside the reference&#x27;s band
+       &middot; severity: major</span>
+  </div>
+  <div class="grid"><div class="cell"><div class="k">sampled tokens</div><div class="v">5,000</div><div class="n">over 1500 positions, 3.3 each</div></div><div class="cell"><div class="k">S1 distributional</div><div class="v">0.4308</div><div class="n">band 0.4823-0.4975</div></div><div class="cell"><div class="k">S2 head frequency</div><div class="v">0.3099</div><div class="n">band 0.3568-0.3815</div></div><div class="cell"><div class="k">wire convention</div><div class="v">text</div><div class="n">text: ids recovered by re-encoding</div></div><div class="cell"><div class="k">unresolved tokens</div><div class="v">0.040%</div><div class="n">4,998 of 5,000 used</div></div><div class="cell"><div class="k">probe-set exposure</div><div class="v">0.0102 %</div><div class="n">reference mass this convention moves</div></div></div>
+  <h2>Reading</h2>
+  <div class="sig"><p><strong>head-level change (weights, template, or temperature above 1).</strong> The endpoint emits the reference&#x27;s most likely token *less* often than the unchanged reference does: S1 0.4308 (band 0.4823-0.4975), S2 0.3099 (band 0.3568-0.3815) at 5000 sampled tokens. The head has lost mass, which a different checkpoint, a quantisation, a prompt template mismatch or a serving temperature above 1 all produce. Sampled evidence alone does not separate those; a weights-mode snapshot would.</p></div>
+  <h2>Where the statistics landed</h2>
+  <div class="hist"><svg viewBox="0 0 720 152" role="img" aria-label="Observed statistics against their acceptance bands"><text x="8" y="14" fill="var(--ink)" font-size="13" font-weight="600">S1 — distributional, sees the tail</text><text x="8" y="27" fill="var(--muted)" font-size="10">Bhattacharyya coefficient of the sample against the stored sketches</text><line x1="8.0" y1="43" x2="712.0" y2="43" stroke="var(--line)" stroke-width="2"/><rect x="367.6" y="34" width="86.1" height="18" fill="var(--accent)" opacity="0.22" rx="3"/><line x1="367.6" y1="32" x2="367.6" y2="54" stroke="var(--accent)"/><line x1="453.7" y1="32" x2="453.7" y2="54" stroke="var(--accent)"/><circle cx="76.9" cy="43" r="5.5" fill="var(--changed)"><title>S1 — distributional, sees the tail: 0.4308, band 0.4823-0.4975</title></circle><text x="76.9" y="67" fill="var(--changed)" font-size="11" text-anchor="middle" font-weight="600">0.4308</text><text x="8" y="78" fill="var(--ink)" font-size="13" font-weight="600">S2 — how often the reference argmax is emitted</text><text x="8" y="91" fill="var(--muted)" font-size="10">above the band = head concentrated; below = head moved</text><line x1="8.0" y1="107" x2="712.0" y2="107" stroke="var(--line)" stroke-width="2"/><rect x="309.7" y="98" width="100.6" height="18" fill="var(--accent)" opacity="0.22" rx="3"/><line x1="309.7" y1="96" x2="309.7" y2="118" stroke="var(--accent)"/><line x1="410.3" y1="96" x2="410.3" y2="118" stroke="var(--accent)"/><circle cx="119.0" cy="107" r="5.5" fill="var(--changed)"><title>S2 — how often the reference argmax is emitted: 0.3099, band 0.3568-0.3815</title></circle><text x="119.0" y="131" fill="var(--changed)" font-size="11" text-anchor="middle" font-weight="600">0.3099</text></svg></div>
+  <h2>Reference identity</h2>
+  <div class="scroll"><table>
+    <tr><th>model</th><td>gpt2</td></tr><tr><th>model_id</th><td>gpt2</td></tr><tr><th>dtype</th><td>float32</td></tr><tr><th>template</th><td>None</td></tr><tr><th>n_positions</th><td>1500</td></tr><tr><th>created_utc</th><td>2026-09-11T13:19:46Z</td></tr><tr><th>servseal</th><td>0.1.2</td></tr>
+    <tr><th>probe set</th><td><code>0622744ec759498ab157735adc7e945c</code>
+        (default-v1) &mdash; the endpoint was asked for the
+        prefixes this hash covers, and nothing else</td></tr>
+    <tr><th>bands</th><td>calibrated at snapshot time from
+        200 simulated runs of the <em>unchanged</em> reference
+        at this budget, family false-positive rate 0.05, through the text round trip</td></tr>
+    <tr><th>sampling</th><td>48 requests,
+        0 retries, <code>max_tokens=1</code>,
+        <code>temperature=1</code>, <code>top_p</code> not sent</td></tr>
+  </table></div>
+  <div class="foot">
+    <p>Method: the reference stores a 256-coordinate square-root
+    sketch of the full next-token distribution at every probe position. A black-box
+    endpoint exposes no distribution, so it is sampled one token at a time and two
+    statistics are formed against those stored sketches: S1, the estimated
+    Bhattacharyya coefficient of the empirical sample, which sees the tail; and S2,
+    the rate at which the reference's most likely token comes back, which sees only
+    the head. A serving filter pushes S2 <em>up</em> &mdash; cutting the tail
+    concentrates the sample on the head &mdash; whereas changed weights push it down.</p>
+    <p><strong>What SEALED does and does not say here.</strong> It says the sample fell
+    inside the interval the unchanged reference produces at this budget. It is not
+    proof of identity: what is guaranteed is the measured detection power at the
+    budget spent, not certainty, and more tokens buy more power.
+    <code>top_p</code> is deliberately never sent, because sending it would switch off
+    the server-side filter this test exists to find.</p>
+    <p>Exit code 3 &middot; generated by servseal
+    0.1.2 &middot; the bands and the probe-set exposure were
+    computed where the reference distributions still existed, and travel inside the
+    snapshot.</p>
+  </div>
+</div></body></html>

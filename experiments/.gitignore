@@ -1,1 +1,15 @@
 cache/
+
+# Model weights pulled down by a remote run. The Kaggle probe's output archive
+# carries a whole copy of the gpt2 repo per case -- onnx, tf, flax, rust, tflite --
+# which is 7 GB of files this repository has no reason to hold. Keep the
+# attestations it produced; they are a few kilobytes each and are tracked above.
+outputs/latest/
+outputs/kaggle_vllm_probe/
+outputs/**/*.safetensors
+outputs/**/*.bin
+outputs/**/*.onnx
+outputs/**/*.h5
+outputs/**/*.msgpack
+outputs/**/*.tflite
+outputs/**/*.ot
