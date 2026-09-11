@@ -76,6 +76,27 @@ def banner(t):
 
 # ------------------------------------------------------------------ environment
 
+banner("install, before anything imports what it checks for")
+# Order is the whole point of this block, and getting it wrong cost a whole session.
+# transformers decides at *import* time whether bitsandbytes is available and caches
+# the answer, so installing it afterwards produces "requires the latest version of
+# bitsandbytes" while the package sits there installed. Everything therefore lands
+# before the first transformers import, in one command so pip resolves the set
+# together rather than letting each install drag the previous one's pins around.
+#
+#   servseal >= 0.2.1  earlier releases cannot snapshot a model on a GPU at all
+#   transformers < 5   the image served 4.57.6 one session and 5.0.0 the next, and
+#                      the quantisers disagree with both in different ways
+#   gguf               transformers needs it to read a GGUF checkpoint; llama.cpp's
+#                      own requirements.txt did not bring it
+#   huggingface_hub    unpinned so pip may raise it: llm-compressor wants a symbol
+#                      (_validate_relative_filename) the image's version lacks
+PKGS = ["servseal>=0.2.1", "transformers>=4.50,<5", "accelerate", "bitsandbytes",
+        "gguf>=0.10.0", "datasets", "huggingface_hub"]
+sh([sys.executable, "-m", "pip", "install", "-q", *PKGS], check=True)
+# separately, and allowed to fail: it pins hardest and is the least essential row
+LLMC = sh([sys.executable, "-m", "pip", "install", "-q", "llmcompressor"]).returncode
+
 banner("environment")
 import torch                                                       # noqa: E402
 
@@ -93,9 +114,6 @@ if CAP[0] < 7:
 torch.backends.cuda.matmul.allow_tf32 = False
 torch.backends.cudnn.allow_tf32 = False
 
-sh([sys.executable, "-m", "pip", "install", "-q", "servseal>=0.2", "accelerate"],
-   check=True)
-
 import numpy as np                                                 # noqa: E402
 import transformers                                                # noqa: E402
 from transformers import AutoModelForCausalLM, AutoTokenizer       # noqa: E402
@@ -107,6 +125,14 @@ from servseal.verdict import classify                              # noqa: E402
 
 print(f"servseal {servseal.__version__}  transformers {transformers.__version__}",
       flush=True)
+for mod in ("bitsandbytes", "gguf", "huggingface_hub", "llmcompressor"):
+    try:
+        m = __import__(mod)
+        print(f"  {mod:<18} {getattr(m, '__version__', 'present')}", flush=True)
+    except Exception as e:
+        print(f"  {mod:<18} ABSENT ({type(e).__name__})", flush=True)
+from transformers.utils import is_bitsandbytes_available       # noqa: E402
+print(f"  transformers sees bitsandbytes: {is_bitsandbytes_available()}", flush=True)
 TEXTS = load_probes()
 PROBE = probe_id(TEXTS)
 TOK = AutoTokenizer.from_pretrained(MODEL)
@@ -235,9 +261,10 @@ def int8_per_channel():
 
 def bnb(kind):
     """bitsandbytes, through transformers. Runs on its own kernels, so on the GPU."""
-    if sh([sys.executable, "-m", "pip", "install", "-q",
-           "bitsandbytes"]).returncode != 0:
-        raise RuntimeError("bitsandbytes did not install")
+    from transformers.utils import is_bitsandbytes_available
+    if not is_bitsandbytes_available():
+        raise RuntimeError("transformers does not see bitsandbytes; it must be "
+                           "installed before transformers is first imported")
     from transformers import BitsAndBytesConfig
     if kind == "nf4":
         cfg = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4",
@@ -258,9 +285,8 @@ def bnb(kind):
 
 def compressed(scheme):
     """AWQ or GPTQ via llm-compressor, which is maintained; autoawq is archived."""
-    if sh([sys.executable, "-m", "pip", "install", "-q",
-           "llmcompressor", "datasets"]).returncode != 0:
-        raise RuntimeError("llmcompressor did not install")
+    if LLMC != 0:
+        raise RuntimeError("llmcompressor did not install (see the install block)")
     from datasets import load_dataset
     from llmcompressor import oneshot
     from llmcompressor.modifiers.quantization import GPTQModifier
@@ -268,8 +294,29 @@ def compressed(scheme):
 
     out = os.path.join(WORK, f"qwen-{scheme}")
     shutil.rmtree(out, ignore_errors=True)
-    ds = load_dataset("wikitext", "wikitext-2-raw-v1", split="train")
+    # Calibration text, and deliberately NOT the probe set: calibrating a quantiser
+    # on the same text the verdict is measured over would be fitting the method to
+    # its own exam, and would flatter exactly the number this run exists to report.
+    #
+    # Several ids are tried because `datasets` now requires a full namespace/name
+    # and the bare "wikitext" that worked for years raises HfUriError -- which is
+    # what cost these two rows last session.
+    ds = None
+    for repo, cfg in (("Salesforce/wikitext", "wikitext-2-raw-v1"),
+                      ("wikitext", "wikitext-2-raw-v1"),
+                      ("stas/openwebtext-10k", None)):
+        try:
+            ds = (load_dataset(repo, cfg, split="train") if cfg
+                  else load_dataset(repo, split="train"))
+            print(f"  calibration from {repo}", flush=True)
+            break
+        except Exception as e:
+            print(f"  {repo}: {type(e).__name__}: {str(e)[:120]}", flush=True)
+    if ds is None:
+        raise RuntimeError("no calibration corpus could be loaded")
     calib = ds.filter(lambda r: len(r["text"]) > 200).select(range(128))
+    assert not (set(t[:80] for t in TEXTS) & set(r[:80] for r in calib["text"])), \
+        "the calibration set overlaps the probe set"
     mod = (AWQModifier(targets="Linear", scheme="W4A16", ignore=["lm_head"])
            if scheme == "awq" else
            GPTQModifier(targets="Linear", scheme="W4A16", ignore=["lm_head"]))
@@ -301,8 +348,9 @@ def gguf(qtype):
             if sh(["git", "clone", "--depth", "1",
                    "https://github.com/ggml-org/llama.cpp", root]).returncode != 0:
                 raise RuntimeError("llama.cpp clone failed")
+        # only the converter's own needs; gguf itself came with the block above
         sh([sys.executable, "-m", "pip", "install", "-q", "-r",
-            os.path.join(root, "requirements.txt")])
+            os.path.join(root, "requirements/requirements-convert_hf_to_gguf.txt")])
         if sh(f"cmake -S {root} -B {root}/build -DLLAMA_CURL=OFF "
               f"-DGGML_NATIVE=OFF -DCMAKE_BUILD_TYPE=Release && "
               f"cmake --build {root}/build --target llama-quantize -j4").returncode:
@@ -332,14 +380,22 @@ def gguf(qtype):
 
 # ------------------------------------------------------------------------- run
 
-attempt("int8 per-channel", int8_per_channel)
-attempt("naive int4 g128", naive_int4)
-attempt("bnb NF4", lambda: bnb("nf4"))
-attempt("bnb int8", lambda: bnb("int8"))
-attempt("GGUF Q8_0", lambda: gguf("Q8_0"))
-attempt("GGUF Q4_K_M", lambda: gguf("Q4_K_M"))
-attempt("AWQ W4A16", lambda: compressed("awq"))
-attempt("GPTQ W4A16", lambda: compressed("gptq"))
+ONLY = [m.strip() for m in os.environ.get("SERVSEAL_ONLY", "").split(",") if m.strip()]
+ALL = [("int8 per-channel", int8_per_channel),
+       ("naive int4 g128", naive_int4),
+       ("bnb NF4", lambda: bnb("nf4")),
+       ("bnb int8", lambda: bnb("int8")),
+       ("GGUF Q8_0", lambda: gguf("Q8_0")),
+       ("GGUF Q4_K_M", lambda: gguf("Q4_K_M")),
+       ("AWQ W4A16", lambda: compressed("awq")),
+       ("GPTQ W4A16", lambda: compressed("gptq"))]
+if ONLY:
+    print(f"\nSERVSEAL_ONLY={ONLY}: running only these; the other rows are "
+          f"already measured and committed", flush=True)
+for _label, _fn in ALL:
+    if ONLY and _label not in ONLY:
+        continue
+    attempt(_label, _fn)
 
 
 # ---------------------------------------------------------------------- verdict
@@ -387,5 +443,7 @@ for f in os.listdir(WORK):
     if f.endswith(".gguf"):
         os.remove(os.path.join(WORK, f))
 
-if len(ok) < 3:
+if not ONLY and len(ok) < 3:
     sys.exit(f"only {len(ok)} methods measured; the study needs the 4-bit row")
+if ONLY and not ok:
+    sys.exit("the requested methods produced nothing")

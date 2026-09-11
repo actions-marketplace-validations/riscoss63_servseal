@@ -1,0 +1,106 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B",
+  "positions": 500,
+  "probe": "0622744ec759498ab157735adc7e945c",
+  "ppl_fp32_cpu": 10.435765266418457,
+  "ppl_fp32_gpu": 10.435959815979004,
+  "servseal": "0.2.1",
+  "transformers": "5.14.1",
+  "gpu": "Tesla T4",
+  "results": [
+    {
+      "method": "control: fp32 gpu vs cpu",
+      "h": 2.3409074299257516e-06,
+      "top1": 1.0,
+      "ppl": 10.435959815979004,
+      "dppl": 0.001864257728878988,
+      "status": "sealed",
+      "severity": "none",
+      "signature": "hardware",
+      "device": "cuda",
+      "note": "the floor below which no verdict here means anything"
+    },
+    {
+      "method": "int8 per-channel",
+      "h": 0.030572697058721652,
+      "top1": 0.956,
+      "ppl": 10.361952781677246,
+      "dppl": -0.7073030377439996,
+      "status": "changed",
+      "severity": "minor",
+      "signature": "precision-level (dtype, kernels) or mild sampling parameter",
+      "device": "cpu",
+      "note": "8-bit, one scale per output channel"
+    },
+    {
+      "method": "naive int4 g128",
+      "h": 0.28764598237173333,
+      "top1": 0.674,
+      "ppl": 15.383686065673828,
+      "dppl": 47.41310936896429,
+      "status": "changed",
+      "severity": "major",
+      "signature": "weight-level change (quantisation, fine-tune, or related model)",
+      "device": "cpu",
+      "note": "4-bit, group 128, no calibration"
+    },
+    {
+      "method": "bnb NF4",
+      "h": 0.17606214825261657,
+      "top1": 0.814,
+      "ppl": 12.406315803527832,
+      "dppl": 18.88044820306725,
+      "status": "changed",
+      "severity": "major",
+      "signature": "weight-level change (quantisation, fine-tune, or related model)",
+      "device": "cuda",
+      "note": "NF4, double quantisation, float32 compute"
+    },
+    {
+      "method": "bnb int8",
+      "h": 0.049511232383202854,
+      "top1": 0.944,
+      "ppl": 10.32309341430664,
+      "dppl": -1.0815143375652718,
+      "status": "changed",
+      "severity": "minor",
+      "signature": "precision-level (dtype, kernels) or mild sampling parameter",
+      "device": "cuda",
+      "note": "LLM.int8, outlier-aware mixed precision"
+    },
+    {
+      "method": "GGUF Q8_0",
+      "h": 0.013825400129421891,
+      "top1": 0.98,
+      "ppl": 10.432950019836426,
+      "dppl": -0.026976905959072414,
+      "status": "changed",
+      "severity": "minor",
+      "signature": "precision-level (dtype, kernels) or mild sampling parameter",
+      "device": "cpu",
+      "note": "llama.cpp Q8_0, dequantised to fp32"
+    },
+    {
+      "method": "GGUF Q4_K_M",
+      "h": 0.09512517084201616,
+      "top1": 0.906,
+      "ppl": 10.959402084350586,
+      "dppl": 5.017713646905748,
+      "status": "changed",
+      "severity": "moderate",
+      "signature": "weight-level change (quantisation, fine-tune, or related model)",
+      "device": "cpu",
+      "note": "llama.cpp Q4_K_M, dequantised to fp32"
+    },
+    {
+      "method": "AWQ W4A16",
+      "h": null,
+      "error": "RuntimeError: --- <Autowrapped Qwen2ForCausalLM 140328013141424>:12 ---\n\n\nname 'Union' is not defined"
+    },
+    {
+      "method": "GPTQ W4A16",
+      "h": null,
+      "error": "RuntimeError: --- <Autowrapped Qwen2ForCausalLM 140328013148528>:12 ---\n\n\nname 'Union' is not defined"
+    }
+  ]
+}
