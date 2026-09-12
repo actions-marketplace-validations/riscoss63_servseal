@@ -76,6 +76,77 @@ natively bf16, the "change" is an exact no-op, and the verdict is SEALED at exac
 zero. And the last line is the silent-upgrade scenario providers actually perform —
 the next model generation behind the same tokenizer, caught at 0.35.
 
+## What it found: quantisation costs more than perplexity reports
+
+The tool exists because perplexity is blind to most of a distribution — it reads the
+probability assigned to the token that actually appeared and nothing else. That is an
+argument until it is a measurement, so here is the measurement, on the decision teams
+make most often.
+
+Quantise a model to cut serving costs, and judge the result the usual way. Then judge
+it on the full distribution and compare the two verdicts.
+
+**Qwen2.5-0.5B, 500 probe positions, every row in one session under transformers
+4.57.6 on a T4** (`experiments/kaggle/quant_real.py`, committed output and per-row
+provenance in `experiments/outputs/quant_real_results.json`):
+
+| deployment | distribution moved | top-1 agreement | Δ perplexity |
+|---|---:|---:|---:|
+| control: re-run, nothing changed | **0.0000** | 1.000 | +0.00 % |
+| control: float32 on GPU vs on CPU | **0.0000** | 1.000 | +0.00 % |
+| GGUF Q8_0 | 0.0138 | 0.980 | −0.03 % |
+| int8 per-channel | 0.0306 | 0.956 | −0.71 % |
+| bitsandbytes int8 (LLM.int8) | 0.0439 | 0.936 | +0.91 % |
+| GGUF Q4_K_M | 0.0951 | 0.906 | +5.02 % |
+| bitsandbytes NF4 | 0.1756 | 0.810 | +18.74 % |
+| GPTQ W4A16 | 0.2076 | 0.762 | +21.46 % |
+| AWQ W4A16 | 0.2478 | 0.754 | +33.52 % |
+| 4-bit group-128, **no calibration** | 0.2876 | 0.674 | +47.41 % |
+
+The last row is the same grid AWQ and GPTQ use, with none of the search that makes
+them methods — AWQ's grid was read back out of the produced checkpoint (`4-bit, group
+128, symmetric`) rather than inferred from the scheme name, so the subtraction is
+exact:
+
+| method | of the damage removed | of the perplexity gap removed |
+|---|---:|---:|
+| AWQ | 14 % | 29 % |
+| GPTQ | 28 % | 55 % |
+| bitsandbytes NF4 | 39 % | 60 % |
+| GGUF Q4_K_M | **67 %** | **89 %** |
+
+**Four independent methods, all overstating, in the same direction, by 15 to 27
+points.** Accepting a quantisation because perplexity barely moved accepts more change
+than it looks like — reliably, not occasionally. And two rankings invert: LLM.int8
+improves perplexity while being the worst of the three 8-bit schemes on the
+distribution.
+
+A second run on CPU (`experiments/quantisation_cost.py`, four models × five schemes)
+adds the part that stops you reading someone else's numbers instead of measuring your
+own: **the cost is not a property of the scheme.** Rounding to bfloat16 is an exact
+no-op on Qwen2.5, whose weights are natively bf16, and measures 0.0332 on GPT-2.
+Per-channel int8 spans 3.4× across four models.
+
+The counterintuitive half is the useful one. Per-tensor int8 is the *closest* to flat
+across models (1.6×) because one outlier weight sets the scale and every transformer
+has one; per-channel and group-wise schemes follow each model's own structure, and
+that is what differs. **The better the scheme, the less its cost transfers.**
+
+Two caveats, because they bound what the table supports. Qwen2.5-0.5B is small and
+AWQ and GPTQ are tuned for far larger models, so their *ranking* here should not be
+generalised — what survives model size is the gap between the two columns, which four
+methods built on different principles agree on. And within any one model perplexity
+ranks the schemes perfectly (Spearman 1.000 on all four): it tells you which option is
+worse, not how much worse. The exchange rate is what does not transfer, and it varies
+1597× across the eighteen cells measured.
+
+Run it on your own model — that is the point, and it needs no GPU for the dtype half:
+
+```bash
+pip install servseal[model]
+python experiments/quantisation_cost.py          # or just snapshot/verify your own pair
+```
+
 ## API mode: endpoints you can only sample from
 
 Against a black-box API the full distribution is unavailable; the endpoint returns
@@ -120,6 +191,9 @@ servseal verify reference.seal.npz \
     --budget 5000 --report attestation.html
 echo $?      # 0 sealed | 3 changed
 ```
+
+A sealed GPT-2 reference is published in [`reference-seals/`](reference-seals/) if
+you want to see the endpoint path work before spending a forward pass of your own.
 
 `SERVSEAL_API_KEY` carries the bearer token. The client sends `max_tokens=1` and
 `temperature=1`, and **never sends `top_p`** — sending `top_p=1.0` would switch off a
