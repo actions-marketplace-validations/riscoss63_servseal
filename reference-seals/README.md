@@ -39,6 +39,36 @@ servseal snapshot /path/to/your-gpt2 -o candidate.seal.npz
 servseal verify gpt2-fp32-default-v1.seal.npz candidate.seal.npz
 ```
 
+## `qwen3-0.6b-fp32-default-v1.seal.npz`
+
+| | |
+|---|---|
+| model | `Qwen/Qwen3-0.6B`, float32, snapshotted on CPU |
+| probe set | `default-v1`, hash `0622744ec759498ab157735adc7e945c` |
+| positions | 1500, sketch width D=256 |
+| vocabulary | 151,936 |
+| perplexity over the probes | 19.3335 |
+
+Published for the on-device case. A 0.6B at 4 bits is what fits on a phone, with
+nothing bigger to fall back on, so what that quantisation costs is a question with a
+deployment behind it rather than a benchmark. Compare your own GGUF against this
+without running the float32 model yourself:
+
+```bash
+pip install "servseal[model]" gguf
+python experiments/ondevice_q4km.py --repo <your-hf-repo> --file <your.gguf>
+```
+
+(`servseal snapshot` takes a model transformers can load by name or directory; a
+loose `.gguf` file needs the `gguf_file=` argument, which the experiment passes and
+the CLI does not yet expose.)
+
+`experiments/ondevice_q4km.py` does that against the file NobodyWho's examples load,
+and reports the per-position distribution rather than only its mean — which is where
+the result is: all twenty probe-text starts collapse to the same token while the other
+1480 positions behave like an ordinary 4-bit quant. A mean of 0.12 hides that
+completely, and so does a perplexity that moves 15 %.
+
 ## What it cannot do
 
 **It is GPT-2's reference, not yours.** A seal is tied to one model, one tokeniser and
