@@ -1,0 +1,1228 @@
+[{"stream_name":"stdout","time":1.178325905,"data":"\n"}
+,{"stream_name":"stdout","time":1.178407919,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":1.178414165,"data":"install, before anything imports what it checks for\n"}
+,{"stream_name":"stdout","time":1.178417735,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":1.178421465,"data":"$ /usr/bin/python3 -m pip install -q -c /kaggle/working/constraints.txt servseal\u003e=0.2.1 transformers\u003e=4.50,\u003c5 accelerate bitsandbytes gguf\u003e=0.10.0 datasets huggingface_hub safetensors llmcompressor\n"}
+,{"stream_name":"stdout","time":5.174859463,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.0/44.0 kB 1.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.331022015,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.9/48.9 kB 2.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.547165951,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 82.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.996852044,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.1/43.1 MB 44.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":8.033390757,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.5/118.5 kB 8.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":8.073858349,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 35.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":8.110099284,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 311.4/311.4 kB 21.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":8.14632869,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 211.4/211.4 kB 16.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":8.18785879,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 529.0/529.0 kB 32.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":8.229678507,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 710.8/710.8 kB 43.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":8.263289485,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.6/61.6 kB 4.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":24.185725109,"data":"$ git clone --depth 1 https://github.com/turboderp-org/exllamav3 /kaggle/working/exllamav3\n"}
+,{"stream_name":"stderr","time":24.207094524,"data":"Cloning into '/kaggle/working/exllamav3'...\n"}
+,{"stream_name":"stdout","time":25.736246534,"data":"$ /usr/bin/python3 -m pip install -q -c /kaggle/working/constraints.txt -e /kaggle/working/exllamav3\n"}
+,{"stream_name":"stdout","time":33.620423828,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.1/62.1 kB 2.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":34.237036895,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 43.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":34.419729134,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 75.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":34.464483372,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 60.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":40.603216342,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":40.603255236,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":40.603276975,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":40.603283313,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.3.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":40.603288939,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":40.6032945,"data":"moviepy 1.0.3 requires decorator\u003c5.0,\u003e=4.0.2, but you have decorator 5.3.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":40.603299945,"data":"numba 0.60.0 requires numpy\u003c2.1,\u003e=1.22, but you have numpy 2.3.5 which is incompatible.\n"}
+,{"stream_name":"stdout","time":40.740543391,"data":"exllamav3 installed: True\n"}
+,{"stream_name":"stdout","time":40.74057491,"data":"\n"}
+,{"stream_name":"stdout","time":40.740580875,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":40.740586348,"data":"environment\n"}
+,{"stream_name":"stdout","time":40.740591933,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":46.290025581,"data":"GPU Tesla T4 (sm_75)  torch 2.10.0+cu128\n"}
+,{"stream_name":"stdout","time":57.262827036,"data":"servseal 0.2.1  transformers 4.57.6\n"}
+,{"stream_name":"stdout","time":57.262860314,"data":"  numpy 2.3.5  (llmcompressor caps it below 2.4)\n"}
+,{"stream_name":"stdout","time":57.262871587,"data":"  exllamav3 imports but not usably: ModuleNotFoundError: No module named 'exllamav3'\n"}
+,{"stream_name":"stdout","time":58.548891207,"data":"\n"}
+,{"stream_name":"stdout","time":58.548933116,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":58.548937543,"data":"references: Qwen/Qwen2.5-1.5B float32, 500 positions, both devices\n"}
+,{"stream_name":"stdout","time":58.548941039,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":123.580810758,"data":"  vocab 151,936  ppl cpu 7.9719  gpu 7.9720  [65s]\n"}
+,{"stream_name":"stdout","time":123.580864348,"data":"  hardware term, fp32 cpu vs gpu: h=0.000004  top1=1.0000\n"}
+,{"stream_name":"stdout","time":123.608818752,"data":"\n"}
+,{"stream_name":"stdout","time":123.608848521,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":123.608854912,"data":"naive int4 g128\n"}
+,{"stream_name":"stdout","time":123.608860088,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":154.851024652,"data":"  naive int4 g128      h=0.2211  top1=0.740  ppl=9.6331 (+20.84 %)  [cpu]  -\u003e CHANGED/major  [31s]\n"}
+,{"stream_name":"stdout","time":155.20268311,"data":"\n"}
+,{"stream_name":"stdout","time":155.202717596,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":155.202724122,"data":"GGUF Q4_K_M\n"}
+,{"stream_name":"stdout","time":155.202729365,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":155.202734767,"data":"$ git clone --depth 1 https://github.com/ggml-org/llama.cpp /kaggle/working/llama.cpp\n"}
+,{"stream_name":"stderr","time":155.204996997,"data":"Cloning into '/kaggle/working/llama.cpp'...\n"}
+,{"stream_name":"stdout","time":159.554068977,"data":"$ /usr/bin/python3 -m pip install -q -r /kaggle/working/llama.cpp/requirements/requirements-convert_hf_to_gguf.txt\n"}
+,{"stream_name":"stdout","time":162.321017759,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 1.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":166.01437916,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 190.3/190.3 MB 7.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":166.315901924,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.5/16.5 MB 57.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":166.351063165,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 295.2/295.2 kB 22.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":204.561555344,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":204.561598787,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":204.561605012,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":204.561609913,"data":"grpcio-tools 1.71.2 requires protobuf\u003c6.0dev,\u003e=5.26.1, but you have protobuf 4.25.9 which is incompatible.\n"}
+,{"stream_name":"stderr","time":204.561614649,"data":"a2a-sdk 0.3.26 requires protobuf\u003e=5.29.5, but you have protobuf 4.25.9 which is incompatible.\n"}
+,{"stream_name":"stderr","time":204.561625061,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":204.56162852,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.3.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":204.561631692,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":204.561634842,"data":"tensorflow 2.20.0 requires protobuf\u003e=5.28.0, but you have protobuf 4.25.9 which is incompatible.\n"}
+,{"stream_name":"stderr","time":204.561650209,"data":"moviepy 1.0.3 requires decorator\u003c5.0,\u003e=4.0.2, but you have decorator 5.3.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":204.561656462,"data":"ydf 0.15.0 requires protobuf\u003c7.0.0,\u003e=5.29.1, but you have protobuf 4.25.9 which is incompatible.\n"}
+,{"stream_name":"stderr","time":204.561661907,"data":"torchaudio 2.10.0+cu128 requires torch==2.10.0, but you have torch 2.11.0+cpu which is incompatible.\n"}
+,{"stream_name":"stderr","time":204.561676261,"data":"torchvision 0.25.0+cu128 requires torch==2.10.0, but you have torch 2.11.0+cpu which is incompatible.\n"}
+,{"stream_name":"stderr","time":204.561680088,"data":"numba 0.60.0 requires numpy\u003c2.1,\u003e=1.22, but you have numpy 2.2.6 which is incompatible.\n"}
+,{"stream_name":"stderr","time":204.56168367,"data":"opentelemetry-proto 1.38.0 requires protobuf\u003c7.0,\u003e=5.0, but you have protobuf 4.25.9 which is incompatible.\n"}
+,{"stream_name":"stderr","time":204.561687319,"data":"grain 0.2.16 requires protobuf\u003e=5.28.3, but you have protobuf 4.25.9 which is incompatible.\n"}
+,{"stream_name":"stderr","time":204.561690894,"data":"grpcio-status 1.71.2 requires protobuf\u003c6.0dev,\u003e=5.26.1, but you have protobuf 4.25.9 which is incompatible.\n"}
+,{"stream_name":"stdout","time":204.795721065,"data":"$ cmake -S /kaggle/working/llama.cpp -B /kaggle/working/llama.cpp/build -DLLAMA_CURL=OFF -DGGML_NATIVE=OFF -DCMAKE_BUILD_TYPE=Release \u0026\u0026 cmake --build /kaggle/working/llama.cpp/build --target llama-quantize -j4\n"}
+,{"stream_name":"stdout","time":205.440484741,"data":"-- The C compiler identification is GNU 11.4.0\n"}
+,{"stream_name":"stdout","time":205.687605724,"data":"-- The CXX compiler identification is GNU 11.4.0\n"}
+,{"stream_name":"stdout","time":205.711733536,"data":"-- Detecting C compiler ABI info\n"}
+,{"stream_name":"stdout","time":205.813446001,"data":"-- Detecting C compiler ABI info - done\n"}
+,{"stream_name":"stdout","time":205.834194275,"data":"-- Check for working C compiler: /usr/bin/cc - skipped\n"}
+,{"stream_name":"stdout","time":205.835581767,"data":"-- Detecting C compile features\n"}
+,{"stream_name":"stdout","time":205.836892766,"data":"-- Detecting C compile features - done\n"}
+,{"stream_name":"stdout","time":205.860489482,"data":"-- Detecting CXX compiler ABI info\n"}
+,{"stream_name":"stdout","time":205.955095771,"data":"-- Detecting CXX compiler ABI info - done\n"}
+,{"stream_name":"stdout","time":205.976563754,"data":"-- Check for working CXX compiler: /usr/bin/c++ - skipped\n"}
+,{"stream_name":"stdout","time":205.977134503,"data":"-- Detecting CXX compile features\n"}
+,{"stream_name":"stdout","time":205.977994142,"data":"-- Detecting CXX compile features - done\n"}
+,{"stream_name":"stdout","time":205.989263013,"data":"-- llama.cpp version: 0.4.1-dev\n"}
+,{"stream_name":"stderr","time":205.989349286,"data":"CMAKE_BUILD_TYPE=Release\n"}
+,{"stream_name":"stdout","time":205.995511572,"data":"-- Found Git: /usr/bin/git (found version \"2.34.1\")\n"}
+,{"stream_name":"stdout","time":206.026465213,"data":"-- The ASM compiler identification is GNU\n"}
+,{"stream_name":"stdout","time":206.029872748,"data":"-- Found assembler: /usr/bin/cc\n"}
+,{"stream_name":"stdout","time":206.119567954,"data":"-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n"}
+,{"stream_name":"stdout","time":206.226754986,"data":"-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n"}
+,{"stream_name":"stdout","time":206.228254454,"data":"-- Found Threads: TRUE\n"}
+,{"stream_name":"stdout","time":206.238675728,"data":"-- Warning: ccache not found - consider installing it for faster compilation or disable this warning with GGML_CCACHE=OFF\n"}
+,{"stream_name":"stdout","time":206.264854667,"data":"-- CMAKE_SYSTEM_PROCESSOR: x86_64\n"}
+,{"stream_name":"stdout","time":206.265710401,"data":"-- GGML_SYSTEM_ARCH: x86\n"}
+,{"stream_name":"stdout","time":206.575961508,"data":"-- Found OpenMP_C: -fopenmp (found version \"4.5\")\n"}
+,{"stream_name":"stdout","time":206.672341258,"data":"-- Found OpenMP_CXX: -fopenmp (found version \"4.5\")\n"}
+,{"stream_name":"stdout","time":206.672861143,"data":"-- Found OpenMP: TRUE (found version \"4.5\")\n"}
+,{"stream_name":"stdout","time":206.675046652,"data":"-- Including CPU backend\n"}
+,{"stream_name":"stdout","time":206.676832425,"data":"-- x86 detected\n"}
+,{"stream_name":"stdout","time":206.677019806,"data":"-- Adding CPU backend variant ggml-cpu: -msse4.2;-mf16c;-mfma;-mbmi2;-mavx;-mavx2 GGML_SSE42;GGML_F16C;GGML_FMA;GGML_BMI2;GGML_AVX;GGML_AVX2\n"}
+,{"stream_name":"stdout","time":206.686821361,"data":"-- ggml version: 0.24.0\n"}
+,{"stream_name":"stdout","time":206.686841395,"data":"-- ggml commit:  9e71716\n"}
+,{"stream_name":"stdout","time":206.77960753,"data":"-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version \"3.0.2\")\n"}
+,{"stream_name":"stdout","time":206.780363855,"data":"-- Performing Test OPENSSL_VERSION_SUPPORTED\n"}
+,{"stream_name":"stdout","time":206.857031932,"data":"-- Performing Test OPENSSL_VERSION_SUPPORTED - Success\n"}
+,{"stream_name":"stdout","time":206.857085461,"data":"-- OpenSSL found: 3.0.2\n"}
+,{"stream_name":"stdout","time":206.919434315,"data":"-- Generating embedded license file for target: llama-app\n"}
+,{"stream_name":"stdout","time":206.92951805,"data":"-- Configuring done (1.8s)\n"}
+,{"stream_name":"stdout","time":207.285385607,"data":"-- Generating done (0.4s)\n"}
+,{"stream_name":"stdout","time":207.286120249,"data":"-- Build files have been written to: /kaggle/working/llama.cpp/build\n"}
+,{"stream_name":"stdout","time":207.520984964,"data":"[  0%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o\n"}
+,{"stream_name":"stdout","time":207.521052882,"data":"[  0%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml.cpp.o\n"}
+,{"stream_name":"stdout","time":207.521223336,"data":"[  0%] Building CXX object common/CMakeFiles/llama-common-base.dir/build-info.cpp.o\n"}
+,{"stream_name":"stdout","time":207.521794344,"data":"[  0%] Building CXX object vendor/cpp-httplib/CMakeFiles/cpp-httplib.dir/httplib.cpp.o\n"}
+,{"stream_name":"stdout","time":208.004733798,"data":"[  0%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o\n"}
+,{"stream_name":"stdout","time":208.039863402,"data":"[  0%] Linking CXX static library libllama-common-base.a\n"}
+,{"stream_name":"stdout","time":208.074847353,"data":"[  0%] Built target llama-common-base\n"}
+,{"stream_name":"stdout","time":208.081155557,"data":"[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o\n"}
+,{"stream_name":"stdout","time":208.723547417,"data":"[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend-meta.cpp.o\n"}
+,{"stream_name":"stdout","time":210.835741067,"data":"[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o\n"}
+,{"stream_name":"stdout","time":211.375737903,"data":"[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o\n"}
+,{"stream_name":"stdout","time":212.020037941,"data":"[  6%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o\n"}
+,{"stream_name":"stdout","time":213.262648994,"data":"[  6%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o\n"}
+,{"stream_name":"stdout","time":221.523429311,"data":"[  6%] Linking CXX shared library ../../bin/libggml-base.so\n"}
+,{"stream_name":"stdout","time":221.63863503,"data":"[  6%] Built target ggml-base\n"}
+,{"stream_name":"stdout","time":221.655173501,"data":"[  6%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o\n"}
+,{"stream_name":"stdout","time":221.655548249,"data":"[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o\n"}
+,{"stream_name":"stdout","time":221.656298123,"data":"[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/repack.cpp.o\n"}
+,{"stream_name":"stdout","time":223.534641808,"data":"[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/iqp.cpp.o\n"}
+,{"stream_name":"stdout","time":223.657373191,"data":"[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/hbm.cpp.o\n"}
+,{"stream_name":"stdout","time":223.686324155,"data":"[ 10%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/quants.c.o\n"}
+,{"stream_name":"stdout","time":225.790112518,"data":"[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/traits.cpp.o\n"}
+,{"stream_name":"stdout","time":226.406977337,"data":"[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o\n"}
+,{"stream_name":"stdout","time":226.988436695,"data":"[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o\n"}
+,{"stream_name":"stdout","time":227.889333647,"data":"[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o\n"}
+,{"stream_name":"stdout","time":228.488276979,"data":"[ 16%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o\n"}
+,{"stream_name":"stdout","time":232.63517413,"data":"[ 16%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o\n"}
+,{"stream_name":"stdout","time":233.318602027,"data":"[ 16%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o\n"}
+,{"stream_name":"stdout","time":233.979265689,"data":"[ 16%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o\n"}
+,{"stream_name":"stdout","time":234.013687343,"data":"[ 20%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/arch/x86/quants.c.o\n"}
+,{"stream_name":"stdout","time":236.118896766,"data":"[ 20%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/arch/x86/repack.cpp.o\n"}
+,{"stream_name":"stdout","time":245.302401709,"data":"[ 20%] Linking CXX static library libcpp-httplib.a\n"}
+,{"stream_name":"stdout","time":245.338418389,"data":"[ 20%] Built target cpp-httplib\n"}
+,{"stream_name":"stdout","time":245.795998773,"data":"[ 20%] Linking CXX shared library ../../bin/libggml-cpu.so\n"}
+,{"stream_name":"stdout","time":245.909865083,"data":"[ 20%] Built target ggml-cpu\n"}
+,{"stream_name":"stdout","time":245.922577166,"data":"[ 20%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-dl.cpp.o\n"}
+,{"stream_name":"stdout","time":245.923200498,"data":"[ 20%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o\n"}
+,{"stream_name":"stdout","time":247.495656656,"data":"[ 23%] Linking CXX shared library ../../bin/libggml.so\n"}
+,{"stream_name":"stdout","time":247.580098898,"data":"[ 23%] Built target ggml\n"}
+,{"stream_name":"stdout","time":247.597257535,"data":"[ 23%] Building CXX object src/CMakeFiles/llama.dir/Unity/unity_9_cxx.cxx.o\n"}
+,{"stream_name":"stdout","time":247.597284641,"data":"[ 23%] Building CXX object src/CMakeFiles/llama.dir/Unity/unity_7_cxx.cxx.o\n"}
+,{"stream_name":"stdout","time":247.598048884,"data":"[ 26%] Building CXX object src/CMakeFiles/llama.dir/Unity/unity_6_cxx.cxx.o\n"}
+,{"stream_name":"stdout","time":247.598067002,"data":"[ 23%] Building CXX object src/CMakeFiles/llama.dir/Unity/unity_8_cxx.cxx.o\n"}
+,{"stream_name":"stdout","time":251.900164247,"data":"[ 26%] Building CXX object src/CMakeFiles/llama.dir/Unity/unity_5_cxx.cxx.o\n"}
+,{"stream_name":"stdout","time":252.38717594,"data":"[ 26%] Building CXX object src/CMakeFiles/llama.dir/Unity/unity_4_cxx.cxx.o\n"}
+,{"stream_name":"stdout","time":253.455810634,"data":"[ 26%] Building CXX object src/CMakeFiles/llama.dir/Unity/unity_3_cxx.cxx.o\n"}
+,{"stream_name":"stdout","time":254.28295354,"data":"[ 26%] Building CXX object src/CMakeFiles/llama.dir/Unity/unity_2_cxx.cxx.o\n"}
+,{"stream_name":"stdout","time":258.016271119,"data":"[ 30%] Building CXX object src/CMakeFiles/llama.dir/Unity/unity_1_cxx.cxx.o\n"}
+,{"stream_name":"stdout","time":258.111634984,"data":"[ 30%] Building CXX object src/CMakeFiles/llama.dir/Unity/unity_0_cxx.cxx.o\n"}
+,{"stream_name":"stdout","time":259.619128239,"data":"[ 30%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o\n"}
+,{"stream_name":"stdout","time":260.598598316,"data":"[ 30%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o\n"}
+,{"stream_name":"stdout","time":263.017435978,"data":"[ 33%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o\n"}
+,{"stream_name":"stdout","time":263.665595338,"data":"[ 33%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o\n"}
+,{"stream_name":"stdout","time":264.649392366,"data":"[ 33%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o\n"}
+,{"stream_name":"stdout","time":266.849677064,"data":"[ 33%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o\n"}
+,{"stream_name":"stdout","time":266.927965277,"data":"[ 36%] Building CXX object src/CMakeFiles/llama.dir/llama-cparams.cpp.o\n"}
+,{"stream_name":"stdout","time":267.132507661,"data":"[ 36%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o\n"}
+,{"stream_name":"stdout","time":267.495651352,"data":"[ 36%] Building CXX object src/CMakeFiles/llama.dir/llama-graph.cpp.o\n"}
+,{"stream_name":"stdout","time":269.004902893,"data":"[ 36%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o\n"}
+,{"stream_name":"stdout","time":270.040543302,"data":"[ 40%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o\n"}
+,{"stream_name":"stdout","time":271.172212066,"data":"[ 40%] Building CXX object src/CMakeFiles/llama.dir/llama-io.cpp.o\n"}
+,{"stream_name":"stdout","time":271.625075601,"data":"[ 40%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o\n"}
+,{"stream_name":"stdout","time":275.612008105,"data":"[ 40%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache-iswa.cpp.o\n"}
+,{"stream_name":"stdout","time":275.625877939,"data":"[ 43%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache-dsa.cpp.o\n"}
+,{"stream_name":"stdout","time":278.499731088,"data":"[ 43%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache-dsa-iswa.cpp.o\n"}
+,{"stream_name":"stdout","time":278.654916715,"data":"[ 43%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache-msa.cpp.o\n"}
+,{"stream_name":"stdout","time":278.667265344,"data":"[ 43%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache-dsv4.cpp.o\n"}
+,{"stream_name":"stdout","time":281.825202326,"data":"[ 43%] Building CXX object src/CMakeFiles/llama.dir/llama-memory.cpp.o\n"}
+,{"stream_name":"stdout","time":282.300368425,"data":"[ 46%] Building CXX object src/CMakeFiles/llama.dir/llama-memory-hybrid.cpp.o\n"}
+,{"stream_name":"stdout","time":282.868612528,"data":"[ 46%] Building CXX object src/CMakeFiles/llama.dir/llama-memory-hybrid-iswa.cpp.o\n"}
+,{"stream_name":"stdout","time":283.204565877,"data":"[ 46%] Building CXX object src/CMakeFiles/llama.dir/llama-memory-hybrid-idx.cpp.o\n"}
+,{"stream_name":"stdout","time":285.62547284,"data":"[ 46%] Building CXX object src/CMakeFiles/llama.dir/llama-memory-recurrent.cpp.o\n"}
+,{"stream_name":"stdout","time":286.497319989,"data":"[ 50%] Building CXX object src/CMakeFiles/llama.dir/llama-mmap.cpp.o\n"}
+,{"stream_name":"stdout","time":287.458017317,"data":"[ 50%] Building CXX object src/CMakeFiles/llama.dir/llama-model-loader.cpp.o\n"}
+,{"stream_name":"stdout","time":287.525278475,"data":"[ 50%] Building CXX object src/CMakeFiles/llama.dir/llama-model-saver.cpp.o\n"}
+,{"stream_name":"stdout","time":288.150078109,"data":"[ 50%] Building CXX object src/CMakeFiles/llama.dir/llama-model.cpp.o\n"}
+,{"stream_name":"stdout","time":289.361426602,"data":"[ 53%] Building CXX object src/CMakeFiles/llama.dir/llama-quant.cpp.o\n"}
+,{"stream_name":"stdout","time":289.827870849,"data":"[ 53%] Building CXX object src/CMakeFiles/llama.dir/llama-sampler.cpp.o\n"}
+,{"stream_name":"stdout","time":300.621123052,"data":"[ 53%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o\n"}
+,{"stream_name":"stdout","time":301.713618453,"data":"[ 53%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o\n"}
+,{"stream_name":"stdout","time":302.049786012,"data":"[ 56%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o\n"}
+,{"stream_name":"stdout","time":312.34970914,"data":"[ 56%] Linking CXX shared library ../bin/libllama.so\n"}
+,{"stream_name":"stdout","time":312.61732208,"data":"[ 56%] Built target llama\n"}
+,{"stream_name":"stdout","time":312.634248935,"data":"[ 56%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/parsers.cpp.o\n"}
+,{"stream_name":"stdout","time":312.63429035,"data":"[ 56%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/cohere2moe.cpp.o\n"}
+,{"stream_name":"stdout","time":312.634664139,"data":"[ 56%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/deepseek.cpp.o\n"}
+,{"stream_name":"stdout","time":312.635415414,"data":"[ 56%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/functionary-v3-2.cpp.o\n"}
+,{"stream_name":"stdout","time":316.167649191,"data":"[ 60%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/gemma4.cpp.o\n"}
+,{"stream_name":"stdout","time":317.605252972,"data":"[ 60%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/gigachat-v3.cpp.o\n"}
+,{"stream_name":"stdout","time":317.887059474,"data":"[ 60%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/gpt-oss.cpp.o\n"}
+,{"stream_name":"stdout","time":319.506025552,"data":"[ 60%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/kimi-k2.cpp.o\n"}
+,{"stream_name":"stdout","time":322.39575576,"data":"[ 63%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/kimi-k3.cpp.o\n"}
+,{"stream_name":"stdout","time":322.629186874,"data":"[ 63%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/lfm2.cpp.o\n"}
+,{"stream_name":"stdout","time":323.720508806,"data":"[ 63%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/minicpm5.cpp.o\n"}
+,{"stream_name":"stdout","time":324.737092627,"data":"[ 63%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/minimax-m3.cpp.o\n"}
+,{"stream_name":"stdout","time":327.721727921,"data":"[ 66%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/ministral3.cpp.o\n"}
+,{"stream_name":"stdout","time":328.223418694,"data":"[ 66%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/muse-glimmer.cpp.o\n"}
+,{"stream_name":"stdout","time":329.601006952,"data":"[ 66%] Building CXX object common/CMakeFiles/llama-common.dir/parsers/qwen3-coder.cpp.o\n"}
+,{"stream_name":"stdout","time":330.913441035,"data":"[ 66%] Building CXX object common/CMakeFiles/llama-common.dir/arg.cpp.o\n"}
+,{"stream_name":"stdout","time":332.927494828,"data":"[ 70%] Building CXX object common/CMakeFiles/llama-common.dir/chat-auto-parser-generator.cpp.o\n"}
+,{"stream_name":"stdout","time":334.042781677,"data":"[ 70%] Building CXX object common/CMakeFiles/llama-common.dir/chat-auto-parser-helpers.cpp.o\n"}
+,{"stream_name":"stdout","time":335.782467259,"data":"[ 70%] Building CXX object common/CMakeFiles/llama-common.dir/chat-diff-analyzer.cpp.o\n"}
+,{"stream_name":"stdout","time":338.234499464,"data":"[ 70%] Building CXX object common/CMakeFiles/llama-common.dir/chat-peg-parser.cpp.o\n"}
+,{"stream_name":"stdout","time":339.355854757,"data":"[ 73%] Building CXX object common/CMakeFiles/llama-common.dir/chat.cpp.o\n"}
+,{"stream_name":"stdout","time":346.942882188,"data":"[ 73%] Building CXX object common/CMakeFiles/llama-common.dir/common.cpp.o\n"}
+,{"stream_name":"stdout","time":347.804589961,"data":"[ 73%] Building CXX object common/CMakeFiles/llama-common.dir/console.cpp.o\n"}
+,{"stream_name":"stdout","time":350.261872421,"data":"[ 73%] Building CXX object common/CMakeFiles/llama-common.dir/debug.cpp.o\n"}
+,{"stream_name":"stdout","time":351.263825254,"data":"[ 73%] Building CXX object common/CMakeFiles/llama-common.dir/download.cpp.o\n"}
+,{"stream_name":"stdout","time":357.403982734,"data":"[ 76%] Building CXX object common/CMakeFiles/llama-common.dir/fit.cpp.o\n"}
+,{"stream_name":"stdout","time":358.28702644,"data":"[ 76%] Building CXX object common/CMakeFiles/llama-common.dir/hf-cache.cpp.o\n"}
+,{"stream_name":"stdout","time":362.380592922,"data":"[ 76%] Building CXX object common/CMakeFiles/llama-common.dir/imatrix-loader.cpp.o\n"}
+,{"stream_name":"stdout","time":363.594659476,"data":"[ 76%] Building CXX object common/CMakeFiles/llama-common.dir/json-schema-to-grammar.cpp.o\n"}
+,{"stream_name":"stdout","time":364.613788432,"data":"[ 80%] Building CXX object common/CMakeFiles/llama-common.dir/json-schema.cpp.o\n"}
+,{"stream_name":"stdout","time":365.175022331,"data":"[ 80%] Building CXX object common/CMakeFiles/llama-common.dir/json.cpp.o\n"}
+,{"stream_name":"stdout","time":365.299877881,"data":"[ 80%] Building CXX object common/CMakeFiles/llama-common.dir/llguidance.cpp.o\n"}
+,{"stream_name":"stdout","time":366.397565282,"data":"[ 80%] Building CXX object common/CMakeFiles/llama-common.dir/log.cpp.o\n"}
+,{"stream_name":"stdout","time":368.576094012,"data":"[ 83%] Building CXX object common/CMakeFiles/llama-common.dir/ngram-cache.cpp.o\n"}
+,{"stream_name":"stdout","time":369.049301497,"data":"[ 83%] Building CXX object common/CMakeFiles/llama-common.dir/ngram-map.cpp.o\n"}
+,{"stream_name":"stdout","time":370.693376759,"data":"[ 83%] Building CXX object common/CMakeFiles/llama-common.dir/ngram-mod.cpp.o\n"}
+,{"stream_name":"stdout","time":370.739355386,"data":"[ 83%] Building CXX object common/CMakeFiles/llama-common.dir/peg-parser.cpp.o\n"}
+,{"stream_name":"stdout","time":371.214029428,"data":"[ 86%] Building CXX object common/CMakeFiles/llama-common.dir/preset.cpp.o\n"}
+,{"stream_name":"stdout","time":376.723352515,"data":"[ 86%] Building CXX object common/CMakeFiles/llama-common.dir/reasoning-budget.cpp.o\n"}
+,{"stream_name":"stdout","time":377.019915201,"data":"[ 86%] Building CXX object common/CMakeFiles/llama-common.dir/sampling.cpp.o\n"}
+,{"stream_name":"stdout","time":378.734208218,"data":"[ 86%] Building CXX object common/CMakeFiles/llama-common.dir/speculative.cpp.o\n"}
+,{"stream_name":"stdout","time":381.457218927,"data":"[ 90%] Building CXX object common/CMakeFiles/llama-common.dir/subproc.cpp.o\n"}
+,{"stream_name":"stdout","time":382.203313358,"data":"[ 90%] Building CXX object common/CMakeFiles/llama-common.dir/trie.cpp.o\n"}
+,{"stream_name":"stdout","time":383.462367385,"data":"[ 90%] Building CXX object common/CMakeFiles/llama-common.dir/unicode.cpp.o\n"}
+,{"stream_name":"stdout","time":383.879935614,"data":"[ 90%] Building CXX object common/CMakeFiles/llama-common.dir/jinja/lexer.cpp.o\n"}
+,{"stream_name":"stdout","time":384.154535887,"data":"[ 90%] Building CXX object common/CMakeFiles/llama-common.dir/jinja/parser.cpp.o\n"}
+,{"stream_name":"stdout","time":386.70985978,"data":"[ 93%] Building CXX object common/CMakeFiles/llama-common.dir/jinja/runtime.cpp.o\n"}
+,{"stream_name":"stdout","time":389.035842197,"data":"[ 93%] Building CXX object common/CMakeFiles/llama-common.dir/jinja/value.cpp.o\n"}
+,{"stream_name":"stdout","time":389.041668707,"data":"[ 93%] Building CXX object common/CMakeFiles/llama-common.dir/jinja/string.cpp.o\n"}
+,{"stream_name":"stdout","time":390.671164461,"data":"[ 93%] Building CXX object common/CMakeFiles/llama-common.dir/jinja/caps.cpp.o\n"}
+,{"stream_name":"stdout","time":398.815181688,"data":"[ 96%] Linking CXX shared library ../bin/libllama-common.so\n"}
+,{"stream_name":"stdout","time":399.243604415,"data":"[ 96%] Built target llama-common\n"}
+,{"stream_name":"stdout","time":399.256386615,"data":"[ 96%] Building CXX object tools/quantize/CMakeFiles/llama-quantize-impl.dir/quantize.cpp.o\n"}
+,{"stream_name":"stdout","time":401.58591585,"data":"[ 96%] Linking CXX shared library ../../bin/libllama-quantize-impl.so\n"}
+,{"stream_name":"stdout","time":401.693540183,"data":"[ 96%] Built target llama-quantize-impl\n"}
+,{"stream_name":"stdout","time":401.706575132,"data":"[100%] Building CXX object tools/quantize/CMakeFiles/llama-quantize.dir/main.cpp.o\n"}
+,{"stream_name":"stdout","time":401.731899243,"data":"[100%] Linking CXX executable ../../bin/llama-quantize\n"}
+,{"stream_name":"stdout","time":401.874556972,"data":"[100%] Built target llama-quantize\n"}
+,{"stream_name":"stderr","time":402.009944804,"data":"\rFetching 7 files:   0%|          | 0/7 [00:00\u003c?, ?it/s]\rFetching 7 files: 100%|██████████| 7/7 [00:00\u003c00:00, 24797.41it/s]\n"}
+,{"stream_name":"stdout","time":402.010465495,"data":"$ /usr/bin/python3 /kaggle/working/llama.cpp/convert_hf_to_gguf.py /root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B/snapshots/8faed761d45a263340a0528343f099c05c9a4323 --outfile /kaggle/working/qwen15b-f16.gguf --outtype f16\n"}
+,{"stream_name":"stderr","time":405.356468333,"data":"INFO:hf-to-gguf:Loading model: 8faed761d45a263340a0528343f099c05c9a4323\n"}
+,{"stream_name":"stderr","time":405.359489033,"data":"INFO:hf-to-gguf:Model architecture: Qwen2ForCausalLM\n"}
+,{"stream_name":"stderr","time":405.370587676,"data":"INFO:hf-to-gguf:gguf: indexing model part 'model.safetensors'\n"}
+,{"stream_name":"stderr","time":405.37240801,"data":"INFO:gguf.gguf_writer:gguf: This GGUF file is for Little Endian only\n"}
+,{"stream_name":"stderr","time":405.379966082,"data":"INFO:hf-to-gguf:Exporting model...\n"}
+,{"stream_name":"stderr","time":405.381175658,"data":"INFO:hf-to-gguf:token_embd.weight,         torch.bfloat16 --\u003e F16, shape = {1536, 151936}\n"}
+,{"stream_name":"stderr","time":405.381478294,"data":"INFO:hf-to-gguf:blk.0.attn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.381884984,"data":"INFO:hf-to-gguf:blk.0.ffn_down.weight,     torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.38204813,"data":"INFO:hf-to-gguf:blk.0.ffn_gate.weight,     torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.382354879,"data":"INFO:hf-to-gguf:blk.0.ffn_up.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.382620293,"data":"INFO:hf-to-gguf:blk.0.ffn_norm.weight,     torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.382881893,"data":"INFO:hf-to-gguf:blk.0.attn_k.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.383175008,"data":"INFO:hf-to-gguf:blk.0.attn_k.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.383470028,"data":"INFO:hf-to-gguf:blk.0.attn_output.weight,  torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.383724566,"data":"INFO:hf-to-gguf:blk.0.attn_q.bias,         torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.38396669,"data":"INFO:hf-to-gguf:blk.0.attn_q.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.384212891,"data":"INFO:hf-to-gguf:blk.0.attn_v.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.384493385,"data":"INFO:hf-to-gguf:blk.0.attn_v.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.384737305,"data":"INFO:hf-to-gguf:blk.1.attn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.385018943,"data":"INFO:hf-to-gguf:blk.1.ffn_down.weight,     torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.385395292,"data":"INFO:hf-to-gguf:blk.1.ffn_gate.weight,     torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.385709259,"data":"INFO:hf-to-gguf:blk.1.ffn_up.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.386001697,"data":"INFO:hf-to-gguf:blk.1.ffn_norm.weight,     torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.386409493,"data":"INFO:hf-to-gguf:blk.1.attn_k.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.386713253,"data":"INFO:hf-to-gguf:blk.1.attn_k.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.386999857,"data":"INFO:hf-to-gguf:blk.1.attn_output.weight,  torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.387251421,"data":"INFO:hf-to-gguf:blk.1.attn_q.bias,         torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.387540511,"data":"INFO:hf-to-gguf:blk.1.attn_q.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.387765466,"data":"INFO:hf-to-gguf:blk.1.attn_v.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.388037744,"data":"INFO:hf-to-gguf:blk.1.attn_v.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.38832867,"data":"INFO:hf-to-gguf:blk.10.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.38866564,"data":"INFO:hf-to-gguf:blk.10.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.389008335,"data":"INFO:hf-to-gguf:blk.10.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.389282282,"data":"INFO:hf-to-gguf:blk.10.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.389548662,"data":"INFO:hf-to-gguf:blk.10.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.389812067,"data":"INFO:hf-to-gguf:blk.10.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.390068585,"data":"INFO:hf-to-gguf:blk.10.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.39044328,"data":"INFO:hf-to-gguf:blk.10.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.390700694,"data":"INFO:hf-to-gguf:blk.10.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.390990982,"data":"INFO:hf-to-gguf:blk.10.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.391257729,"data":"INFO:hf-to-gguf:blk.10.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.391648109,"data":"INFO:hf-to-gguf:blk.10.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.391890223,"data":"INFO:hf-to-gguf:blk.11.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.392188561,"data":"INFO:hf-to-gguf:blk.11.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.392471712,"data":"INFO:hf-to-gguf:blk.11.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.392767836,"data":"INFO:hf-to-gguf:blk.11.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.393007332,"data":"INFO:hf-to-gguf:blk.11.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.393245634,"data":"INFO:hf-to-gguf:blk.11.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.393533744,"data":"INFO:hf-to-gguf:blk.11.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.393901142,"data":"INFO:hf-to-gguf:blk.11.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.394185247,"data":"INFO:hf-to-gguf:blk.11.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.394519437,"data":"INFO:hf-to-gguf:blk.11.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.394836751,"data":"INFO:hf-to-gguf:blk.11.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.395124249,"data":"INFO:hf-to-gguf:blk.11.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.39537326,"data":"INFO:hf-to-gguf:blk.12.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.395673565,"data":"INFO:hf-to-gguf:blk.12.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.395951437,"data":"INFO:hf-to-gguf:blk.12.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.396200435,"data":"INFO:hf-to-gguf:blk.12.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.396551243,"data":"INFO:hf-to-gguf:blk.12.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.396791823,"data":"INFO:hf-to-gguf:blk.12.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.397085658,"data":"INFO:hf-to-gguf:blk.12.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.397365677,"data":"INFO:hf-to-gguf:blk.12.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.39763434,"data":"INFO:hf-to-gguf:blk.12.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.397899426,"data":"INFO:hf-to-gguf:blk.12.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.398154934,"data":"INFO:hf-to-gguf:blk.12.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.398400982,"data":"INFO:hf-to-gguf:blk.12.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.398630657,"data":"INFO:hf-to-gguf:blk.13.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.398911709,"data":"INFO:hf-to-gguf:blk.13.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.399231396,"data":"INFO:hf-to-gguf:blk.13.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.39955757,"data":"INFO:hf-to-gguf:blk.13.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.399795195,"data":"INFO:hf-to-gguf:blk.13.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.400015498,"data":"INFO:hf-to-gguf:blk.13.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.400342729,"data":"INFO:hf-to-gguf:blk.13.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.400630941,"data":"INFO:hf-to-gguf:blk.13.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.400869302,"data":"INFO:hf-to-gguf:blk.13.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.401197616,"data":"INFO:hf-to-gguf:blk.13.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.401452382,"data":"INFO:hf-to-gguf:blk.13.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.401738747,"data":"INFO:hf-to-gguf:blk.13.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.401996037,"data":"INFO:hf-to-gguf:blk.14.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.402285382,"data":"INFO:hf-to-gguf:blk.14.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.402587723,"data":"INFO:hf-to-gguf:blk.14.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.40286275,"data":"INFO:hf-to-gguf:blk.14.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.403113059,"data":"INFO:hf-to-gguf:blk.14.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.403374135,"data":"INFO:hf-to-gguf:blk.14.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.403652303,"data":"INFO:hf-to-gguf:blk.14.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.403926336,"data":"INFO:hf-to-gguf:blk.14.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.404191391,"data":"INFO:hf-to-gguf:blk.14.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.404457943,"data":"INFO:hf-to-gguf:blk.14.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.404731568,"data":"INFO:hf-to-gguf:blk.14.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.405053915,"data":"INFO:hf-to-gguf:blk.14.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.405295185,"data":"INFO:hf-to-gguf:blk.15.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.405580881,"data":"INFO:hf-to-gguf:blk.15.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.405941049,"data":"INFO:hf-to-gguf:blk.15.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.406212211,"data":"INFO:hf-to-gguf:blk.15.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.406476455,"data":"INFO:hf-to-gguf:blk.15.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.406756278,"data":"INFO:hf-to-gguf:blk.15.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.407025393,"data":"INFO:hf-to-gguf:blk.15.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.407297505,"data":"INFO:hf-to-gguf:blk.15.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.407564949,"data":"INFO:hf-to-gguf:blk.15.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.407863891,"data":"INFO:hf-to-gguf:blk.15.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.408174116,"data":"INFO:hf-to-gguf:blk.15.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.408470961,"data":"INFO:hf-to-gguf:blk.15.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.408758358,"data":"INFO:hf-to-gguf:blk.16.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.409103132,"data":"INFO:hf-to-gguf:blk.16.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.409390028,"data":"INFO:hf-to-gguf:blk.16.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.40980528,"data":"INFO:hf-to-gguf:blk.16.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.409925895,"data":"INFO:hf-to-gguf:blk.16.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.410185608,"data":"INFO:hf-to-gguf:blk.16.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.410432879,"data":"INFO:hf-to-gguf:blk.16.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.410747689,"data":"INFO:hf-to-gguf:blk.16.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.410976499,"data":"INFO:hf-to-gguf:blk.16.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.411268422,"data":"INFO:hf-to-gguf:blk.16.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.411517387,"data":"INFO:hf-to-gguf:blk.16.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.411774132,"data":"INFO:hf-to-gguf:blk.16.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.411946135,"data":"INFO:hf-to-gguf:blk.17.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.412228594,"data":"INFO:hf-to-gguf:blk.17.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.412523763,"data":"INFO:hf-to-gguf:blk.17.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.412799135,"data":"INFO:hf-to-gguf:blk.17.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.41302239,"data":"INFO:hf-to-gguf:blk.17.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.41330211,"data":"INFO:hf-to-gguf:blk.17.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.413580028,"data":"INFO:hf-to-gguf:blk.17.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.413831335,"data":"INFO:hf-to-gguf:blk.17.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.414084155,"data":"INFO:hf-to-gguf:blk.17.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.414362801,"data":"INFO:hf-to-gguf:blk.17.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.414620411,"data":"INFO:hf-to-gguf:blk.17.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.414872237,"data":"INFO:hf-to-gguf:blk.17.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.415195921,"data":"INFO:hf-to-gguf:blk.18.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.415478597,"data":"INFO:hf-to-gguf:blk.18.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.415727129,"data":"INFO:hf-to-gguf:blk.18.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.416008448,"data":"INFO:hf-to-gguf:blk.18.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.416259508,"data":"INFO:hf-to-gguf:blk.18.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.416511568,"data":"INFO:hf-to-gguf:blk.18.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.416773219,"data":"INFO:hf-to-gguf:blk.18.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.417071028,"data":"INFO:hf-to-gguf:blk.18.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.417302716,"data":"INFO:hf-to-gguf:blk.18.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.417605689,"data":"INFO:hf-to-gguf:blk.18.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.41782,"data":"INFO:hf-to-gguf:blk.18.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.418098553,"data":"INFO:hf-to-gguf:blk.18.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.418351777,"data":"INFO:hf-to-gguf:blk.19.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.418640136,"data":"INFO:hf-to-gguf:blk.19.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.418915557,"data":"INFO:hf-to-gguf:blk.19.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.419173474,"data":"INFO:hf-to-gguf:blk.19.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.419391682,"data":"INFO:hf-to-gguf:blk.19.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.419709962,"data":"INFO:hf-to-gguf:blk.19.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.419976942,"data":"INFO:hf-to-gguf:blk.19.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.420302658,"data":"INFO:hf-to-gguf:blk.19.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.420590441,"data":"INFO:hf-to-gguf:blk.19.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.420890096,"data":"INFO:hf-to-gguf:blk.19.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.421154147,"data":"INFO:hf-to-gguf:blk.19.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.421443608,"data":"INFO:hf-to-gguf:blk.19.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.421650938,"data":"INFO:hf-to-gguf:blk.2.attn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.421924656,"data":"INFO:hf-to-gguf:blk.2.ffn_down.weight,     torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.422247207,"data":"INFO:hf-to-gguf:blk.2.ffn_gate.weight,     torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.422591382,"data":"INFO:hf-to-gguf:blk.2.ffn_up.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.422878754,"data":"INFO:hf-to-gguf:blk.2.ffn_norm.weight,     torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.423171352,"data":"INFO:hf-to-gguf:blk.2.attn_k.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.42351184,"data":"INFO:hf-to-gguf:blk.2.attn_k.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.423785898,"data":"INFO:hf-to-gguf:blk.2.attn_output.weight,  torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.424036451,"data":"INFO:hf-to-gguf:blk.2.attn_q.bias,         torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.424333474,"data":"INFO:hf-to-gguf:blk.2.attn_q.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.424686863,"data":"INFO:hf-to-gguf:blk.2.attn_v.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.424951565,"data":"INFO:hf-to-gguf:blk.2.attn_v.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.425179223,"data":"INFO:hf-to-gguf:blk.20.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.425470883,"data":"INFO:hf-to-gguf:blk.20.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.425766571,"data":"INFO:hf-to-gguf:blk.20.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.426044053,"data":"INFO:hf-to-gguf:blk.20.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.426334068,"data":"INFO:hf-to-gguf:blk.20.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.426585225,"data":"INFO:hf-to-gguf:blk.20.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.426874982,"data":"INFO:hf-to-gguf:blk.20.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.427119411,"data":"INFO:hf-to-gguf:blk.20.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.427362578,"data":"INFO:hf-to-gguf:blk.20.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.427610363,"data":"INFO:hf-to-gguf:blk.20.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.427849648,"data":"INFO:hf-to-gguf:blk.20.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.428083584,"data":"INFO:hf-to-gguf:blk.20.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.42831421,"data":"INFO:hf-to-gguf:blk.21.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.428602639,"data":"INFO:hf-to-gguf:blk.21.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.428859777,"data":"INFO:hf-to-gguf:blk.21.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.429697371,"data":"INFO:hf-to-gguf:blk.21.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.429947834,"data":"INFO:hf-to-gguf:blk.21.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.430189957,"data":"INFO:hf-to-gguf:blk.21.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.430498743,"data":"INFO:hf-to-gguf:blk.21.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.430787258,"data":"INFO:hf-to-gguf:blk.21.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.431023397,"data":"INFO:hf-to-gguf:blk.21.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.431313198,"data":"INFO:hf-to-gguf:blk.21.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.43155215,"data":"INFO:hf-to-gguf:blk.21.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.43185452,"data":"INFO:hf-to-gguf:blk.21.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.432103175,"data":"INFO:hf-to-gguf:blk.22.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.43237737,"data":"INFO:hf-to-gguf:blk.22.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.432660616,"data":"INFO:hf-to-gguf:blk.22.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.432913954,"data":"INFO:hf-to-gguf:blk.22.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.433178947,"data":"INFO:hf-to-gguf:blk.22.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.433433189,"data":"INFO:hf-to-gguf:blk.22.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.433753414,"data":"INFO:hf-to-gguf:blk.22.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.434030209,"data":"INFO:hf-to-gguf:blk.22.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.434405461,"data":"INFO:hf-to-gguf:blk.22.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.434697791,"data":"INFO:hf-to-gguf:blk.22.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.434915792,"data":"INFO:hf-to-gguf:blk.22.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.4351817,"data":"INFO:hf-to-gguf:blk.22.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.43543709,"data":"INFO:hf-to-gguf:blk.23.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.435697023,"data":"INFO:hf-to-gguf:blk.23.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.435992035,"data":"INFO:hf-to-gguf:blk.23.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.436252458,"data":"INFO:hf-to-gguf:blk.23.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.43647119,"data":"INFO:hf-to-gguf:blk.23.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.436706733,"data":"INFO:hf-to-gguf:blk.23.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.436973996,"data":"INFO:hf-to-gguf:blk.23.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.437216061,"data":"INFO:hf-to-gguf:blk.23.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.437484557,"data":"INFO:hf-to-gguf:blk.23.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.437741478,"data":"INFO:hf-to-gguf:blk.23.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.437938523,"data":"INFO:hf-to-gguf:blk.23.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.438232593,"data":"INFO:hf-to-gguf:blk.23.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.438500016,"data":"INFO:hf-to-gguf:blk.24.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.43884541,"data":"INFO:hf-to-gguf:blk.24.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.439108271,"data":"INFO:hf-to-gguf:blk.24.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.439371073,"data":"INFO:hf-to-gguf:blk.24.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.439648456,"data":"INFO:hf-to-gguf:blk.24.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.439872836,"data":"INFO:hf-to-gguf:blk.24.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.440117236,"data":"INFO:hf-to-gguf:blk.24.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.440416111,"data":"INFO:hf-to-gguf:blk.24.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.440675131,"data":"INFO:hf-to-gguf:blk.24.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.440923835,"data":"INFO:hf-to-gguf:blk.24.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.441181188,"data":"INFO:hf-to-gguf:blk.24.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.441459359,"data":"INFO:hf-to-gguf:blk.24.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.441716769,"data":"INFO:hf-to-gguf:blk.25.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.441980776,"data":"INFO:hf-to-gguf:blk.25.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.442258415,"data":"INFO:hf-to-gguf:blk.25.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.442535047,"data":"INFO:hf-to-gguf:blk.25.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.442804825,"data":"INFO:hf-to-gguf:blk.25.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.443017115,"data":"INFO:hf-to-gguf:blk.25.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.443388472,"data":"INFO:hf-to-gguf:blk.25.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.443746289,"data":"INFO:hf-to-gguf:blk.25.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.443957027,"data":"INFO:hf-to-gguf:blk.25.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.444350931,"data":"INFO:hf-to-gguf:blk.25.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.444653253,"data":"INFO:hf-to-gguf:blk.25.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.444964294,"data":"INFO:hf-to-gguf:blk.25.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.445233099,"data":"INFO:hf-to-gguf:blk.26.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.445595443,"data":"INFO:hf-to-gguf:blk.26.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.445939586,"data":"INFO:hf-to-gguf:blk.26.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.446263793,"data":"INFO:hf-to-gguf:blk.26.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.446554869,"data":"INFO:hf-to-gguf:blk.26.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.446838511,"data":"INFO:hf-to-gguf:blk.26.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.447108593,"data":"INFO:hf-to-gguf:blk.26.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.447362515,"data":"INFO:hf-to-gguf:blk.26.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.447596093,"data":"INFO:hf-to-gguf:blk.26.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.447926055,"data":"INFO:hf-to-gguf:blk.26.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.448174738,"data":"INFO:hf-to-gguf:blk.26.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.448555828,"data":"INFO:hf-to-gguf:blk.26.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.448829258,"data":"INFO:hf-to-gguf:blk.27.attn_norm.weight,   torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.449124768,"data":"INFO:hf-to-gguf:blk.27.ffn_down.weight,    torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.449438887,"data":"INFO:hf-to-gguf:blk.27.ffn_gate.weight,    torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.449730661,"data":"INFO:hf-to-gguf:blk.27.ffn_up.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.449984369,"data":"INFO:hf-to-gguf:blk.27.ffn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.450260877,"data":"INFO:hf-to-gguf:blk.27.attn_k.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.450587482,"data":"INFO:hf-to-gguf:blk.27.attn_k.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.450907273,"data":"INFO:hf-to-gguf:blk.27.attn_output.weight, torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.451115971,"data":"INFO:hf-to-gguf:blk.27.attn_q.bias,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.451383384,"data":"INFO:hf-to-gguf:blk.27.attn_q.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.451628035,"data":"INFO:hf-to-gguf:blk.27.attn_v.bias,        torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.451884609,"data":"INFO:hf-to-gguf:blk.27.attn_v.weight,      torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.452129661,"data":"INFO:hf-to-gguf:blk.3.attn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.452399208,"data":"INFO:hf-to-gguf:blk.3.ffn_down.weight,     torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.452688421,"data":"INFO:hf-to-gguf:blk.3.ffn_gate.weight,     torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.452972016,"data":"INFO:hf-to-gguf:blk.3.ffn_up.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.453337059,"data":"INFO:hf-to-gguf:blk.3.ffn_norm.weight,     torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.453612352,"data":"INFO:hf-to-gguf:blk.3.attn_k.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.453892958,"data":"INFO:hf-to-gguf:blk.3.attn_k.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.454176048,"data":"INFO:hf-to-gguf:blk.3.attn_output.weight,  torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.454420431,"data":"INFO:hf-to-gguf:blk.3.attn_q.bias,         torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.454675514,"data":"INFO:hf-to-gguf:blk.3.attn_q.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.454919527,"data":"INFO:hf-to-gguf:blk.3.attn_v.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.455166177,"data":"INFO:hf-to-gguf:blk.3.attn_v.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.455425722,"data":"INFO:hf-to-gguf:blk.4.attn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.455792588,"data":"INFO:hf-to-gguf:blk.4.ffn_down.weight,     torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.45590286,"data":"INFO:hf-to-gguf:blk.4.ffn_gate.weight,     torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.45616074,"data":"INFO:hf-to-gguf:blk.4.ffn_up.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.456396608,"data":"INFO:hf-to-gguf:blk.4.ffn_norm.weight,     torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.456646441,"data":"INFO:hf-to-gguf:blk.4.attn_k.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.456968613,"data":"INFO:hf-to-gguf:blk.4.attn_k.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.457284874,"data":"INFO:hf-to-gguf:blk.4.attn_output.weight,  torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.457555916,"data":"INFO:hf-to-gguf:blk.4.attn_q.bias,         torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.457960162,"data":"INFO:hf-to-gguf:blk.4.attn_q.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.458220841,"data":"INFO:hf-to-gguf:blk.4.attn_v.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.458517541,"data":"INFO:hf-to-gguf:blk.4.attn_v.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.458776958,"data":"INFO:hf-to-gguf:blk.5.attn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.459058641,"data":"INFO:hf-to-gguf:blk.5.ffn_down.weight,     torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.459355066,"data":"INFO:hf-to-gguf:blk.5.ffn_gate.weight,     torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.459639761,"data":"INFO:hf-to-gguf:blk.5.ffn_up.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.459900019,"data":"INFO:hf-to-gguf:blk.5.ffn_norm.weight,     torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.460187673,"data":"INFO:hf-to-gguf:blk.5.attn_k.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.460517643,"data":"INFO:hf-to-gguf:blk.5.attn_k.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.460831228,"data":"INFO:hf-to-gguf:blk.5.attn_output.weight,  torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.461069186,"data":"INFO:hf-to-gguf:blk.5.attn_q.bias,         torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.461376434,"data":"INFO:hf-to-gguf:blk.5.attn_q.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.461676382,"data":"INFO:hf-to-gguf:blk.5.attn_v.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.461977096,"data":"INFO:hf-to-gguf:blk.5.attn_v.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.462253705,"data":"INFO:hf-to-gguf:blk.6.attn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.462539641,"data":"INFO:hf-to-gguf:blk.6.ffn_down.weight,     torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.462872411,"data":"INFO:hf-to-gguf:blk.6.ffn_gate.weight,     torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.463159514,"data":"INFO:hf-to-gguf:blk.6.ffn_up.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.463409253,"data":"INFO:hf-to-gguf:blk.6.ffn_norm.weight,     torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.463659989,"data":"INFO:hf-to-gguf:blk.6.attn_k.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.463927372,"data":"INFO:hf-to-gguf:blk.6.attn_k.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.464173378,"data":"INFO:hf-to-gguf:blk.6.attn_output.weight,  torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.464467182,"data":"INFO:hf-to-gguf:blk.6.attn_q.bias,         torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.464758491,"data":"INFO:hf-to-gguf:blk.6.attn_q.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.464978897,"data":"INFO:hf-to-gguf:blk.6.attn_v.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.465262461,"data":"INFO:hf-to-gguf:blk.6.attn_v.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.465547085,"data":"INFO:hf-to-gguf:blk.7.attn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.465828383,"data":"INFO:hf-to-gguf:blk.7.ffn_down.weight,     torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.466085728,"data":"INFO:hf-to-gguf:blk.7.ffn_gate.weight,     torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.466358777,"data":"INFO:hf-to-gguf:blk.7.ffn_up.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.46664106,"data":"INFO:hf-to-gguf:blk.7.ffn_norm.weight,     torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.466840727,"data":"INFO:hf-to-gguf:blk.7.attn_k.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.467120274,"data":"INFO:hf-to-gguf:blk.7.attn_k.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.467483165,"data":"INFO:hf-to-gguf:blk.7.attn_output.weight,  torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.467722585,"data":"INFO:hf-to-gguf:blk.7.attn_q.bias,         torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.468014351,"data":"INFO:hf-to-gguf:blk.7.attn_q.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.468277934,"data":"INFO:hf-to-gguf:blk.7.attn_v.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.468697515,"data":"INFO:hf-to-gguf:blk.7.attn_v.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.468708279,"data":"INFO:hf-to-gguf:blk.8.attn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.468907832,"data":"INFO:hf-to-gguf:blk.8.ffn_down.weight,     torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.469151822,"data":"INFO:hf-to-gguf:blk.8.ffn_gate.weight,     torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.469414611,"data":"INFO:hf-to-gguf:blk.8.ffn_up.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.469657011,"data":"INFO:hf-to-gguf:blk.8.ffn_norm.weight,     torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.469875346,"data":"INFO:hf-to-gguf:blk.8.attn_k.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.470101413,"data":"INFO:hf-to-gguf:blk.8.attn_k.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.470367701,"data":"INFO:hf-to-gguf:blk.8.attn_output.weight,  torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.470585275,"data":"INFO:hf-to-gguf:blk.8.attn_q.bias,         torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.470844694,"data":"INFO:hf-to-gguf:blk.8.attn_q.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.471046794,"data":"INFO:hf-to-gguf:blk.8.attn_v.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.471349556,"data":"INFO:hf-to-gguf:blk.8.attn_v.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.471623351,"data":"INFO:hf-to-gguf:blk.9.attn_norm.weight,    torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.471848719,"data":"INFO:hf-to-gguf:blk.9.ffn_down.weight,     torch.bfloat16 --\u003e F16, shape = {8960, 1536}\n"}
+,{"stream_name":"stderr","time":405.472069656,"data":"INFO:hf-to-gguf:blk.9.ffn_gate.weight,     torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.47232237,"data":"INFO:hf-to-gguf:blk.9.ffn_up.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 8960}\n"}
+,{"stream_name":"stderr","time":405.47258604,"data":"INFO:hf-to-gguf:blk.9.ffn_norm.weight,     torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.472801323,"data":"INFO:hf-to-gguf:blk.9.attn_k.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.473041099,"data":"INFO:hf-to-gguf:blk.9.attn_k.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.473330979,"data":"INFO:hf-to-gguf:blk.9.attn_output.weight,  torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.47361462,"data":"INFO:hf-to-gguf:blk.9.attn_q.bias,         torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.473819387,"data":"INFO:hf-to-gguf:blk.9.attn_q.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 1536}\n"}
+,{"stream_name":"stderr","time":405.474029528,"data":"INFO:hf-to-gguf:blk.9.attn_v.bias,         torch.bfloat16 --\u003e F32, shape = {256}\n"}
+,{"stream_name":"stderr","time":405.474291016,"data":"INFO:hf-to-gguf:blk.9.attn_v.weight,       torch.bfloat16 --\u003e F16, shape = {1536, 256}\n"}
+,{"stream_name":"stderr","time":405.474510259,"data":"INFO:hf-to-gguf:output_norm.weight,        torch.bfloat16 --\u003e F32, shape = {1536}\n"}
+,{"stream_name":"stderr","time":405.475825842,"data":"INFO:hf-to-gguf:Set meta model\n"}
+,{"stream_name":"stderr","time":405.475851153,"data":"INFO:hf-to-gguf:Set model parameters\n"}
+,{"stream_name":"stderr","time":405.476020903,"data":"INFO:hf-to-gguf:gguf: context length = 131072\n"}
+,{"stream_name":"stderr","time":405.476086785,"data":"INFO:hf-to-gguf:gguf: embedding length = 1536\n"}
+,{"stream_name":"stderr","time":405.476103437,"data":"INFO:hf-to-gguf:gguf: feed forward length = 8960\n"}
+,{"stream_name":"stderr","time":405.476203337,"data":"INFO:hf-to-gguf:gguf: head count = 12\n"}
+,{"stream_name":"stderr","time":405.476245224,"data":"INFO:hf-to-gguf:gguf: key-value head count = 2\n"}
+,{"stream_name":"stderr","time":405.476323538,"data":"INFO:hf-to-gguf:gguf: rope theta = 1000000.0\n"}
+,{"stream_name":"stderr","time":405.47636332,"data":"INFO:hf-to-gguf:gguf: rms norm epsilon = 1e-06\n"}
+,{"stream_name":"stderr","time":405.476439793,"data":"INFO:hf-to-gguf:gguf: file type = 1\n"}
+,{"stream_name":"stderr","time":405.476592703,"data":"INFO:hf-to-gguf:Set model quantization version\n"}
+,{"stream_name":"stderr","time":405.476952313,"data":"INFO:hf-to-gguf:Set model tokenizer\n"}
+,{"stream_name":"stderr","time":407.016158664,"data":"INFO:numexpr.utils:NumExpr defaulting to 4 threads.\n"}
+,{"stream_name":"stderr","time":408.359315825,"data":"INFO:gguf.vocab:Adding 151387 merge(s).\n"}
+,{"stream_name":"stderr","time":408.359353036,"data":"INFO:gguf.vocab:Setting special token type eos to 151643\n"}
+,{"stream_name":"stderr","time":408.359364065,"data":"INFO:gguf.vocab:Setting special token type pad to 151643\n"}
+,{"stream_name":"stderr","time":408.359368467,"data":"INFO:gguf.vocab:Setting special token type bos to 151643\n"}
+,{"stream_name":"stderr","time":408.359954066,"data":"INFO:gguf.vocab:Setting add_bos_token to False\n"}
+,{"stream_name":"stderr","time":408.359971434,"data":"INFO:gguf.vocab:Setting chat_template to {%- if tools %}\n"}
+,{"stream_name":"stderr","time":408.359975698,"data":"    {{- '\u003c|im_start|\u003esystem\\n' }}\n"}
+,{"stream_name":"stderr","time":408.359985463,"data":"    {%- if messages[0]['role'] == 'system' %}\n"}
+,{"stream_name":"stderr","time":408.359988198,"data":"        {{- messages[0]['content'] }}\n"}
+,{"stream_name":"stderr","time":408.359990458,"data":"    {%- else %}\n"}
+,{"stream_name":"stderr","time":408.359992768,"data":"        {{- 'You are a helpful assistant.' }}\n"}
+,{"stream_name":"stderr","time":408.359995003,"data":"    {%- endif %}\n"}
+,{"stream_name":"stderr","time":408.359997469,"data":"    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within \u003ctools\u003e\u003c/tools\u003e XML tags:\\n\u003ctools\u003e\" }}\n"}
+,{"stream_name":"stderr","time":408.360014018,"data":"    {%- for tool in tools %}\n"}
+,{"stream_name":"stderr","time":408.360021817,"data":"        {{- \"\\n\" }}\n"}
+,{"stream_name":"stderr","time":408.360026145,"data":"        {{- tool | tojson }}\n"}
+,{"stream_name":"stderr","time":408.360030145,"data":"    {%- endfor %}\n"}
+,{"stream_name":"stderr","time":408.360034112,"data":"    {{- \"\\n\u003c/tools\u003e\\n\\nFor each function call, return a json object with function name and arguments within \u003ctool_call\u003e\u003c/tool_call\u003e XML tags:\\n\u003ctool_call\u003e\\n{\\\"name\\\": \u003cfunction-name\u003e, \\\"arguments\\\": \u003cargs-json-object\u003e}\\n\u003c/tool_call\u003e\u003c|im_end|\u003e\\n\" }}\n"}
+,{"stream_name":"stderr","time":408.360039882,"data":"{%- else %}\n"}
+,{"stream_name":"stderr","time":408.360043174,"data":"    {%- if messages[0]['role'] == 'system' %}\n"}
+,{"stream_name":"stderr","time":408.360046884,"data":"        {{- '\u003c|im_start|\u003esystem\\n' + messages[0]['content'] + '\u003c|im_end|\u003e\\n' }}\n"}
+,{"stream_name":"stderr","time":408.360050698,"data":"    {%- else %}\n"}
+,{"stream_name":"stderr","time":408.360054024,"data":"        {{- '\u003c|im_start|\u003esystem\\nYou are a helpful assistant.\u003c|im_end|\u003e\\n' }}\n"}
+,{"stream_name":"stderr","time":408.360059575,"data":"    {%- endif %}\n"}
+,{"stream_name":"stderr","time":408.360075172,"data":"{%- endif %}\n"}
+,{"stream_name":"stderr","time":408.360077568,"data":"{%- for message in messages %}\n"}
+,{"stream_name":"stderr","time":408.360079848,"data":"    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n"}
+,{"stream_name":"stderr","time":408.360082521,"data":"        {{- '\u003c|im_start|\u003e' + message.role + '\\n' + message.content + '\u003c|im_end|\u003e' + '\\n' }}\n"}
+,{"stream_name":"stderr","time":408.360085116,"data":"    {%- elif message.role == \"assistant\" %}\n"}
+,{"stream_name":"stderr","time":408.360087457,"data":"        {{- '\u003c|im_start|\u003e' + message.role }}\n"}
+,{"stream_name":"stderr","time":408.360089806,"data":"        {%- if message.content %}\n"}
+,{"stream_name":"stderr","time":408.360092087,"data":"            {{- '\\n' + message.content }}\n"}
+,{"stream_name":"stderr","time":408.36009444,"data":"        {%- endif %}\n"}
+,{"stream_name":"stderr","time":408.36009668,"data":"        {%- for tool_call in message.tool_calls %}\n"}
+,{"stream_name":"stderr","time":408.360099804,"data":"            {%- if tool_call.function is defined %}\n"}
+,{"stream_name":"stderr","time":408.360113572,"data":"                {%- set tool_call = tool_call.function %}\n"}
+,{"stream_name":"stderr","time":408.36011768,"data":"            {%- endif %}\n"}
+,{"stream_name":"stderr","time":408.36012169,"data":"            {{- '\\n\u003ctool_call\u003e\\n{\"name\": \"' }}\n"}
+,{"stream_name":"stderr","time":408.360126123,"data":"            {{- tool_call.name }}\n"}
+,{"stream_name":"stderr","time":408.360130038,"data":"            {{- '\", \"arguments\": ' }}\n"}
+,{"stream_name":"stderr","time":408.360133493,"data":"            {{- tool_call.arguments | tojson }}\n"}
+,{"stream_name":"stderr","time":408.360136764,"data":"            {{- '}\\n\u003c/tool_call\u003e' }}\n"}
+,{"stream_name":"stderr","time":408.360140646,"data":"        {%- endfor %}\n"}
+,{"stream_name":"stderr","time":408.365225428,"data":"        {{- '\u003c|im_end|\u003e\\n' }}\n"}
+,{"stream_name":"stderr","time":408.365240312,"data":"    {%- elif message.role == \"tool\" %}\n"}
+,{"stream_name":"stderr","time":408.365246988,"data":"        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n"}
+,{"stream_name":"stderr","time":408.365251532,"data":"            {{- '\u003c|im_start|\u003euser' }}\n"}
+,{"stream_name":"stderr","time":408.365255574,"data":"        {%- endif %}\n"}
+,{"stream_name":"stderr","time":408.365259327,"data":"        {{- '\\n\u003ctool_response\u003e\\n' }}\n"}
+,{"stream_name":"stderr","time":408.365263229,"data":"        {{- message.content }}\n"}
+,{"stream_name":"stderr","time":408.365266909,"data":"        {{- '\\n\u003c/tool_response\u003e' }}\n"}
+,{"stream_name":"stderr","time":408.365270794,"data":"        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n"}
+,{"stream_name":"stderr","time":408.365274777,"data":"            {{- '\u003c|im_end|\u003e\\n' }}\n"}
+,{"stream_name":"stderr","time":408.365278504,"data":"        {%- endif %}\n"}
+,{"stream_name":"stderr","time":408.365282289,"data":"    {%- endif %}\n"}
+,{"stream_name":"stderr","time":408.365285841,"data":"{%- endfor %}\n"}
+,{"stream_name":"stderr","time":408.365289401,"data":"{%- if add_generation_prompt %}\n"}
+,{"stream_name":"stderr","time":408.365293437,"data":"    {{- '\u003c|im_start|\u003eassistant\\n' }}\n"}
+,{"stream_name":"stderr","time":408.365297173,"data":"{%- endif %}\n"}
+,{"stream_name":"stderr","time":408.365300899,"data":"\n"}
+,{"stream_name":"stderr","time":408.365314256,"data":"INFO:gguf.gguf_writer:Writing the following files:\n"}
+,{"stream_name":"stderr","time":408.365318575,"data":"INFO:gguf.gguf_writer:/kaggle/working/qwen15b-f16.gguf: n_tensors = 338, total_size = 3.1G\n"}
+,{"stream_name":"stderr","time":418.922911746,"data":"\rWriting:   0%|          | 0.00/3.09G [00:00\u003c?, ?byte/s]\rWriting:  15%|█▌        | 467M/3.09G [00:01\u003c00:08, 314Mbyte/s]\rWriting:  17%|█▋        | 522M/3.09G [00:01\u003c00:08, 298Mbyte/s]\rWriting:  18%|█▊        | 555M/3.09G [00:01\u003c00:08, 299Mbyte/s]\rWriting:  19%|█▉        | 588M/3.09G [00:01\u003c00:08, 300Mbyte/s]\rWriting:  21%|██        | 643M/3.09G [00:02\u003c00:08, 302Mbyte/s]\rWriting:  22%|██▏       | 681M/3.09G [00:02\u003c00:08, 291Mbyte/s]\rWriting:  24%|██▍       | 737M/3.09G [00:02\u003c00:08, 293Mbyte/s]\rWriting:  25%|██▌       | 775M/3.09G [00:02\u003c00:07, 299Mbyte/s]\rWriting:  27%|██▋       | 830M/3.09G [00:02\u003c00:07, 303Mbyte/s]\rWriting:  28%|██▊       | 869M/3.09G [00:02\u003c00:07, 308Mbyte/s]\rWriting:  30%|██▉       | 924M/3.09G [00:03\u003c00:06, 311Mbyte/s]\rWriting:  31%|███       | 962M/3.09G [00:03\u003c00:06, 314Mbyte/s]\rWriting:  33%|███▎      | 1.02G/3.09G [00:03\u003c00:06, 313Mbyte/s]\rWriting:  34%|███▍      | 1.06G/3.09G [00:03\u003c00:06, 316Mbyte/s]\rWriting:  36%|███▌      | 1.11G/3.09G [00:03\u003c00:06, 316Mbyte/s]\rWriting:  37%|███▋      | 1.15G/3.09G [00:03\u003c00:06, 318Mbyte/s]\rWriting:  39%|███▉      | 1.20G/3.09G [00:03\u003c00:05, 317Mbyte/s]\rWriting:  40%|████      | 1.24G/3.09G [00:04\u003c00:05, 318Mbyte/s]\rWriting:  42%|████▏     | 1.30G/3.09G [00:04\u003c00:05, 316Mbyte/s]\rWriting:  43%|████▎     | 1.34G/3.09G [00:04\u003c00:05, 317Mbyte/s]\rWriting:  45%|████▌     | 1.39G/3.09G [00:04\u003c00:05, 316Mbyte/s]\rWriting:  46%|████▋     | 1.43G/3.09G [00:04\u003c00:05, 318Mbyte/s]\rWriting:  48%|████▊     | 1.49G/3.09G [00:04\u003c00:05, 315Mbyte/s]\rWriting:  49%|████▉     | 1.52G/3.09G [00:04\u003c00:04, 317Mbyte/s]\rWriting:  51%|█████     | 1.58G/3.09G [00:05\u003c00:04, 317Mbyte/s]\rWriting:  52%|█████▏    | 1.62G/3.09G [00:05\u003c00:04, 319Mbyte/s]\rWriting:  54%|█████▍    | 1.67G/3.09G [00:05\u003c00:04, 316Mbyte/s]\rWriting:  55%|█████▌    | 1.71G/3.09G [00:05\u003c00:04, 318Mbyte/s]\rWriting:  57%|█████▋    | 1.77G/3.09G [00:05\u003c00:04, 316Mbyte/s]\rWriting:  58%|█████▊    | 1.80G/3.09G [00:05\u003c00:04, 318Mbyte/s]\rWriting:  60%|██████    | 1.86G/3.09G [00:05\u003c00:03, 317Mbyte/s]\rWriting:  61%|██████▏   | 1.90G/3.09G [00:06\u003c00:03, 319Mbyte/s]\rWriting:  63%|██████▎   | 1.95G/3.09G [00:06\u003c00:03, 317Mbyte/s]\rWriting:  65%|██████▍   | 1.99G/3.09G [00:06\u003c00:03, 316Mbyte/s]\rWriting:  66%|██████▋   | 2.05G/3.09G [00:06\u003c00:03, 314Mbyte/s]\rWriting:  68%|██████▊   | 2.09G/3.09G [00:06\u003c00:03, 317Mbyte/s]\rWriting:  69%|██████▉   | 2.14G/3.09G [00:06\u003c00:02, 316Mbyte/s]\rWriting:  71%|███████   | 2.18G/3.09G [00:07\u003c00:02, 317Mbyte/s]\rWriting:  72%|███████▏  | 2.23G/3.09G [00:07\u003c00:02, 316Mbyte/s]\rWriting:  74%|███████▎  | 2.27G/3.09G [00:07\u003c00:02, 319Mbyte/s]\rWriting:  75%|███████▌  | 2.33G/3.09G [00:07\u003c00:02, 318Mbyte/s]\rWriting:  77%|███████▋  | 2.37G/3.09G [00:07\u003c00:02, 319Mbyte/s]\rWriting:  78%|███████▊  | 2.42G/3.09G [00:07\u003c00:02, 320Mbyte/s]\rWriting:  80%|███████▉  | 2.46G/3.09G [00:07\u003c00:01, 322Mbyte/s]\rWriting:  81%|████████▏ | 2.52G/3.09G [00:08\u003c00:01, 320Mbyte/s]\rWriting:  83%|████████▎ | 2.55G/3.09G [00:08\u003c00:01, 322Mbyte/s]\rWriting:  84%|████████▍ | 2.61G/3.09G [00:08\u003c00:01, 319Mbyte/s]\rWriting:  86%|████████▌ | 2.65G/3.09G [00:08\u003c00:01, 321Mbyte/s]\rWriting:  88%|████████▊ | 2.70G/3.09G [00:08\u003c00:01, 318Mbyte/s]\rWriting:  89%|████████▉ | 2.74G/3.09G [00:08\u003c00:01, 320Mbyte/s]\rWriting:  91%|█████████ | 2.80G/3.09G [00:08\u003c00:00, 318Mbyte/s]\rWriting:  92%|█████████▏| 2.83G/3.09G [00:09\u003c00:00, 320Mbyte/s]\rWriting:  94%|█████████▎| 2.89G/3.09G [00:09\u003c00:00, 317Mbyte/s]\rWriting:  95%|█████████▍| 2.93G/3.09G [00:09\u003c00:00, 291Mbyte/s]\rWriting:  97%|█████████▋| 2.98G/3.09G [00:09\u003c00:00, 279Mbyte/s]\rWriting:  98%|█████████▊| 3.02G/3.09G [00:09\u003c00:00, 270Mbyte/s]\rWriting:  99%|█████████▉| 3.05G/3.09G [00:09\u003c00:00, 264Mbyte/s]\rWriting: 100%|█████████▉| 3.08G/3.09G [00:09\u003c00:00, 254Mbyte/s]\rWriting: 100%|██████████| 3.09G/3.09G [00:10\u003c00:00, 307Mbyte/s]\n"}
+,{"stream_name":"stderr","time":418.923310086,"data":"INFO:hf-to-gguf:Model successfully exported to /kaggle/working/qwen15b-f16.gguf\n"}
+,{"stream_name":"stdout","time":420.020577882,"data":"$ /kaggle/working/llama.cpp/build/bin/llama-quantize /kaggle/working/qwen15b-f16.gguf /kaggle/working/qwen15b-Q4_K_M.gguf Q4_K_M\n"}
+,{"stream_name":"stderr","time":420.036763314,"data":"version: 0.4.1-dev (build 1, commit 9e71716)\n"}
+,{"stream_name":"stderr","time":420.036792269,"data":"built with GNU 11.4.0 for Linux x86_64\n"}
+,{"stream_name":"stderr","time":420.036797998,"data":"llama_quantize: quantizing '/kaggle/working/qwen15b-f16.gguf' to '/kaggle/working/qwen15b-Q4_K_M.gguf' as Q4_K_M\n"}
+,{"stream_name":"stderr","time":420.108682368,"data":"llama_model_loader: loaded meta data with 25 key-value pairs and 338 tensors from /kaggle/working/qwen15b-f16.gguf (version GGUF V3 (latest))\n"}
+,{"stream_name":"stderr","time":420.10872027,"data":"llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.\n"}
+,{"stream_name":"stderr","time":420.108725626,"data":"llama_model_loader: - kv   0:                       general.architecture str              = qwen2\n"}
+,{"stream_name":"stderr","time":420.108730438,"data":"llama_model_loader: - kv   1:                               general.type str              = model\n"}
+,{"stream_name":"stderr","time":420.108735096,"data":"llama_model_loader: - kv   2:                               general.name str              = 8faed761d45a263340a0528343f099c05c9a4323\n"}
+,{"stream_name":"stderr","time":420.108739641,"data":"llama_model_loader: - kv   3:                           general.finetune str              = 8faed761d45a263340a0528343f099c05c9a4323\n"}
+,{"stream_name":"stderr","time":420.108744288,"data":"llama_model_loader: - kv   4:                         general.size_label str              = 1.5B\n"}
+,{"stream_name":"stderr","time":420.108759487,"data":"llama_model_loader: - kv   5:                          qwen2.block_count u32              = 28\n"}
+,{"stream_name":"stderr","time":420.108764285,"data":"llama_model_loader: - kv   6:                       qwen2.context_length u32              = 131072\n"}
+,{"stream_name":"stderr","time":420.108768966,"data":"llama_model_loader: - kv   7:                     qwen2.embedding_length u32              = 1536\n"}
+,{"stream_name":"stderr","time":420.10877359,"data":"llama_model_loader: - kv   8:                  qwen2.feed_forward_length u32              = 8960\n"}
+,{"stream_name":"stderr","time":420.108777983,"data":"llama_model_loader: - kv   9:                 qwen2.attention.head_count u32              = 12\n"}
+,{"stream_name":"stderr","time":420.108781902,"data":"llama_model_loader: - kv  10:              qwen2.attention.head_count_kv u32              = 2\n"}
+,{"stream_name":"stderr","time":420.108795238,"data":"llama_model_loader: - kv  11:                       qwen2.rope.freq_base f32              = 1000000.000000\n"}
+,{"stream_name":"stderr","time":420.108799872,"data":"llama_model_loader: - kv  12:     qwen2.attention.layer_norm_rms_epsilon f32              = 0.000001\n"}
+,{"stream_name":"stderr","time":420.108804419,"data":"llama_model_loader: - kv  13:                          general.file_type u32              = 1\n"}
+,{"stream_name":"stderr","time":420.108808951,"data":"llama_model_loader: - kv  14:               general.quantization_version u32              = 2\n"}
+,{"stream_name":"stderr","time":420.108813468,"data":"llama_model_loader: - kv  15:                       tokenizer.ggml.model str              = gpt2\n"}
+,{"stream_name":"stderr","time":420.108818525,"data":"llama_model_loader: - kv  16:                         tokenizer.ggml.pre str              = qwen2\n"}
+,{"stream_name":"stderr","time":420.142775115,"data":"llama_model_loader: - kv  17:                      tokenizer.ggml.tokens arr[str,151936]  = [\"!\", \"\\\"\", \"#\", \"$\", \"%\", \"\u0026\", \"'\", ...\n"}
+,{"stream_name":"stderr","time":420.148846608,"data":"llama_model_loader: - kv  18:                  tokenizer.ggml.token_type arr[i32,151936]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...\n"}
+,{"stream_name":"stderr","time":420.178944978,"data":"llama_model_loader: - kv  19:                      tokenizer.ggml.merges arr[str,151387]  = [\"Ġ Ġ\", \"ĠĠ ĠĠ\", \"i n\", \"Ġ t\",...\n"}
+,{"stream_name":"stderr","time":420.17896597,"data":"llama_model_loader: - kv  20:                tokenizer.ggml.eos_token_id u32              = 151643\n"}
+,{"stream_name":"stderr","time":420.178970556,"data":"llama_model_loader: - kv  21:            tokenizer.ggml.padding_token_id u32              = 151643\n"}
+,{"stream_name":"stderr","time":420.178974498,"data":"llama_model_loader: - kv  22:                tokenizer.ggml.bos_token_id u32              = 151643\n"}
+,{"stream_name":"stderr","time":420.17897793,"data":"llama_model_loader: - kv  23:               tokenizer.ggml.add_bos_token bool             = false\n"}
+,{"stream_name":"stderr","time":420.178981833,"data":"llama_model_loader: - kv  24:                    tokenizer.chat_template str              = {%- if tools %}\\n    {{- '\u003c|im_start|\u003e...\n"}
+,{"stream_name":"stderr","time":420.178999102,"data":"llama_model_loader: - type  f32:  141 tensors\n"}
+,{"stream_name":"stderr","time":420.179002888,"data":"llama_model_loader: - type  f16:  197 tensors\n"}
+,{"stream_name":"stderr","time":420.343024981,"data":"[   1/ 338] output_norm.weight                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":427.122715707,"data":"[   2/ 338] token_embd.weight                    - [  1536, 151936,      1,      1], type =    f16, converting to q6_K .. size =   445.12 MiB -\u003e   182.57 MiB\n"}
+,{"stream_name":"stderr","time":427.134661654,"data":"[   3/ 338] blk.0.attn_k.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":427.159808834,"data":"[   4/ 338] blk.0.attn_k.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":427.159959687,"data":"[   5/ 338] blk.0.attn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":427.305431937,"data":"[   6/ 338] blk.0.attn_output.weight             - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":427.30574387,"data":"[   7/ 338] blk.0.attn_q.bias                    - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":427.450035132,"data":"[   8/ 338] blk.0.attn_q.weight                  - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":427.450291394,"data":"[   9/ 338] blk.0.attn_v.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":427.461670814,"data":"[  10/ 338] blk.0.attn_v.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q6_K .. size =     0.75 MiB -\u003e     0.31 MiB\n"}
+,{"stream_name":"stderr","time":427.810304896,"data":"[  11/ 338] blk.0.ffn_down.weight                - [  8960,   1536,      1,      1], type =    f16, converting to q6_K .. size =    26.25 MiB -\u003e    10.77 MiB\n"}
+,{"stream_name":"stderr","time":428.637887474,"data":"[  12/ 338] blk.0.ffn_gate.weight                - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":428.638726415,"data":"[  13/ 338] blk.0.ffn_norm.weight                - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":429.470139703,"data":"[  14/ 338] blk.0.ffn_up.weight                  - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":429.47136667,"data":"[  15/ 338] blk.1.attn_k.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":429.496038883,"data":"[  16/ 338] blk.1.attn_k.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":429.496054308,"data":"[  17/ 338] blk.1.attn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":429.642226965,"data":"[  18/ 338] blk.1.attn_output.weight             - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":429.642504686,"data":"[  19/ 338] blk.1.attn_q.bias                    - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":429.786719919,"data":"[  20/ 338] blk.1.attn_q.weight                  - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":429.786932303,"data":"[  21/ 338] blk.1.attn_v.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":429.79774197,"data":"[  22/ 338] blk.1.attn_v.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q6_K .. size =     0.75 MiB -\u003e     0.31 MiB\n"}
+,{"stream_name":"stderr","time":430.147463119,"data":"[  23/ 338] blk.1.ffn_down.weight                - [  8960,   1536,      1,      1], type =    f16, converting to q6_K .. size =    26.25 MiB -\u003e    10.77 MiB\n"}
+,{"stream_name":"stderr","time":430.980002599,"data":"[  24/ 338] blk.1.ffn_gate.weight                - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":430.981178851,"data":"[  25/ 338] blk.1.ffn_norm.weight                - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":431.761111286,"data":"[  26/ 338] blk.1.ffn_up.weight                  - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":431.762370848,"data":"[  27/ 338] blk.2.attn_k.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":431.785442473,"data":"[  28/ 338] blk.2.attn_k.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":431.785556074,"data":"[  29/ 338] blk.2.attn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":431.916535744,"data":"[  30/ 338] blk.2.attn_output.weight             - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":431.916743061,"data":"[  31/ 338] blk.2.attn_q.bias                    - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":432.046256611,"data":"[  32/ 338] blk.2.attn_q.weight                  - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":432.046488829,"data":"[  33/ 338] blk.2.attn_v.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":432.056466661,"data":"[  34/ 338] blk.2.attn_v.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q6_K .. size =     0.75 MiB -\u003e     0.31 MiB\n"}
+,{"stream_name":"stderr","time":432.375893293,"data":"[  35/ 338] blk.2.ffn_down.weight                - [  8960,   1536,      1,      1], type =    f16, converting to q6_K .. size =    26.25 MiB -\u003e    10.77 MiB\n"}
+,{"stream_name":"stderr","time":433.134045145,"data":"[  36/ 338] blk.2.ffn_gate.weight                - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":433.134773227,"data":"[  37/ 338] blk.2.ffn_norm.weight                - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":433.894116844,"data":"[  38/ 338] blk.2.ffn_up.weight                  - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":433.89497268,"data":"[  39/ 338] blk.3.attn_k.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":433.918495746,"data":"[  40/ 338] blk.3.attn_k.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":433.9192487,"data":"[  41/ 338] blk.3.attn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":434.049552569,"data":"[  42/ 338] blk.3.attn_output.weight             - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":434.049737938,"data":"[  43/ 338] blk.3.attn_q.bias                    - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":434.179717324,"data":"[  44/ 338] blk.3.attn_q.weight                  - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":434.179928161,"data":"[  45/ 338] blk.3.attn_v.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":434.202617089,"data":"[  46/ 338] blk.3.attn_v.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":434.989211518,"data":"[  47/ 338] blk.3.ffn_down.weight                - [  8960,   1536,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":435.754949177,"data":"[  48/ 338] blk.3.ffn_gate.weight                - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":435.755718376,"data":"[  49/ 338] blk.3.ffn_norm.weight                - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":436.515213502,"data":"[  50/ 338] blk.3.ffn_up.weight                  - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":436.515926283,"data":"[  51/ 338] blk.4.attn_k.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":436.539388956,"data":"[  52/ 338] blk.4.attn_k.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":436.539422458,"data":"[  53/ 338] blk.4.attn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":436.670679612,"data":"[  54/ 338] blk.4.attn_output.weight             - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":436.670947001,"data":"[  55/ 338] blk.4.attn_q.bias                    - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":436.801240371,"data":"[  56/ 338] blk.4.attn_q.weight                  - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":436.801416988,"data":"[  57/ 338] blk.4.attn_v.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":436.824555781,"data":"[  58/ 338] blk.4.attn_v.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":437.587763424,"data":"[  59/ 338] blk.4.ffn_down.weight                - [  8960,   1536,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":438.34999309,"data":"[  60/ 338] blk.4.ffn_gate.weight                - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":438.350785226,"data":"[  61/ 338] blk.4.ffn_norm.weight                - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":439.109363895,"data":"[  62/ 338] blk.4.ffn_up.weight                  - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":439.110119762,"data":"[  63/ 338] blk.5.attn_k.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":439.132668006,"data":"[  64/ 338] blk.5.attn_k.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":439.132689802,"data":"[  65/ 338] blk.5.attn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":439.265753141,"data":"[  66/ 338] blk.5.attn_output.weight             - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":439.265944741,"data":"[  67/ 338] blk.5.attn_q.bias                    - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":439.398023845,"data":"[  68/ 338] blk.5.attn_q.weight                  - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":439.398238792,"data":"[  69/ 338] blk.5.attn_v.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":439.40813232,"data":"[  70/ 338] blk.5.attn_v.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q6_K .. size =     0.75 MiB -\u003e     0.31 MiB\n"}
+,{"stream_name":"stderr","time":439.728342135,"data":"[  71/ 338] blk.5.ffn_down.weight                - [  8960,   1536,      1,      1], type =    f16, converting to q6_K .. size =    26.25 MiB -\u003e    10.77 MiB\n"}
+,{"stream_name":"stderr","time":440.501476296,"data":"[  72/ 338] blk.5.ffn_gate.weight                - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":440.502362528,"data":"[  73/ 338] blk.5.ffn_norm.weight                - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":441.307349236,"data":"[  74/ 338] blk.5.ffn_up.weight                  - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":441.308331422,"data":"[  75/ 338] blk.6.attn_k.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":441.331457318,"data":"[  76/ 338] blk.6.attn_k.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":441.331474992,"data":"[  77/ 338] blk.6.attn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":441.462941806,"data":"[  78/ 338] blk.6.attn_output.weight             - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":441.463168025,"data":"[  79/ 338] blk.6.attn_q.bias                    - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":441.593823813,"data":"[  80/ 338] blk.6.attn_q.weight                  - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":441.594052371,"data":"[  81/ 338] blk.6.attn_v.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":441.617011357,"data":"[  82/ 338] blk.6.attn_v.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":442.391360007,"data":"[  83/ 338] blk.6.ffn_down.weight                - [  8960,   1536,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":443.152529775,"data":"[  84/ 338] blk.6.ffn_gate.weight                - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":443.153297192,"data":"[  85/ 338] blk.6.ffn_norm.weight                - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":443.919097704,"data":"[  86/ 338] blk.6.ffn_up.weight                  - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":443.919985048,"data":"[  87/ 338] blk.7.attn_k.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":443.942651263,"data":"[  88/ 338] blk.7.attn_k.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":443.942695398,"data":"[  89/ 338] blk.7.attn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":444.072987515,"data":"[  90/ 338] blk.7.attn_output.weight             - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":444.073206439,"data":"[  91/ 338] blk.7.attn_q.bias                    - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":444.203048566,"data":"[  92/ 338] blk.7.attn_q.weight                  - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":444.20322161,"data":"[  93/ 338] blk.7.attn_v.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":444.225872806,"data":"[  94/ 338] blk.7.attn_v.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":444.980441579,"data":"[  95/ 338] blk.7.ffn_down.weight                - [  8960,   1536,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":445.742500349,"data":"[  96/ 338] blk.7.ffn_gate.weight                - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":445.74323868,"data":"[  97/ 338] blk.7.ffn_norm.weight                - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":446.506344889,"data":"[  98/ 338] blk.7.ffn_up.weight                  - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":446.507070349,"data":"[  99/ 338] blk.8.attn_k.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":446.530408315,"data":"[ 100/ 338] blk.8.attn_k.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":446.530423121,"data":"[ 101/ 338] blk.8.attn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":446.66456028,"data":"[ 102/ 338] blk.8.attn_output.weight             - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":446.664740846,"data":"[ 103/ 338] blk.8.attn_q.bias                    - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":446.797353254,"data":"[ 104/ 338] blk.8.attn_q.weight                  - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":446.797531452,"data":"[ 105/ 338] blk.8.attn_v.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":446.807530055,"data":"[ 106/ 338] blk.8.attn_v.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q6_K .. size =     0.75 MiB -\u003e     0.31 MiB\n"}
+,{"stream_name":"stderr","time":447.129673897,"data":"[ 107/ 338] blk.8.ffn_down.weight                - [  8960,   1536,      1,      1], type =    f16, converting to q6_K .. size =    26.25 MiB -\u003e    10.77 MiB\n"}
+,{"stream_name":"stderr","time":447.898580372,"data":"[ 108/ 338] blk.8.ffn_gate.weight                - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":447.899489332,"data":"[ 109/ 338] blk.8.ffn_norm.weight                - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":448.661237908,"data":"[ 110/ 338] blk.8.ffn_up.weight                  - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":448.662006305,"data":"[ 111/ 338] blk.9.attn_k.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":448.687405481,"data":"[ 112/ 338] blk.9.attn_k.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":448.687451885,"data":"[ 113/ 338] blk.9.attn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":448.816972685,"data":"[ 114/ 338] blk.9.attn_output.weight             - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":448.81717625,"data":"[ 115/ 338] blk.9.attn_q.bias                    - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":448.947013237,"data":"[ 116/ 338] blk.9.attn_q.weight                  - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":448.94717001,"data":"[ 117/ 338] blk.9.attn_v.bias                    - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":448.970307834,"data":"[ 118/ 338] blk.9.attn_v.weight                  - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":449.740333251,"data":"[ 119/ 338] blk.9.ffn_down.weight                - [  8960,   1536,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":450.515803769,"data":"[ 120/ 338] blk.9.ffn_gate.weight                - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":450.516686177,"data":"[ 121/ 338] blk.9.ffn_norm.weight                - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":451.417715101,"data":"[ 122/ 338] blk.9.ffn_up.weight                  - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":451.41856892,"data":"[ 123/ 338] blk.10.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":451.44776453,"data":"[ 124/ 338] blk.10.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":451.447868446,"data":"[ 125/ 338] blk.10.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":451.581902451,"data":"[ 126/ 338] blk.10.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":451.58211313,"data":"[ 127/ 338] blk.10.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":451.721488936,"data":"[ 128/ 338] blk.10.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":451.721773115,"data":"[ 129/ 338] blk.10.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":451.748308065,"data":"[ 130/ 338] blk.10.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":452.513724004,"data":"[ 131/ 338] blk.10.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":453.271982476,"data":"[ 132/ 338] blk.10.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":453.272901078,"data":"[ 133/ 338] blk.10.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":454.030179926,"data":"[ 134/ 338] blk.10.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":454.031278077,"data":"[ 135/ 338] blk.11.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":454.05601029,"data":"[ 136/ 338] blk.11.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":454.05613293,"data":"[ 137/ 338] blk.11.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":454.202631543,"data":"[ 138/ 338] blk.11.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":454.202820766,"data":"[ 139/ 338] blk.11.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":454.348086493,"data":"[ 140/ 338] blk.11.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":454.348326223,"data":"[ 141/ 338] blk.11.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":454.359379627,"data":"[ 142/ 338] blk.11.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q6_K .. size =     0.75 MiB -\u003e     0.31 MiB\n"}
+,{"stream_name":"stderr","time":454.709793944,"data":"[ 143/ 338] blk.11.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q6_K .. size =    26.25 MiB -\u003e    10.77 MiB\n"}
+,{"stream_name":"stderr","time":455.542399649,"data":"[ 144/ 338] blk.11.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":455.543479497,"data":"[ 145/ 338] blk.11.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":456.342315831,"data":"[ 146/ 338] blk.11.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":456.34318674,"data":"[ 147/ 338] blk.12.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":456.366171182,"data":"[ 148/ 338] blk.12.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":456.366203368,"data":"[ 149/ 338] blk.12.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":456.508802755,"data":"[ 150/ 338] blk.12.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":456.509025855,"data":"[ 151/ 338] blk.12.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":456.639354163,"data":"[ 152/ 338] blk.12.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":456.639583993,"data":"[ 153/ 338] blk.12.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":456.662785754,"data":"[ 154/ 338] blk.12.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":457.427068378,"data":"[ 155/ 338] blk.12.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":458.183025389,"data":"[ 156/ 338] blk.12.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":458.183927644,"data":"[ 157/ 338] blk.12.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":458.940905352,"data":"[ 158/ 338] blk.12.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":458.941851215,"data":"[ 159/ 338] blk.13.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":458.965013294,"data":"[ 160/ 338] blk.13.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":458.965073678,"data":"[ 161/ 338] blk.13.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":459.09602606,"data":"[ 162/ 338] blk.13.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":459.096308163,"data":"[ 163/ 338] blk.13.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":459.227127017,"data":"[ 164/ 338] blk.13.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":459.227366653,"data":"[ 165/ 338] blk.13.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":459.250930006,"data":"[ 166/ 338] blk.13.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":460.013652914,"data":"[ 167/ 338] blk.13.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":460.778641943,"data":"[ 168/ 338] blk.13.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":460.779526354,"data":"[ 169/ 338] blk.13.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":461.56776649,"data":"[ 170/ 338] blk.13.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":461.568646117,"data":"[ 171/ 338] blk.14.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":461.591521455,"data":"[ 172/ 338] blk.14.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":461.59154023,"data":"[ 173/ 338] blk.14.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":461.722273895,"data":"[ 174/ 338] blk.14.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":461.722472607,"data":"[ 175/ 338] blk.14.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":461.855712745,"data":"[ 176/ 338] blk.14.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":461.855867803,"data":"[ 177/ 338] blk.14.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":461.865778626,"data":"[ 178/ 338] blk.14.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q6_K .. size =     0.75 MiB -\u003e     0.31 MiB\n"}
+,{"stream_name":"stderr","time":462.201205431,"data":"[ 179/ 338] blk.14.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q6_K .. size =    26.25 MiB -\u003e    10.77 MiB\n"}
+,{"stream_name":"stderr","time":462.989160814,"data":"[ 180/ 338] blk.14.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":462.989877882,"data":"[ 181/ 338] blk.14.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":463.748191976,"data":"[ 182/ 338] blk.14.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":463.749004606,"data":"[ 183/ 338] blk.15.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":463.771614784,"data":"[ 184/ 338] blk.15.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":463.771683579,"data":"[ 185/ 338] blk.15.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":463.90520953,"data":"[ 186/ 338] blk.15.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":463.905445869,"data":"[ 187/ 338] blk.15.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":464.036805258,"data":"[ 188/ 338] blk.15.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":464.037002736,"data":"[ 189/ 338] blk.15.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":464.060281456,"data":"[ 190/ 338] blk.15.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":464.877025691,"data":"[ 191/ 338] blk.15.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":465.667496743,"data":"[ 192/ 338] blk.15.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":465.668269567,"data":"[ 193/ 338] blk.15.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":466.44312044,"data":"[ 194/ 338] blk.15.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":466.443928508,"data":"[ 195/ 338] blk.16.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":466.46719279,"data":"[ 196/ 338] blk.16.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":466.467255762,"data":"[ 197/ 338] blk.16.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":466.597851794,"data":"[ 198/ 338] blk.16.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":466.598009612,"data":"[ 199/ 338] blk.16.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":466.736463472,"data":"[ 200/ 338] blk.16.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":466.736734007,"data":"[ 201/ 338] blk.16.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":466.763482925,"data":"[ 202/ 338] blk.16.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":467.565223386,"data":"[ 203/ 338] blk.16.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":468.334511646,"data":"[ 204/ 338] blk.16.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":468.335527332,"data":"[ 205/ 338] blk.16.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":469.098968733,"data":"[ 206/ 338] blk.16.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":469.099897371,"data":"[ 207/ 338] blk.17.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":469.122879063,"data":"[ 208/ 338] blk.17.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":469.122931405,"data":"[ 209/ 338] blk.17.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":469.257928119,"data":"[ 210/ 338] blk.17.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":469.258088599,"data":"[ 211/ 338] blk.17.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":469.393784057,"data":"[ 212/ 338] blk.17.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":469.394054133,"data":"[ 213/ 338] blk.17.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":469.403970226,"data":"[ 214/ 338] blk.17.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q6_K .. size =     0.75 MiB -\u003e     0.31 MiB\n"}
+,{"stream_name":"stderr","time":469.722401899,"data":"[ 215/ 338] blk.17.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q6_K .. size =    26.25 MiB -\u003e    10.77 MiB\n"}
+,{"stream_name":"stderr","time":470.502724689,"data":"[ 216/ 338] blk.17.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":470.503809088,"data":"[ 217/ 338] blk.17.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":471.298473897,"data":"[ 218/ 338] blk.17.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":471.29937193,"data":"[ 219/ 338] blk.18.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":471.322530317,"data":"[ 220/ 338] blk.18.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":471.322604525,"data":"[ 221/ 338] blk.18.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":471.454087782,"data":"[ 222/ 338] blk.18.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":471.454292101,"data":"[ 223/ 338] blk.18.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":471.584262328,"data":"[ 224/ 338] blk.18.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":471.584436168,"data":"[ 225/ 338] blk.18.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":471.607106151,"data":"[ 226/ 338] blk.18.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":472.368117135,"data":"[ 227/ 338] blk.18.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":473.127417117,"data":"[ 228/ 338] blk.18.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":473.128326263,"data":"[ 229/ 338] blk.18.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":473.914687058,"data":"[ 230/ 338] blk.18.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":473.915625044,"data":"[ 231/ 338] blk.19.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":473.939001606,"data":"[ 232/ 338] blk.19.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":473.940219988,"data":"[ 233/ 338] blk.19.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":474.06938384,"data":"[ 234/ 338] blk.19.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":474.069575333,"data":"[ 235/ 338] blk.19.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":474.200620656,"data":"[ 236/ 338] blk.19.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":474.200826684,"data":"[ 237/ 338] blk.19.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":474.224395628,"data":"[ 238/ 338] blk.19.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":474.986017463,"data":"[ 239/ 338] blk.19.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":475.747695165,"data":"[ 240/ 338] blk.19.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":475.74857556,"data":"[ 241/ 338] blk.19.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":476.530362216,"data":"[ 242/ 338] blk.19.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":476.531084333,"data":"[ 243/ 338] blk.20.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":476.553814066,"data":"[ 244/ 338] blk.20.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":476.553830165,"data":"[ 245/ 338] blk.20.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":476.684323473,"data":"[ 246/ 338] blk.20.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":476.684551339,"data":"[ 247/ 338] blk.20.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":476.815522039,"data":"[ 248/ 338] blk.20.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":476.815735022,"data":"[ 249/ 338] blk.20.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":476.825755847,"data":"[ 250/ 338] blk.20.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q6_K .. size =     0.75 MiB -\u003e     0.31 MiB\n"}
+,{"stream_name":"stderr","time":477.146646097,"data":"[ 251/ 338] blk.20.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q6_K .. size =    26.25 MiB -\u003e    10.77 MiB\n"}
+,{"stream_name":"stderr","time":477.911925261,"data":"[ 252/ 338] blk.20.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":477.912694036,"data":"[ 253/ 338] blk.20.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":478.67488341,"data":"[ 254/ 338] blk.20.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":478.675666486,"data":"[ 255/ 338] blk.21.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":478.698859407,"data":"[ 256/ 338] blk.21.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":478.698904189,"data":"[ 257/ 338] blk.21.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":478.830020267,"data":"[ 258/ 338] blk.21.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":478.830289129,"data":"[ 259/ 338] blk.21.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":478.961737035,"data":"[ 260/ 338] blk.21.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":478.961917755,"data":"[ 261/ 338] blk.21.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":478.985097582,"data":"[ 262/ 338] blk.21.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":479.748853835,"data":"[ 263/ 338] blk.21.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":480.509325692,"data":"[ 264/ 338] blk.21.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":480.510080454,"data":"[ 265/ 338] blk.21.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":481.323278417,"data":"[ 266/ 338] blk.21.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":481.324036319,"data":"[ 267/ 338] blk.22.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":481.347539596,"data":"[ 268/ 338] blk.22.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":481.347557743,"data":"[ 269/ 338] blk.22.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":481.481944997,"data":"[ 270/ 338] blk.22.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":481.482200076,"data":"[ 271/ 338] blk.22.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":481.613528599,"data":"[ 272/ 338] blk.22.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":481.61370743,"data":"[ 273/ 338] blk.22.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":481.636886123,"data":"[ 274/ 338] blk.22.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":482.430476907,"data":"[ 275/ 338] blk.22.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":483.221027686,"data":"[ 276/ 338] blk.22.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":483.221793164,"data":"[ 277/ 338] blk.22.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":483.986600138,"data":"[ 278/ 338] blk.22.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":483.98738711,"data":"[ 279/ 338] blk.23.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":484.010684436,"data":"[ 280/ 338] blk.23.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":484.01073451,"data":"[ 281/ 338] blk.23.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":484.141712212,"data":"[ 282/ 338] blk.23.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":484.141913301,"data":"[ 283/ 338] blk.23.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":484.27200177,"data":"[ 284/ 338] blk.23.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":484.272208858,"data":"[ 285/ 338] blk.23.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":484.281943435,"data":"[ 286/ 338] blk.23.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q6_K .. size =     0.75 MiB -\u003e     0.31 MiB\n"}
+,{"stream_name":"stderr","time":484.603154622,"data":"[ 287/ 338] blk.23.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q6_K .. size =    26.25 MiB -\u003e    10.77 MiB\n"}
+,{"stream_name":"stderr","time":485.379578744,"data":"[ 288/ 338] blk.23.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":485.380318352,"data":"[ 289/ 338] blk.23.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":486.163072527,"data":"[ 290/ 338] blk.23.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":486.163921755,"data":"[ 291/ 338] blk.24.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":486.188378067,"data":"[ 292/ 338] blk.24.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":486.188509432,"data":"[ 293/ 338] blk.24.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":486.334113241,"data":"[ 294/ 338] blk.24.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":486.334407361,"data":"[ 295/ 338] blk.24.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":486.488011892,"data":"[ 296/ 338] blk.24.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":486.488311559,"data":"[ 297/ 338] blk.24.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":486.500016158,"data":"[ 298/ 338] blk.24.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q6_K .. size =     0.75 MiB -\u003e     0.31 MiB\n"}
+,{"stream_name":"stderr","time":486.843709807,"data":"[ 299/ 338] blk.24.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q6_K .. size =    26.25 MiB -\u003e    10.77 MiB\n"}
+,{"stream_name":"stderr","time":487.63067098,"data":"[ 300/ 338] blk.24.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":487.631405596,"data":"[ 301/ 338] blk.24.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":488.384734752,"data":"[ 302/ 338] blk.24.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":488.385520022,"data":"[ 303/ 338] blk.25.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":488.408424602,"data":"[ 304/ 338] blk.25.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":488.408446184,"data":"[ 305/ 338] blk.25.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":488.541052331,"data":"[ 306/ 338] blk.25.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":488.541292059,"data":"[ 307/ 338] blk.25.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":488.67245881,"data":"[ 308/ 338] blk.25.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":488.672629984,"data":"[ 309/ 338] blk.25.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":488.682814883,"data":"[ 310/ 338] blk.25.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q6_K .. size =     0.75 MiB -\u003e     0.31 MiB\n"}
+,{"stream_name":"stderr","time":488.999914286,"data":"[ 311/ 338] blk.25.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q6_K .. size =    26.25 MiB -\u003e    10.77 MiB\n"}
+,{"stream_name":"stderr","time":489.759879088,"data":"[ 312/ 338] blk.25.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":489.7607504,"data":"[ 313/ 338] blk.25.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":490.520460958,"data":"[ 314/ 338] blk.25.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":490.521482531,"data":"[ 315/ 338] blk.26.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":490.544416337,"data":"[ 316/ 338] blk.26.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":490.544440791,"data":"[ 317/ 338] blk.26.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":490.673762863,"data":"[ 318/ 338] blk.26.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":490.673941736,"data":"[ 319/ 338] blk.26.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":490.80986971,"data":"[ 320/ 338] blk.26.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":490.810087014,"data":"[ 321/ 338] blk.26.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":490.819736057,"data":"[ 322/ 338] blk.26.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q6_K .. size =     0.75 MiB -\u003e     0.31 MiB\n"}
+,{"stream_name":"stderr","time":491.166778368,"data":"[ 323/ 338] blk.26.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q6_K .. size =    26.25 MiB -\u003e    10.77 MiB\n"}
+,{"stream_name":"stderr","time":491.918463828,"data":"[ 324/ 338] blk.26.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":491.919488213,"data":"[ 325/ 338] blk.26.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":492.673462889,"data":"[ 326/ 338] blk.26.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":492.674254246,"data":"[ 327/ 338] blk.27.attn_k.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":492.696850306,"data":"[ 328/ 338] blk.27.attn_k.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q4_K .. size =     0.75 MiB -\u003e     0.21 MiB\n"}
+,{"stream_name":"stderr","time":492.696931753,"data":"[ 329/ 338] blk.27.attn_norm.weight              - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":492.826527523,"data":"[ 330/ 338] blk.27.attn_output.weight            - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":492.826747288,"data":"[ 331/ 338] blk.27.attn_q.bias                   - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":492.958085024,"data":"[ 332/ 338] blk.27.attn_q.weight                 - [  1536,   1536,      1,      1], type =    f16, converting to q4_K .. size =     4.50 MiB -\u003e     1.27 MiB\n"}
+,{"stream_name":"stderr","time":492.95832968,"data":"[ 333/ 338] blk.27.attn_v.bias                   - [   256,      1,      1,      1], type =    f32, size =    0.001 MiB\n"}
+,{"stream_name":"stderr","time":492.96870549,"data":"[ 334/ 338] blk.27.attn_v.weight                 - [  1536,    256,      1,      1], type =    f16, converting to q6_K .. size =     0.75 MiB -\u003e     0.31 MiB\n"}
+,{"stream_name":"stderr","time":493.29711684,"data":"[ 335/ 338] blk.27.ffn_down.weight               - [  8960,   1536,      1,      1], type =    f16, converting to q6_K .. size =    26.25 MiB -\u003e    10.77 MiB\n"}
+,{"stream_name":"stderr","time":494.052840614,"data":"[ 336/ 338] blk.27.ffn_gate.weight               - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":494.053609412,"data":"[ 337/ 338] blk.27.ffn_norm.weight               - [  1536,      1,      1,      1], type =    f32, size =    0.006 MiB\n"}
+,{"stream_name":"stderr","time":494.815396162,"data":"[ 338/ 338] blk.27.ffn_up.weight                 - [  1536,   8960,      1,      1], type =    f16, converting to q4_K .. size =    26.25 MiB -\u003e     7.38 MiB\n"}
+,{"stream_name":"stderr","time":494.854592829,"data":"llama_model_quantize_impl: model size  =  2944.68 MiB (16.00 BPW)\n"}
+,{"stream_name":"stderr","time":494.854621939,"data":"llama_model_quantize_impl: quant size  =   934.69 MiB (5.08 BPW)\n"}
+,{"stream_name":"stdout","time":494.940322465,"data":"\n"}
+,{"stream_name":"stdout","time":494.940352373,"data":"llama_quantize: quantize time = 74903.26 ms\n"}
+,{"stream_name":"stdout","time":494.940357894,"data":"llama_quantize:    total time = 74903.26 ms\n"}
+,{"stream_name":"stderr","time":535.760298314,"data":"\rConverting and de-quantizing GGUF tensors...:   0%|          | 0/338 [00:00\u003c?, ?it/s]\rConverting and de-quantizing GGUF tensors...:   1%|          | 2/338 [00:02\u003c06:51,  1.22s/it]\rConverting and de-quantizing GGUF tensors...:   3%|▎         | 11/338 [00:02\u003c00:58,  5.60it/s]\rConverting and de-quantizing GGUF tensors...:   4%|▍         | 15/338 [00:02\u003c00:45,  7.08it/s]\rConverting and de-quantizing GGUF tensors...:   7%|▋         | 23/338 [00:03\u003c00:24, 12.67it/s]\rConverting and de-quantizing GGUF tensors...:   8%|▊         | 27/338 [00:03\u003c00:24, 12.85it/s]\rConverting and de-quantizing GGUF tensors...:  10%|█         | 35/338 [00:03\u003c00:15, 19.09it/s]\rConverting and de-quantizing GGUF tensors...:  12%|█▏        | 39/338 [00:03\u003c00:17, 17.01it/s]\rConverting and de-quantizing GGUF tensors...:  14%|█▍        | 47/338 [00:03\u003c00:12, 23.15it/s]\rConverting and de-quantizing GGUF tensors...:  15%|█▌        | 51/338 [00:04\u003c00:14, 19.43it/s]\rConverting and de-quantizing GGUF tensors...:  17%|█▋        | 59/338 [00:04\u003c00:10, 25.71it/s]\rConverting and de-quantizing GGUF tensors...:  19%|█▊        | 63/338 [00:04\u003c00:13, 20.82it/s]\rConverting and de-quantizing GGUF tensors...:  21%|██        | 71/338 [00:04\u003c00:09, 26.95it/s]\rConverting and de-quantizing GGUF tensors...:  22%|██▏       | 75/338 [00:05\u003c00:12, 21.53it/s]\rConverting and de-quantizing GGUF tensors...:  25%|██▍       | 83/338 [00:05\u003c00:09, 27.80it/s]\rConverting and de-quantizing GGUF tensors...:  26%|██▌       | 87/338 [00:05\u003c00:11, 22.26it/s]\rConverting and de-quantizing GGUF tensors...:  28%|██▊       | 95/338 [00:05\u003c00:08, 28.33it/s]\rConverting and de-quantizing GGUF tensors...:  29%|██▉       | 99/338 [00:06\u003c00:10, 22.38it/s]\rConverting and de-quantizing GGUF tensors...:  32%|███▏      | 107/338 [00:06\u003c00:08, 28.60it/s]\rConverting and de-quantizing GGUF tensors...:  33%|███▎      | 111/338 [00:06\u003c00:10, 22.47it/s]\rConverting and de-quantizing GGUF tensors...:  35%|███▌      | 119/338 [00:06\u003c00:07, 28.59it/s]\rConverting and de-quantizing GGUF tensors...:  36%|███▋      | 123/338 [00:07\u003c00:09, 22.32it/s]\rConverting and de-quantizing GGUF tensors...:  39%|███▉      | 131/338 [00:07\u003c00:07, 28.45it/s]\rConverting and de-quantizing GGUF tensors...:  40%|███▉      | 135/338 [00:07\u003c00:09, 22.42it/s]\rConverting and de-quantizing GGUF tensors...:  42%|████▏     | 143/338 [00:07\u003c00:06, 28.61it/s]\rConverting and de-quantizing GGUF tensors...:  43%|████▎     | 147/338 [00:08\u003c00:08, 22.60it/s]\rConverting and de-quantizing GGUF tensors...:  46%|████▌     | 155/338 [00:08\u003c00:06, 28.88it/s]\rConverting and de-quantizing GGUF tensors...:  47%|████▋     | 159/338 [00:08\u003c00:07, 22.68it/s]\rConverting and de-quantizing GGUF tensors...:  49%|████▉     | 167/338 [00:08\u003c00:05, 28.68it/s]\rConverting and de-quantizing GGUF tensors...:  51%|█████     | 171/338 [00:08\u003c00:07, 22.53it/s]\rConverting and de-quantizing GGUF tensors...:  53%|█████▎    | 179/338 [00:09\u003c00:05, 28.34it/s]\rConverting and de-quantizing GGUF tensors...:  54%|█████▍    | 183/338 [00:09\u003c00:06, 22.32it/s]\rConverting and de-quantizing GGUF tensors...:  57%|█████▋    | 191/338 [00:09\u003c00:05, 27.85it/s]\rConverting and de-quantizing GGUF tensors...:  58%|█████▊    | 195/338 [00:09\u003c00:06, 21.55it/s]\rConverting and de-quantizing GGUF tensors...:  60%|██████    | 203/338 [00:10\u003c00:04, 27.07it/s]\rConverting and de-quantizing GGUF tensors...:  61%|██████    | 207/338 [00:10\u003c00:06, 21.33it/s]\rConverting and de-quantizing GGUF tensors...:  64%|██████▎   | 215/338 [00:10\u003c00:04, 27.01it/s]\rConverting and de-quantizing GGUF tensors...:  65%|██████▍   | 219/338 [00:10\u003c00:05, 21.74it/s]\rConverting and de-quantizing GGUF tensors...:  67%|██████▋   | 227/338 [00:11\u003c00:04, 27.54it/s]\rConverting and de-quantizing GGUF tensors...:  68%|██████▊   | 231/338 [00:11\u003c00:04, 21.67it/s]\rConverting and de-quantizing GGUF tensors...:  71%|███████   | 239/338 [00:11\u003c00:03, 27.34it/s]\rConverting and de-quantizing GGUF tensors...:  72%|███████▏  | 243/338 [00:12\u003c00:04, 19.85it/s]\rConverting and de-quantizing GGUF tensors...:  74%|███████▍  | 251/338 [00:12\u003c00:03, 24.92it/s]\rConverting and de-quantizing GGUF tensors...:  75%|███████▌  | 255/338 [00:12\u003c00:04, 19.53it/s]\rConverting and de-quantizing GGUF tensors...:  78%|███████▊  | 263/338 [00:12\u003c00:03, 24.07it/s]\rConverting and de-quantizing GGUF tensors...:  79%|███████▊  | 266/338 [00:13\u003c00:04, 17.75it/s]\rConverting and de-quantizing GGUF tensors...:  81%|████████▏ | 275/338 [00:13\u003c00:02, 24.31it/s]\rConverting and de-quantizing GGUF tensors...:  83%|████████▎ | 279/338 [00:13\u003c00:03, 19.33it/s]\rConverting and de-quantizing GGUF tensors...:  85%|████████▍ | 287/338 [00:13\u003c00:02, 24.01it/s]\rConverting and de-quantizing GGUF tensors...:  86%|████████▌ | 290/338 [00:14\u003c00:02, 17.43it/s]\rConverting and de-quantizing GGUF tensors...:  88%|████████▊ | 299/338 [00:14\u003c00:01, 23.38it/s]\rConverting and de-quantizing GGUF tensors...:  89%|████████▉ | 302/338 [00:14\u003c00:02, 16.77it/s]\rConverting and de-quantizing GGUF tensors...:  92%|█████████▏| 311/338 [00:15\u003c00:01, 22.57it/s]\rConverting and de-quantizing GGUF tensors...:  93%|█████████▎| 314/338 [00:15\u003c00:01, 17.45it/s]\rConverting and de-quantizing GGUF tensors...:  96%|█████████▌| 323/338 [00:15\u003c00:00, 23.26it/s]\rConverting and de-quantizing GGUF tensors...:  96%|█████████▋| 326/338 [00:16\u003c00:00, 17.75it/s]\rConverting and de-quantizing GGUF tensors...:  99%|█████████▉| 335/338 [00:16\u003c00:00, 23.98it/s]\rConverting and de-quantizing GGUF tensors...: 100%|██████████| 338/338 [00:16\u003c00:00, 20.22it/s]\n"}
+,{"stream_name":"stdout","time":551.240897076,"data":"  GGUF Q4_K_M          h=0.0913  top1=0.904  ppl=8.3560 (+4.82 %)  [cpu]  -\u003e CHANGED/moderate  [396s]\n"}
+,{"stream_name":"stdout","time":551.594035612,"data":"\n"}
+,{"stream_name":"stdout","time":551.594074042,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":551.594079545,"data":"bnb NF4\n"}
+,{"stream_name":"stdout","time":551.594083058,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":557.843944417,"data":"  bnb NF4              h=0.1379  top1=0.850  ppl=8.9837 (+12.69 %)  [cuda]  -\u003e CHANGED/major  [6s]\n"}
+,{"stream_name":"stdout","time":558.168648,"data":"\n"}
+,{"stream_name":"stdout","time":558.16868524,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":558.168690122,"data":"EXL3 4.0 bpw\n"}
+,{"stream_name":"stdout","time":558.168693858,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":558.16906464,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":558.169073707,"data":"  File \"/kaggle/src/script.py\", line 197, in attempt\n"}
+,{"stream_name":"stdout","time":558.169077101,"data":"    P, ppl, device, note = fn()\n"}
+,{"stream_name":"stdout","time":558.16908023,"data":"                           ^^^^\n"}
+,{"stream_name":"stdout","time":558.169083221,"data":"  File \"/kaggle/src/script.py\", line 463, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":558.169086936,"data":"    + [(f\"EXL3 {b} bpw\", (lambda b=b: exl3(b))) for b in EXL3_BPW]\n"}
+,{"stream_name":"stdout","time":558.169090208,"data":"                                      ^^^^^^^\n"}
+,{"stream_name":"stdout","time":558.169093248,"data":"  File \"/kaggle/src/script.py\", line 358, in exl3\n"}
+,{"stream_name":"stdout","time":558.169096272,"data":"    raise RuntimeError(\"exllamav3 did not install on this image\")\n"}
+,{"stream_name":"stdout","time":558.169099344,"data":"RuntimeError: exllamav3 did not install on this image\n"}
+,{"stream_name":"stdout","time":558.169102316,"data":"\n"}
+,{"stream_name":"stdout","time":558.169105273,"data":"  UNAVAILABLE: RuntimeError: exllamav3 did not install on this image\n"}
+,{"stream_name":"stdout","time":558.169108302,"data":"\n"}
+,{"stream_name":"stdout","time":558.169111163,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":558.169114365,"data":"EXL3 3.0 bpw\n"}
+,{"stream_name":"stdout","time":558.169118554,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":558.169350137,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":558.169361443,"data":"  File \"/kaggle/src/script.py\", line 197, in attempt\n"}
+,{"stream_name":"stdout","time":558.169383826,"data":"    P, ppl, device, note = fn()\n"}
+,{"stream_name":"stdout","time":558.169386704,"data":"                           ^^^^\n"}
+,{"stream_name":"stdout","time":558.169389416,"data":"  File \"/kaggle/src/script.py\", line 463, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":558.16939215,"data":"    + [(f\"EXL3 {b} bpw\", (lambda b=b: exl3(b))) for b in EXL3_BPW]\n"}
+,{"stream_name":"stdout","time":558.169394526,"data":"                                      ^^^^^^^\n"}
+,{"stream_name":"stdout","time":558.169396802,"data":"  File \"/kaggle/src/script.py\", line 358, in exl3\n"}
+,{"stream_name":"stdout","time":558.169399079,"data":"    raise RuntimeError(\"exllamav3 did not install on this image\")\n"}
+,{"stream_name":"stdout","time":558.169401466,"data":"RuntimeError: exllamav3 did not install on this image\n"}
+,{"stream_name":"stdout","time":558.169403696,"data":"\n"}
+,{"stream_name":"stdout","time":558.169405796,"data":"  UNAVAILABLE: RuntimeError: exllamav3 did not install on this image\n"}
+,{"stream_name":"stdout","time":558.169408067,"data":"\n"}
+,{"stream_name":"stdout","time":558.169410276,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":558.169413731,"data":"EXL3 5.0 bpw\n"}
+,{"stream_name":"stdout","time":558.169428167,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":558.169593454,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":558.169600237,"data":"  File \"/kaggle/src/script.py\", line 197, in attempt\n"}
+,{"stream_name":"stdout","time":558.169603669,"data":"    P, ppl, device, note = fn()\n"}
+,{"stream_name":"stdout","time":558.169606992,"data":"                           ^^^^\n"}
+,{"stream_name":"stdout","time":558.169610323,"data":"  File \"/kaggle/src/script.py\", line 463, in \u003clambda\u003e\n"}
+,{"stream_name":"stdout","time":558.169614056,"data":"    + [(f\"EXL3 {b} bpw\", (lambda b=b: exl3(b))) for b in EXL3_BPW]\n"}
+,{"stream_name":"stdout","time":558.169617566,"data":"                                      ^^^^^^^\n"}
+,{"stream_name":"stdout","time":558.169620891,"data":"  File \"/kaggle/src/script.py\", line 358, in exl3\n"}
+,{"stream_name":"stdout","time":558.169624241,"data":"    raise RuntimeError(\"exllamav3 did not install on this image\")\n"}
+,{"stream_name":"stdout","time":558.169627758,"data":"RuntimeError: exllamav3 did not install on this image\n"}
+,{"stream_name":"stdout","time":558.169631051,"data":"\n"}
+,{"stream_name":"stdout","time":558.169634204,"data":"  UNAVAILABLE: RuntimeError: exllamav3 did not install on this image\n"}
+,{"stream_name":"stdout","time":558.169637605,"data":"\n"}
+,{"stream_name":"stdout","time":558.169640709,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":558.169644146,"data":"AWQ W4A16\n"}
+,{"stream_name":"stdout","time":558.169647254,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":559.906492748,"data":"n import QuantizationScheme\n"}
+,{"stream_name":"stdout","time":559.906520053,"data":"  File \"/usr/local/lib/python3.12/dist-packages/compressed_tensors/quantization/__init__.py\", line 7, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.90652631,"data":"    from .quant_args import *\n"}
+,{"stream_name":"stdout","time":559.906530228,"data":"  File \"/usr/local/lib/python3.12/dist-packages/compressed_tensors/quantization/quant_args.py\", line 48, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.906547238,"data":"    class FP4_E2M1_DATA(FloatArgs):\n"}
+,{"stream_name":"stdout","time":559.906550302,"data":"  File \"/usr/local/lib/python3.12/dist-packages/compressed_tensors/quantization/quant_args.py\", line 56, in FP4_E2M1_DATA\n"}
+,{"stream_name":"stdout","time":559.906552821,"data":"    @torch.compile\n"}
+,{"stream_name":"stdout","time":559.906555012,"data":"     ^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":559.906557193,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/__init__.py\", line 2745, in compile\n"}
+,{"stream_name":"stdout","time":559.906559553,"data":"    stacklevel=2,\n"}
+,{"stream_name":"stdout","time":559.906561867,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py\", line 1404, in optimize\n"}
+,{"stream_name":"stdout","time":559.906564337,"data":"    # 2. If there are more arguments left in `args`, they map to varargs in original\n"}
+,{"stream_name":"stdout","time":559.90656664,"data":"       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":559.906568917,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py\", line 1479, in _optimize\n"}
+,{"stream_name":"stdout","time":559.906571353,"data":"    if ca_kwargs_override:\n"}
+,{"stream_name":"stdout","time":559.906573558,"data":"          ^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":559.906575757,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py\", line 1242, in get_compiler_fn\n"}
+,{"stream_name":"stdout","time":559.906578113,"data":"    try:\n"}
+,{"stream_name":"stdout","time":559.906580484,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_dynamo/repro/after_dynamo.py\", line 33, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.906582978,"data":"    from torch._dynamo.debug_utils import (\n"}
+,{"stream_name":"stdout","time":559.906585255,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_dynamo/debug_utils.py\", line 43, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.906587626,"data":"    from torch._dynamo.testing import rand_strided\n"}
+,{"stream_name":"stdout","time":559.906589965,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_dynamo/testing.py\", line 33, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.906592393,"data":"    from torch._dynamo.backends.debugging import aot_eager\n"}
+,{"stream_name":"stdout","time":559.906594677,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_dynamo/backends/debugging.py\", line 34, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.906597111,"data":"    from functorch.compile import min_cut_rematerialization_partition\n"}
+,{"stream_name":"stdout","time":559.906599397,"data":"  File \"/usr/local/lib/python3.12/dist-packages/functorch/compile/__init__.py\", line 2, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.90660182,"data":"    from torch._functorch.aot_autograd import (\n"}
+,{"stream_name":"stdout","time":559.906604082,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_functorch/aot_autograd.py\", line 38, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.906606498,"data":"    from ._aot_autograd.autograd_cache import (  # noqa: F401\n"}
+,{"stream_name":"stdout","time":559.906610049,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_functorch/_aot_autograd/autograd_cache.py\", line 27, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.906612614,"data":"    from torch._inductor.codecache import (\n"}
+,{"stream_name":"stdout","time":559.906617463,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/codecache.py\", line 89, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.906619942,"data":"    from torch._inductor.utils import (\n"}
+,{"stream_name":"stdout","time":559.906622151,"data":"ImportError: cannot import name 'XPU_KERNEL_FORMAT' from 'torch._inductor.utils' (/usr/local/lib/python3.12/dist-packages/torch/_inductor/utils.py)\n"}
+,{"stream_name":"stdout","time":559.906624614,"data":"\n"}
+,{"stream_name":"stdout","time":559.906626775,"data":"  UNAVAILABLE: ImportError: cannot import name 'XPU_KERNEL_FORMAT' from 'torch._inductor.utils' (/usr/local/lib/python3.12/dist-packages/torch/_inductor/utils.py)\n"}
+,{"stream_name":"stdout","time":559.906953,"data":"\n"}
+,{"stream_name":"stdout","time":559.906961509,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":559.906965673,"data":"GPTQ W4A16\n"}
+,{"stream_name":"stdout","time":559.906969106,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":559.914609073,"data":"n import QuantizationScheme\n"}
+,{"stream_name":"stdout","time":559.914625311,"data":"  File \"/usr/local/lib/python3.12/dist-packages/compressed_tensors/quantization/__init__.py\", line 7, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.914630092,"data":"    from .quant_args import *\n"}
+,{"stream_name":"stdout","time":559.914633506,"data":"  File \"/usr/local/lib/python3.12/dist-packages/compressed_tensors/quantization/quant_args.py\", line 48, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.914648581,"data":"    class FP4_E2M1_DATA(FloatArgs):\n"}
+,{"stream_name":"stdout","time":559.914652608,"data":"  File \"/usr/local/lib/python3.12/dist-packages/compressed_tensors/quantization/quant_args.py\", line 56, in FP4_E2M1_DATA\n"}
+,{"stream_name":"stdout","time":559.914657391,"data":"    @torch.compile\n"}
+,{"stream_name":"stdout","time":559.914660837,"data":"     ^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":559.914664743,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/__init__.py\", line 2745, in compile\n"}
+,{"stream_name":"stdout","time":559.914668721,"data":"    stacklevel=2,\n"}
+,{"stream_name":"stdout","time":559.914671891,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py\", line 1404, in optimize\n"}
+,{"stream_name":"stdout","time":559.91467553,"data":"    # 2. If there are more arguments left in `args`, they map to varargs in original\n"}
+,{"stream_name":"stdout","time":559.914679101,"data":"       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":559.914682511,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py\", line 1479, in _optimize\n"}
+,{"stream_name":"stdout","time":559.91468611,"data":"    if ca_kwargs_override:\n"}
+,{"stream_name":"stdout","time":559.914689661,"data":"          ^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":559.914695586,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py\", line 1242, in get_compiler_fn\n"}
+,{"stream_name":"stdout","time":559.914697968,"data":"    try:\n"}
+,{"stream_name":"stdout","time":559.914700148,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_dynamo/repro/after_dynamo.py\", line 33, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.914702608,"data":"    from torch._dynamo.debug_utils import (\n"}
+,{"stream_name":"stdout","time":559.91470482,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_dynamo/debug_utils.py\", line 43, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.914713751,"data":"    from torch._dynamo.testing import rand_strided\n"}
+,{"stream_name":"stdout","time":559.914716083,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_dynamo/testing.py\", line 33, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.914718463,"data":"    from torch._dynamo.backends.debugging import aot_eager\n"}
+,{"stream_name":"stdout","time":559.914720717,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_dynamo/backends/debugging.py\", line 34, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.914723182,"data":"    from functorch.compile import min_cut_rematerialization_partition\n"}
+,{"stream_name":"stdout","time":559.914725411,"data":"  File \"/usr/local/lib/python3.12/dist-packages/functorch/compile/__init__.py\", line 2, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.914727886,"data":"    from torch._functorch.aot_autograd import (\n"}
+,{"stream_name":"stdout","time":559.914730407,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_functorch/aot_autograd.py\", line 38, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.914733121,"data":"    from ._aot_autograd.autograd_cache import (  # noqa: F401\n"}
+,{"stream_name":"stdout","time":559.914735981,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_functorch/_aot_autograd/autograd_cache.py\", line 27, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.914738466,"data":"    from torch._inductor.codecache import (\n"}
+,{"stream_name":"stdout","time":559.914740701,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/codecache.py\", line 89, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":559.914743057,"data":"    from torch._inductor.utils import (\n"}
+,{"stream_name":"stdout","time":559.914745284,"data":"ImportError: cannot import name 'XPU_KERNEL_FORMAT' from 'torch._inductor.utils' (/usr/local/lib/python3.12/dist-packages/torch/_inductor/utils.py)\n"}
+,{"stream_name":"stdout","time":559.914752438,"data":"\n"}
+,{"stream_name":"stdout","time":559.914754791,"data":"  UNAVAILABLE: ImportError: cannot import name 'XPU_KERNEL_FORMAT' from 'torch._inductor.utils' (/usr/local/lib/python3.12/dist-packages/torch/_inductor/utils.py)\n"}
+,{"stream_name":"stdout","time":559.914995124,"data":"\n"}
+,{"stream_name":"stdout","time":559.915001856,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":559.915006008,"data":"THE CURVE  (Qwen/Qwen2.5-1.5B, 500 positions, fp32 ppl 7.9719)\n"}
+,{"stream_name":"stdout","time":559.915009475,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":559.915012987,"data":"method                   mean_h    top1     d_ppl%   dev  verdict\n"}
+,{"stream_name":"stdout","time":559.915016459,"data":"control: fp32 gpu vs cpu   0.0000   1.000      +0.00  cuda  SEALED/none\n"}
+,{"stream_name":"stdout","time":559.915023475,"data":"naive int4 g128          0.2211   0.740     +20.84   cpu  CHANGED/major\n"}
+,{"stream_name":"stdout","time":559.915032449,"data":"GGUF Q4_K_M              0.0913   0.904      +4.82   cpu  CHANGED/moderate\n"}
+,{"stream_name":"stdout","time":559.915034867,"data":"bnb NF4                  0.1379   0.850     +12.69  cuda  CHANGED/major\n"}
+,{"stream_name":"stdout","time":559.915037199,"data":"EXL3 4.0 bpw                  -       -          -     -  RuntimeError: exllamav3 did not install on this imag\n"}
+,{"stream_name":"stdout","time":559.915056499,"data":"EXL3 3.0 bpw                  -       -          -     -  RuntimeError: exllamav3 did not install on this imag\n"}
+,{"stream_name":"stdout","time":559.915068542,"data":"EXL3 5.0 bpw                  -       -          -     -  RuntimeError: exllamav3 did not install on this imag\n"}
+,{"stream_name":"stdout","time":559.915072406,"data":"AWQ W4A16                     -       -          -     -  ImportError: cannot import name 'XPU_KERNEL_FORMAT' \n"}
+,{"stream_name":"stdout","time":559.915084325,"data":"GPTQ W4A16                    -       -          -     -  ImportError: cannot import name 'XPU_KERNEL_FORMAT' \n"}
+,{"stream_name":"stdout","time":559.915098377,"data":"\n"}
+,{"stream_name":"stdout","time":559.915102392,"data":"against the same 4-bit grid with no search (h=0.2211, ppl +20.84 %):\n"}
+,{"stream_name":"stdout","time":559.915105822,"data":"method              behaviour   perplexity    apart\n"}
+,{"stream_name":"stdout","time":559.915173189,"data":"GGUF Q4_K_M               59 %          77 %     18 pts\n"}
+,{"stream_name":"stdout","time":559.915183838,"data":"bnb NF4                   38 %          39 %      1 pts\n"}
+,{"stream_name":"stdout","time":559.915188004,"data":"\n"}
+,{"stream_name":"stdout","time":559.915191637,"data":"If the trellis rows sit apart by about as much as the grid rows, the gap\n"}
+,{"stream_name":"stdout","time":559.915195227,"data":"is a property of lossy compression rather than of rounding. If they do\n"}
+,{"stream_name":"stdout","time":559.915198619,"data":"not, that is the more interesting answer and the first study overclaimed.\n"}
+,{"stream_name":"stdout","time":560.577683952,"data":"\n"}
+,{"stream_name":"stdout","time":560.577715315,"data":"4/9 measured\n"}
+,{"stream_name":"stdout","time":560.577719698,"data":"  NOTE: no EXL3 row. The question this run was pushed for is unanswered;\n"}
+,{"stream_name":"stdout","time":560.577726968,"data":"        read the exllamav3 install and convert output above.\n"}
+,{"stream_name":"stderr","time":566.654665671,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":566.654700675,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":566.989813035,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":566.989890039,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":567.820638142,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":568.784271723,"data":"[NbConvertApp] Writing 385266 bytes to __results__.html\n"}
+]

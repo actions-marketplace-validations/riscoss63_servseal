@@ -32,8 +32,14 @@ USER = "abderrahmanesghairi"
 DATASET = f"{USER}/servseal-api-kit"
 KERNEL = f"{USER}/servseal-vllm-probe"
 KERNEL_QUANT = f"{USER}/servseal-quant-real"
+KERNEL_EXL3 = f"{USER}/servseal-exl3-curve"
 
 PAYLOAD = ["servseal", "pyproject.toml", "README.md", "LICENSE"]
+
+# which kernel each --which selects, and the script it carries
+TARGET = {"vllm": (KERNEL, "vllm_probe.py"),
+          "quant": (KERNEL_QUANT, "quant_real.py"),
+          "exl3": (KERNEL_EXL3, "exl3_curve.py")}
 
 
 def api():
@@ -86,9 +92,9 @@ def push_dataset(a, files):
 
 def push_kernel(a, which="vllm"):
     meta = {
-        "id": KERNEL_QUANT if which == "quant" else KERNEL,
-        "title": "servseal-quant-real" if which == "quant" else "servseal-vllm-probe",
-        "code_file": "quant_real.py" if which == "quant" else "vllm_probe.py",
+        "id": TARGET[which][0],
+        "title": TARGET[which][0].split("/")[1],
+        "code_file": TARGET[which][1],
         "language": "python",
         "kernel_type": "script",
         "is_private": True,
@@ -96,7 +102,8 @@ def push_kernel(a, which="vllm"):
         "enable_tpu": False,
         "enable_internet": True,
         # the quantisation kernel takes servseal from PyPI, so it needs no dataset
-        "dataset_sources": [] if which == "quant" else [DATASET],
+        # only the vllm probe predates the release and needs the source shipped
+        "dataset_sources": [DATASET] if which == "vllm" else [],
         "competition_sources": [],
         "kernel_sources": [],
         "model_sources": [],
@@ -107,19 +114,18 @@ def push_kernel(a, which="vllm"):
     shutil.copy2(os.path.join(HERE, meta["code_file"]), stage)
     json.dump(meta, open(os.path.join(stage, "kernel-metadata.json"), "w"), indent=2)
     print(f"  pushing {meta['id']} (private, GPU, internet"
-          + (", no dataset)" if which == "quant" else f", dataset {DATASET})"))
+          + (f", dataset {DATASET})" if which == "vllm" else ", no dataset)"))
     print(a.kernels_push(stage))
 
 
 def status(a, which="vllm"):
-    s = a.kernels_status(
-        KERNEL_QUANT if which == 'quant' else KERNEL)
+    s = a.kernels_status(TARGET[which][0])
     print(json.dumps(s if isinstance(s, dict) else s.__dict__, default=str, indent=2))
 
 
 def fetch(a, which="vllm"):
     os.makedirs(OUT, exist_ok=True)
-    k = KERNEL_QUANT if which == "quant" else KERNEL
+    k = TARGET[which][0]
     dest = os.path.join(OUT, "kaggle_" + k.split("/")[1])
     # Archive whatever is there before replacing it. kernels_output only ever
     # returns the *latest* version, so an overwritten result cannot be fetched
@@ -153,7 +159,7 @@ def main():
     p.add_argument("--status", action="store_true")
     p.add_argument("--fetch", action="store_true")
     p.add_argument("--kernel-only", action="store_true")
-    p.add_argument("--which", default="vllm", choices=["vllm", "quant"],
+    p.add_argument("--which", default="vllm", choices=list(TARGET),
                    help="which kernel to push, watch or fetch")
     a_ = p.parse_args()
 
@@ -167,17 +173,17 @@ def main():
     if a_.dry_run:
         for f in sorted(files)[:40]:
             print("   ", f)
-        tgt = KERNEL_QUANT if a_.which == "quant" else KERNEL
-        print(f"\nwould push kernel {tgt} (private)"
-              + ("" if a_.which == "quant" else f", and dataset {DATASET}"))
+        tgt = TARGET[a_.which][0]
+        print(f"\nwould push kernel {tgt} ({TARGET[a_.which][1]}, private)"
+              + (f", and dataset {DATASET}" if a_.which == "vllm" else ""))
         return 0
     a = api()
-    if not a_.kernel_only and a_.which != "quant":
+    if not a_.kernel_only and a_.which == "vllm":
         push_dataset(a, files)
         print("  waiting for the dataset to finish processing")
         time.sleep(20)
     push_kernel(a, a_.which)
-    tgt = KERNEL_QUANT if a_.which == "quant" else KERNEL
+    tgt = TARGET[a_.which][0]
     w = "" if a_.which == "vllm" else f" --which {a_.which}"
     print(f"\nwatch: https://www.kaggle.com/code/{tgt}")
     print(f"then:  python push.py{w} --status   /   python push.py{w} --fetch")

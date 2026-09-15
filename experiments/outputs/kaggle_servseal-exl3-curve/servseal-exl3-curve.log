@@ -1,0 +1,684 @@
+[{"stream_name":"stdout","time":0.898187253,"data":"\n"}
+,{"stream_name":"stdout","time":0.89822733,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":0.898233176,"data":"install, before anything imports what it checks for\n"}
+,{"stream_name":"stdout","time":0.898237311,"data":"========================================================================================\n"}
+,{"stream_name":"stdout","time":0.898264689,"data":"$ /usr/bin/python3 -m pip install -q -c /kaggle/working/constraints.txt servseal\u003e=0.2.1 transformers\u003e=4.50,\u003c5 accelerate bitsandbytes gguf\u003e=0.10.0 datasets huggingface_hub safetensors llmcompressor\n"}
+,{"stream_name":"stdout","time":4.645924229,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.0/44.0 kB 1.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":6.780033895,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.9/48.9 kB 3.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":6.924237698,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 107.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.292312261,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.1/43.1 MB 46.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.317829803,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.5/118.5 kB 8.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.346471901,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 35.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.440839418,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 311.4/311.4 kB 23.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.469013026,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 211.4/211.4 kB 15.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.500214622,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 529.0/529.0 kB 35.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.531595449,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 710.8/710.8 kB 40.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.554088924,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.6/61.6 kB 5.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":23.44902307,"data":"$ git clone --depth 1 https://github.com/turboderp-org/exllamav3 /kaggle/working/exllamav3\n"}
+,{"stream_name":"stderr","time":23.503180335,"data":"Cloning into '/kaggle/working/exllamav3'...\n"}
+,{"stream_name":"stdout","time":25.033095888,"data":"$ /usr/bin/python3 -m pip install -q -c /kaggle/working/constraints.txt /kaggle/working/exllamav3\n"}
+,{"stream_name":"stdout","time":32.849974391,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.1/62.1 kB 2.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":33.418906121,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 52.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":33.582843332,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 86.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":33.622993105,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 64.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":41.099921876,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":41.099966501,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":41.099971741,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":41.099975332,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.3.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":41.099978593,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":41.099981971,"data":"moviepy 1.0.3 requires decorator\u003c5.0,\u003e=4.0.2, but you have decorator 5.3.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":41.099985157,"data":"numba 0.60.0 requires numpy\u003c2.1,\u003e=1.22, but you have numpy 2.3.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":149.285101713,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":149.285147639,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/utils/cpp_extension.py\", line 2693, in _run_ninja_build\n"}
+,{"stream_name":"stderr","time":149.285715647,"data":"    subprocess.run(\n"}
+,{"stream_name":"stderr","time":149.285731399,"data":"  File \"/usr/lib/python3.12/subprocess.py\", line 571, in run\n"}
+,{"stream_name":"stderr","time":149.287747713,"data":"    raise CalledProcessError(retcode, process.args,\n"}
+,{"stream_name":"stderr","time":149.28776714,"data":"subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 255.\n"}
+,{"stream_name":"stderr","time":149.287773196,"data":"\n"}
+,{"stream_name":"stderr","time":149.287777538,"data":"The above exception was the direct cause of the following exception:\n"}
+,{"stream_name":"stderr","time":149.287782137,"data":"\n"}
+,{"stream_name":"stderr","time":149.28778681,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":149.287794705,"data":"  File \"/kaggle/src/script.py\", line 117, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":149.287977281,"data":"    import exllamav3                                   # noqa: F401\n"}
+,{"stream_name":"stderr","time":149.287989008,"data":"    ^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":149.288003104,"data":"  File \"/usr/local/lib/python3.12/dist-packages/exllamav3/__init__.py\", line 41, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":149.288186788,"data":"    from .model.config import Config\n"}
+,{"stream_name":"stderr","time":149.28820438,"data":"  File \"/usr/local/lib/python3.12/dist-packages/exllamav3/model/__init__.py\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":149.288291223,"data":"    from .config import Config\n"}
+,{"stream_name":"stderr","time":149.288301919,"data":"  File \"/usr/local/lib/python3.12/dist-packages/exllamav3/model/config.py\", line 5, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":149.288388783,"data":"    from ..util.rope import RopeSettings, RopeStyle\n"}
+,{"stream_name":"stderr","time":149.288444906,"data":"  File \"/usr/local/lib/python3.12/dist-packages/exllamav3/util/rope.py\", line 6, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":149.288549996,"data":"    from ..ext import exllamav3_ext as ext\n"}
+,{"stream_name":"stderr","time":149.288562192,"data":"  File \"/usr/local/lib/python3.12/dist-packages/exllamav3/ext.py\", line 147, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":149.28871955,"data":"    exllamav3_ext = load(\n"}
+,{"stream_name":"stderr","time":149.288726907,"data":"                    ^^^^^\n"}
+,{"stream_name":"stderr","time":149.288739357,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/utils/cpp_extension.py\", line 1767, in load\n"}
+,{"stream_name":"stderr","time":149.289180562,"data":"    return _jit_compile(\n"}
+,{"stream_name":"stderr","time":149.289189884,"data":"           ^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":149.289193426,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/utils/cpp_extension.py\", line 2207, in _jit_compile\n"}
+,{"stream_name":"stderr","time":149.289693606,"data":"    _write_ninja_file_and_build_library(\n"}
+,{"stream_name":"stderr","time":149.289706585,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/utils/cpp_extension.py\", line 2362, in _write_ninja_file_and_build_library\n"}
+,{"stream_name":"stderr","time":149.290155046,"data":"    _run_ninja_build(\n"}
+,{"stream_name":"stderr","time":149.29016337,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/utils/cpp_extension.py\", line 2710, in _run_ninja_build\n"}
+,{"stream_name":"stderr","time":149.29071323,"data":"    raise RuntimeError(message) from e\n"}
+,{"stream_name":"stderr","time":149.291103278,"data":"RuntimeError: Error building extension 'exllamav3_ext': [1/164] c++ -MMD -MF avx512_target.o.d -DTORCH_EXTENSION_NAME=exllamav3_ext -DTORCH_API_INCLUDE_EXTENSION_H -I/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext -isystem /usr/local/lib/python3.12/dist-packages/torch/include -isystem /usr/local/lib/python3.12/dist-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -fPIC -std=c++17 -Ofast -c /usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/avx512_target.cpp -o avx512_target.o \n"}
+,{"stream_name":"stderr","time":149.291124289,"data":"[2/164] c++ -MMD -MF ngram_gather_win.o.d -DTORCH_EXTENSION_NAME=exllamav3_ext -DTORCH_API_INCLUDE_EXTENSION_H -I/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext -isystem /usr/local/lib/python3.12/dist-packages/torch/include -isystem /usr/local/lib/python3.12/dist-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -fPIC -std=c++17 -Ofast -c /usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/ngram_gather_win.cpp -o ngram_gather_win.o \n"}
+,{"stream_name":"stderr","time":149.291131962,"data":"[3/164] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output histogram.cuda.o.d -DTORCH_EXTENSION_NAME=exllamav3_ext -DTORCH_API_INCLUDE_EXTENSION_H -I/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext -isystem /usr/local/lib/python3.12/dist-packages/torch/include -isystem /usr/local/lib/python3.12/dist-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 --compiler-options '-fPIC' -lineinfo -O3 --use_fast_math -Xcudafe --diag_suppress=177 -Xcudafe --diag_suppress=20012 -std=c++17 -c /usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/histogram.cu -o histogram.cuda.o \n"}
+,{"stream_name":"stderr","time":149.291147701,"data":"[4/164] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output hgemm_f16acc.cuda.o.d -DTORCH_EXTENSION_NAME=exllamav3_ext -DTORCH_API_INCLUDE_EXTENSION_H -I/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext -isystem /usr/local/lib/python3.12/dist-packages/torch/include -isystem /usr/local/lib/python3.12/dist-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 --compiler-options '-fPIC' -lineinfo -O3 --use_fast_math -Xcudafe --diag_suppress=177 -Xcudafe --diag_suppress=20012 -std=c++17 -c /usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/hgemm_f16acc.cu -o hgemm_f16acc.cuda.o \n"}
+,{"stream_name":"stderr","time":149.291153886,"data":"FAILED: [code=255] hgemm_f16acc.cuda.o \n"}
+,{"stream_name":"stderr","time":149.291157379,"data":"/usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output hgemm_f16acc.cuda.o.d -DTORCH_EXTENSION_NAME=exllamav3_ext -DTORCH_API_INCLUDE_EXTENSION_H -I/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext -isystem /usr/local/lib/python3.12/dist-packages/torch/include -isystem /usr/local/lib/python3.12/dist-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 --compiler-options '-fPIC' -lineinfo -O3 --use_fast_math -Xcudafe --diag_suppress=177 -Xcudafe --diag_suppress=20012 -std=c++17 -c /usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/hgemm_f16acc.cu -o hgemm_f16acc.cuda.o \n"}
+,{"stream_name":"stderr","time":149.291163368,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 100; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29116736,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 104; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291170899,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 108; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291174568,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 112; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29117834,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 116; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291183308,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 120; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291190818,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 124; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291208505,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 128; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.2912127,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 132; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291217005,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 136; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291224998,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 140; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291228671,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 144; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291232267,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 148; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291235828,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 152; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29123942,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 156; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291242947,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 160; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291246565,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 164; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291250773,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 168; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291254453,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 172; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291258034,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 176; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29126165,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 180; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291265209,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 184; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291268844,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 188; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291273037,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 192; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291317429,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 196; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291321726,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 200; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291325353,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 204; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291328945,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 208; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291332616,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 212; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291336145,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 216; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291343904,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 220; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291354543,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 224; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291368916,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 250; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291373787,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 254; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291378218,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 258; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291382085,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 262; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291386551,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 266; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291390623,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 270; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291394267,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 274; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291397865,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 278; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291401492,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 420; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291405105,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 424; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291408718,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 428; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291412307,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 432; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291415972,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 436; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291419546,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 440; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291423598,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 444; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291427157,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 448; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291430835,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 452; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291434777,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 456; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291438365,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 460; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291451545,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 464; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291468817,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 468; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291473083,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 472; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291477348,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 476; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291481173,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 480; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291485543,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 484; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291489482,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 488; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291493074,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 492; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291496732,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 496; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291500367,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 500; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291503917,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 504; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291507535,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 508; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291511115,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 512; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291514737,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 516; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291518792,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 520; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291522475,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 524; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29152601,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 528; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291529632,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 532; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291533155,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 536; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291536776,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 540; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29154875,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 544; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291552632,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 568; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291573836,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 572; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291577882,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 576; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291582,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 580; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291586205,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 584; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291590527,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 588; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291594623,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 592; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291598167,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 596; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291601795,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 762; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291606209,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 796; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291609782,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 830; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291613368,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 864; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291616912,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 895; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291620458,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 919; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291624,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 943; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29162758,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 967; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291633702,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 977; error   : Feature 'cp.async.commit_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291637987,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1144; error   : Feature 'cp.async.wait_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291641883,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1191; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291646264,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1209; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291669268,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1227; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291673657,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1244; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291678169,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1266; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291682338,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1283; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291687101,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1300; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291690843,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1317; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29169463,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1327; error   : Feature 'cp.async.commit_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291698218,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1456; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291701914,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1462; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291705557,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1468; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29170922,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1474; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29171286,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1480; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291716411,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1486; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291719939,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1492; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291723595,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1498; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291727175,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1504; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291730749,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1510; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29173435,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1516; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29173787,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1522; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291741527,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1528; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291763077,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1534; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291767472,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1540; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291771805,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1546; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291775767,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1593; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291780386,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1597; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291784881,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1601; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291788558,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1605; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291792233,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1609; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291795873,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1613; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291799497,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1617; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291803152,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1621; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291806749,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1625; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29181045,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1629; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291814073,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1633; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291817689,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1637; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291821299,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1641; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291825116,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1645; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291828721,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1649; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291832307,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 1653; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291837603,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2217; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291843942,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2223; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291860979,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2229; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291865669,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2235; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291870013,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2241; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291874206,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2247; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291878426,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2253; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291882092,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2259; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291885667,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2265; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291889349,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2271; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291893053,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2277; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29189668,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2283; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291900519,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2289; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291904109,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2295; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291907658,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2301; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291911278,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2306; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291914766,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2310; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.2919184,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2314; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291921936,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2318; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291925608,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2322; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291929291,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2326; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291934541,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2330; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29195404,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2334; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291958271,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2338; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29197203,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2342; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291976143,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2346; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291979729,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2350; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291983265,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2354; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291987149,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2358; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291990792,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2362; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291994413,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2366; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.291998066,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 2370; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292001708,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 3433; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292005278,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 3476; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292008828,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 3519; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292012388,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 3562; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292015926,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 3604; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292019483,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 3646; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292022993,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 3688; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292026544,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 3730; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292035668,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 3748; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292050239,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 3761; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292054252,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 3774; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292061714,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 3787; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292066794,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 3797; error   : Feature 'cp.async.commit_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292070639,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4118; error   : Feature 'cp.async.wait_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292074279,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4144; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292077844,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4156; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292081427,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4168; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292085066,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4180; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292088638,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4192; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29209218,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4204; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292095807,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4216; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292099401,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4228; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292102985,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4252; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292106552,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4268; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292110094,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4284; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292113719,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4300; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292117572,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4310; error   : Feature 'cp.async.commit_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292121474,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4462; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292130481,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4468; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292133809,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4513; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292147571,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4518; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292155217,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4559; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292159861,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4564; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292163928,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4605; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292167566,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4610; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292171168,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4651; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292174782,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4656; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292178446,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4697; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292182092,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4702; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292185664,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4743; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292189204,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4748; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292192836,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4789; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292196439,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4794; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292200579,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4835; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292204119,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4840; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292207759,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4881; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292211301,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4886; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292214903,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4927; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292223981,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4932; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292227207,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4973; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292240671,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 4978; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292244949,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5019; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292252791,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5024; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292256671,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5065; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292260321,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5070; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292264041,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5111; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292267643,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5116; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292271344,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5157; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292289397,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5162; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29229424,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5303; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292297889,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5308; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292301418,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5349; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292305006,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5354; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292308588,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5395; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292312172,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5400; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292315753,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5441; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292319355,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5446; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292322901,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5487; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292326528,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5492; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292330162,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5533; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29233381,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5538; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292337486,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5579; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292347384,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5584; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292354191,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5625; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292367803,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5630; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292372281,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5671; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292376589,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5676; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292380604,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5717; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292385004,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5722; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292388991,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5763; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292392595,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5768; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292397241,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5809; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292400873,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5814; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292404511,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5855; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292408172,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5860; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292411773,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5901; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292415606,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5906; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292419263,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5947; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292422926,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5952; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292426632,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5992; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292430268,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 5997; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292434203,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 6595; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292437811,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 6637; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292450339,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 6679; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292468094,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 6721; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292472452,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 6761; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292476872,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 6794; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292480875,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 6827; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292485133,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 6860; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292488904,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 6870; error   : Feature 'cp.async.commit_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292492597,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7108; error   : Feature 'cp.async.wait_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292496279,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7151; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292499923,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7168; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292503539,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7185; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292507157,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7202; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292510753,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7223; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292514583,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7241; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292518223,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7259; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292521791,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7277; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292525454,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7287; error   : Feature 'cp.async.commit_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292529202,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7439; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292532808,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7445; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292536448,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7490; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292548444,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7495; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292551978,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7536; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292565639,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7541; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292569797,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7582; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292574071,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7587; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.2925784,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7628; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29258262,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7633; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292586302,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7674; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292590015,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7679; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292593983,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7720; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292597577,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7725; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292601175,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7766; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292604733,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7771; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292608335,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7812; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292611885,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7817; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292615526,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7858; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292619243,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7863; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292622866,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7904; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292626472,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7909; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292630027,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7950; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292633678,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7955; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292646166,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 7996; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29266016,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8001; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29266455,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8042; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292668872,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8047; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292673512,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8088; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292677792,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8093; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292681521,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8134; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292685085,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8139; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29268866,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8280; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292692294,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8285; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292696132,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8326; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292699735,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8331; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292703432,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8372; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292707117,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8377; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292710753,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8418; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292714397,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8423; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292717985,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8464; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292721544,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8469; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292725153,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8510; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292728799,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8515; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292741294,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8556; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292755414,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8561; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292759742,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8602; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29276402,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8607; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292768212,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8648; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292772432,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8653; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292776042,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8694; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292779667,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8699; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292783219,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8740; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292786872,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8745; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29279046,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8786; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292794085,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8791; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292797623,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8832; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292801276,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8837; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292804854,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8878; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292808815,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8883; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292812455,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8924; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292815965,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8929; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292819534,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8969; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29282318,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 8974; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292828405,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 9555; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292849975,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 9589; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.2928543,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 9623; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29285861,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 9657; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292862967,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 9688; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292867333,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 9712; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292870997,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 9736; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29287455,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 9760; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292878225,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 9770; error   : Feature 'cp.async.commit_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292881919,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 9937; error   : Feature 'cp.async.wait_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292885585,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 9984; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292889509,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10002; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292893205,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10020; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292896796,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10037; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292900027,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10059; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292903587,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10076; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292907256,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10093; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292910793,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10110; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292914293,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10120; error   : Feature 'cp.async.commit_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292917919,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10249; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292921366,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10255; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29293351,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10261; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29294896,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10267; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292953129,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10273; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292957352,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10279; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292967037,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10285; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292970982,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10291; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292975005,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10297; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292978594,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10303; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292982228,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10309; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292985829,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10315; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292989359,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10321; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292992945,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10327; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.292996499,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10333; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293000032,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10339; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293003673,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10386; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293007274,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10390; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293010834,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10394; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293014503,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10398; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293018151,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10402; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293028366,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10406; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29304636,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10410; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293051282,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10414; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29305574,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10418; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293059984,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10422; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293063627,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10426; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293067182,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10430; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293070801,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10434; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293074377,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10438; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293078034,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10442; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293082477,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 10446; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293086159,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11010; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293089736,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11016; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293093407,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11022; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293097017,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11028; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293100683,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11034; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293104249,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11040; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29310779,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11046; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293111768,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11052; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293120727,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11058; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293124076,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11064; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293138007,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11070; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293145477,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11076; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293149885,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11082; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293154147,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11088; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293157855,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11094; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293161484,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11099; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293165211,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11103; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293168807,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11107; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293172332,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11111; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29317598,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11115; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293179506,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11119; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293183127,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11123; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293186919,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11127; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293190492,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11131; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293194087,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11135; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293197687,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11139; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29320135,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11143; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293204952,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11147; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293210342,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11151; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293216779,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11155; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293219964,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11159; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293237156,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 11163; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293241639,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 12485; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293245994,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 12528; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293249734,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 12571; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293253282,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 12614; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293256893,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 12656; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293260554,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 12698; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293264547,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 12740; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293268145,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 12782; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293271755,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 12800; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293301074,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 12813; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293305485,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 12826; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293309231,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 12839; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293312888,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 12849; error   : Feature 'cp.async.commit_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293316562,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13170; error   : Feature 'cp.async.wait_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293320147,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13196; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293323805,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13208; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293327493,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13220; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293331139,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13232; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293334742,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13244; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293338407,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13256; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293345746,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13268; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293355114,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13280; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293369178,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13304; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29337342,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13320; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293377706,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13336; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293382635,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13352; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293387085,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13362; error   : Feature 'cp.async.commit_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293391278,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13514; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29339492,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13520; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293398558,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13565; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293402231,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13570; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293405896,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13611; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293409613,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13616; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293413231,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13657; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293416898,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13662; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29342056,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13703; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293424151,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13708; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293428562,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13749; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293432245,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13754; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29343585,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13795; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293442643,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13800; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293452132,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13841; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293468038,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13846; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293472177,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13887; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293476575,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13892; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293480446,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13933; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293484806,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13938; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293488655,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13979; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29349237,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 13984; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293496005,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14025; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293499648,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14030; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29350326,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14071; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29350699,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14076; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293510933,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14117; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293514588,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14122; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293518256,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14163; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293521861,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14168; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293525457,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14209; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29352909,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14214; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293532655,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14355; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293539395,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14360; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29354926,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14401; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293552553,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14406; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293567043,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14447; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293571296,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14452; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293575337,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14493; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293579636,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14498; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293583625,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14539; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293587271,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14544; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293591409,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14585; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293595068,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14590; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293598757,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14631; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293602461,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14636; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293606093,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14677; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293609642,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14682; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29361326,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14723; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293616845,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14728; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293620438,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14769; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293624063,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14774; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293627921,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14815; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293631653,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14820; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293644055,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14861; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293647294,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14866; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293661181,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14907; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293665811,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14912; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293670109,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14953; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29367449,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14958; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293678757,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 14999; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293682501,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 15004; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293686109,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 15044; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293689776,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 15049; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29369339,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 15906; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293696965,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 15948; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293700607,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 15990; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.2937042,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16032; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293707751,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16072; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293711421,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16105; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293715039,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16138; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293718554,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16171; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293722083,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16181; error   : Feature 'cp.async.commit_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293726053,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16419; error   : Feature 'cp.async.wait_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293734631,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16462; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293742186,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16479; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293756176,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16496; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293760473,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16513; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293764738,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16534; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293769045,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16552; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293772933,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16570; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293776499,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16588; error   : Feature 'cp.async' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293780121,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16598; error   : Feature 'cp.async.commit_group' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293783785,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16750; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293787394,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16756; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293791149,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16801; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293794791,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16806; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293798383,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16847; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293802359,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16852; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293805974,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16893; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293809541,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16898; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293813133,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16939; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293816661,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16944; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.2938203,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16985; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293832173,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 16990; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293835116,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17031; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293848308,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17036; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293852363,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17077; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293856497,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17082; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293860662,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17123; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293864864,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17128; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293868864,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17169; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293872481,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17174; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29387605,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17215; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293880027,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17220; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293883633,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17261; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293887248,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17266; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293890886,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17307; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293894459,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17312; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293898053,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17353; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293901683,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17358; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293905239,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17399; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293909837,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17404; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293913449,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17445; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293917065,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17450; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293929216,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17591; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293932328,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17596; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293946534,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17637; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293950927,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17642; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293955098,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17683; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293971751,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17688; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293975546,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17729; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293979137,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17734; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293982791,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17775; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293986381,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17780; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293990067,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17821; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.293993645,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17826; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29399722,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17867; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29400091,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17872; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294004629,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17913; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294008231,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17918; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294011807,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17959; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294015402,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 17964; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294019074,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 18005; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29402243,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 18010; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294044961,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 18051; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294049563,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 18056; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294054176,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 18097; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.2940578,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 18102; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.29406138,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 18143; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294065048,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 18148; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294068735,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 18189; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294072393,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 18194; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294076016,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 18235; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294079535,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 18240; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294083127,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 18280; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294086758,"data":"ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 18285; error   : Feature '.m16n8k16' requires .target sm_80 or higher\n"}
+,{"stream_name":"stderr","time":149.294090366,"data":"ptxas fatal   : Ptx assembly aborted due to errors\n"}
+,{"stream_name":"stderr","time":149.294094264,"data":"[5/164] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output graph.cuda.o.d -DTORCH_EXTENSION_NAME=exllamav3_ext -DTORCH_API_INCLUDE_EXTENSION_H -I/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext -isystem /usr/local/lib/python3.12/dist-packages/torch/include -isystem /usr/local/lib/python3.12/dist-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 --compiler-options '-fPIC' -lineinfo -O3 --use_fast_math -Xcudafe --diag_suppress=177 -Xcudafe --diag_suppress=20012 -std=c++17 -c /usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/graph.cu -o graph.cuda.o \n"}
+,{"stream_name":"stderr","time":149.294100328,"data":"/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/graph.cu: In member function ‘void Graph::inspect_graph()’:\n"}
+,{"stream_name":"stderr","time":149.294104613,"data":"/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/graph.cu:198:8: warning: format ‘%i’ expects argument of type ‘int’, but argument 3 has type ‘std::vector\u003cCUgraphNode_st*\u003e::size_type’ {aka ‘long unsigned int’} [-Wformat=]\n"}
+,{"stream_name":"stderr","time":149.294110749,"data":"  198 |     DBGI(nodes.size());\n"}
+,{"stream_name":"stderr","time":149.294138331,"data":"      |        ^~~~~~~~~~                              \n"}
+,{"stream_name":"stderr","time":149.294142925,"data":"      |                                              |\n"}
+,{"stream_name":"stderr","time":149.294147289,"data":"      |                                              std::vector\u003cCUgraphNode_st*\u003e::size_type {aka long unsigned int}\n"}
+,{"stream_name":"stderr","time":149.294151856,"data":"[6/164] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output rope.cuda.o.d -DTORCH_EXTENSION_NAME=exllamav3_ext -DTORCH_API_INCLUDE_EXTENSION_H -I/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext -isystem /usr/local/lib/python3.12/dist-packages/torch/include -isystem /usr/local/lib/python3.12/dist-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 --compiler-options '-fPIC' -lineinfo -O3 --use_fast_math -Xcudafe --diag_suppress=177 -Xcudafe --diag_suppress=20012 -std=c++17 -c /usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/rope.cu -o rope.cuda.o \n"}
+,{"stream_name":"stderr","time":149.294158461,"data":"[7/164] c++ -MMD -MF sam.o.d -DTORCH_EXTENSION_NAME=exllamav3_ext -DTORCH_API_INCLUDE_EXTENSION_H -I/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext -isystem /usr/local/lib/python3.12/dist-packages/torch/include -isystem /usr/local/lib/python3.12/dist-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -fPIC -std=c++17 -Ofast -c /usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/sam.cpp -o sam.o \n"}
+,{"stream_name":"stderr","time":149.294163233,"data":"[8/164] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output routing.cuda.o.d -DTORCH_EXTENSION_NAME=exllamav3_ext -DTORCH_API_INCLUDE_EXTENSION_H -I/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext -isystem /usr/local/lib/python3.12/dist-packages/torch/include -isystem /usr/local/lib/python3.12/dist-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 --compiler-options '-fPIC' -lineinfo -O3 --use_fast_math -Xcudafe --diag_suppress=177 -Xcudafe --diag_suppress=20012 -std=c++17 -c /usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/routing.cu -o routing.cuda.o \n"}
+,{"stream_name":"stderr","time":149.294169188,"data":"[9/164] c++ -MMD -MF bindings.o.d -DTORCH_EXTENSION_NAME=exllamav3_ext -DTORCH_API_INCLUDE_EXTENSION_H -I/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext -isystem /usr/local/lib/python3.12/dist-packages/torch/include -isystem /usr/local/lib/python3.12/dist-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -fPIC -std=c++17 -Ofast -c /usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/bindings.cpp -o bindings.o \n"}
+,{"stream_name":"stderr","time":149.294174009,"data":"ninja: build stopped: subcommand failed.\n"}
+,{"stream_name":"stderr","time":149.294177417,"data":"\n"}
+,{"stream_name":"stderr","time":153.518862633,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":153.518910136,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":153.80864199,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":153.808684275,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":154.467456691,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":155.827912655,"data":"[NbConvertApp] Writing 387117 bytes to __results__.html\n"}
+]
