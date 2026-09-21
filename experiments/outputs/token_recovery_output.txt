@@ -1,0 +1,137 @@
+
+==============================================================================
+gpt2  (gpt2@fp32, vocab 50,257, 1500 positions)
+==============================================================================
+
+1. WIRE FORMS
+   convention  distinct  colliding ids   groups
+   piece         50,257              0        0
+   decoded       49,924            340        7
+   largest group:         '\ufffd' <- 255 ids [94, 95, 96, 97, 98, 99] ...
+   largest group:        ' \ufffd' <- 43 ids [564, 1587, 2343, 5525, 6184, 7377] ...
+   largest group:   '\ufffd\ufffd' <- 31 ids [4204, 6353, 6408, 7134, 8008, 8955] ...
+
+2. ROUND TRIP  (decode -> re-encode, the rule available at verify time)
+   exact    49,913  99.32 % of vocabulary
+   split        17   0.03 % of vocabulary
+   wrong       327   0.65 % of vocabulary
+   what the ambiguity is made of, and therefore which text reaches it:
+         344  100.0 %  byte fragment (multi-byte UTF-8 split)   e.g. '\ufffd'
+
+3. MASS  (share of the reference distribution, which is what gets sampled)
+   class      mean mass  worst position  argmax hits
+   split        0.0000 %          0.006 %       0 /1,500
+   wrong        0.0101 %          2.142 %       0 /1,500
+   padded       0.0000 %          0.000 %       0 /1,500
+
+   silently corrupted mass = 0.0101 %   (dropped, recoverable: 0.0000 %)
+
+4. END TO END  (budget 5,000, 3.3 samples per position)
+   tokens dropped as unresolvable : 0.0 / 5000 (0.000 %)
+   statistic   shift from the round trip   band half-width    ratio
+   S1                          -0.000000          0.007266    0.000
+   S2                          +0.000001          0.012603    0.000
+
+   false positives, bands calibrated WITHOUT the round trip : 0.02   (budget 0.05)
+   false positives, bands calibrated THROUGH the round trip  : 0.02   (budget 0.05)
+   power against top-p 0.95, round trip applied, recalibrated bands : 0.99
+
+   [26s]
+
+==============================================================================
+pythia  (pythia-160m@fp32, vocab 50,304, 1500 positions)
+==============================================================================
+
+1. WIRE FORMS
+   convention  distinct  colliding ids   groups
+   piece         50,277              0        0
+   decoded       49,790            513       26
+   27 padded slots have no wire form at all (model width 50,304 > tokeniser 50,277)
+   largest group:         '\ufffd' <- 411 ids [96, 97, 98, 99, 100, 101] ...
+   largest group:        ' \ufffd' <- 44 ids [541, 929, 1191, 1325, 1454, 3384] ...
+   largest group:   '\ufffd\ufffd' <- 12 ids [8318, 9223, 13076, 15911, 18713, 19675] ...
+
+2. ROUND TRIP  (decode -> re-encode, the rule available at verify time)
+   exact    49,572  98.54 % of vocabulary
+   split       261   0.52 % of vocabulary
+   wrong       444   0.88 % of vocabulary
+   what the ambiguity is made of, and therefore which text reaches it:
+         484   68.7 %  byte fragment (multi-byte UTF-8 split)   e.g. '\ufffd'
+         221   31.3 %  whitespace run (code, indentation)   e.g. '  '
+
+3. MASS  (share of the reference distribution, which is what gets sampled)
+   class      mean mass  worst position  argmax hits
+   split        0.0030 %          0.081 %       0 /1,500
+   wrong        0.0017 %          1.277 %       0 /1,500
+   padded       0.0000 %          0.000 %       0 /1,500
+
+   silently corrupted mass = 0.0017 %   (dropped, recoverable: 0.0030 %)
+
+4. END TO END  (budget 5,000, 3.3 samples per position)
+   tokens dropped as unresolvable : 0.1 / 5000 (0.003 %)
+   statistic   shift from the round trip   band half-width    ratio
+   S1                          +0.000008          0.008152    0.001
+   S2                          +0.000008          0.011522    0.001
+
+   false positives, bands calibrated WITHOUT the round trip : 0.07   (budget 0.05)
+   false positives, bands calibrated THROUGH the round trip  : 0.07   (budget 0.05)
+   power against top-p 0.95, round trip applied, recalibrated bands : 1.00
+
+   [26s]
+
+==============================================================================
+qwen  (qwen2.5-0.5b@bf16, vocab 151,936, 1500 positions)
+==============================================================================
+
+1. WIRE FORMS
+   convention  distinct  colliding ids   groups
+   piece        151,665              0        0
+   decoded      150,329          1,347       11
+   271 padded slots have no wire form at all (model width 151,936 > tokeniser 151,665)
+   largest group:         '\ufffd' <- 1067 ids [94, 95, 96, 97, 98, 99] ...
+   largest group:        ' \ufffd' <- 191 ids [636, 1278, 1683, 2139, 2858, 3315] ...
+   largest group:   '\ufffd\ufffd' <- 72 ids [3219, 7492, 9973, 15675, 15902, 18535] ...
+
+2. ROUND TRIP  (decode -> re-encode, the rule available at verify time)
+   exact   148,308  97.61 % of vocabulary
+   split     1,840   1.21 % of vocabulary
+   wrong     1,517   1.00 % of vocabulary
+   what the ambiguity is made of, and therefore which text reaches it:
+       1,895   56.4 %  non-ASCII text (precomposed)   e.g. '\u1f77'
+       1,448   43.1 %  byte fragment (multi-byte UTF-8 split)   e.g. '\ufffd'
+          10    0.3 %  combining mark (NFC/NFD normalisation)   e.g. '\xea\u0301'
+           4    0.1 %  ASCII, cause not classified   e.g. '<unk>'
+
+3. MASS  (share of the reference distribution, which is what gets sampled)
+   class      mean mass  worst position  argmax hits
+   split        0.0001 %          0.022 %       0 /1,500
+   wrong        0.0094 %          2.464 %       0 /1,500
+   padded       0.0000 %          0.000 %       0 /1,500
+
+   silently corrupted mass = 0.0094 %   (dropped, recoverable: 0.0001 %)
+
+4. END TO END  (budget 5,000, 3.3 samples per position)
+   tokens dropped as unresolvable : 0.0 / 5000 (0.000 %)
+   statistic   shift from the round trip   band half-width    ratio
+   S1                          +0.000004          0.007063    0.001
+   S2                          +0.000000          0.011810    0.000
+
+   false positives, bands calibrated WITHOUT the round trip : 0.04   (budget 0.05)
+   false positives, bands calibrated THROUGH the round trip  : 0.04   (budget 0.05)
+   power against top-p 0.95, round trip applied, recalibrated bands : 1.00
+
+   [42s]
+
+==============================================================================
+VERDICT
+==============================================================================
+model     corrupted   dropped  argmax  shift/band  FP naive  FP recal  power
+gpt2        0.0101%   0.0000%       0       0.000      0.02      0.02   0.99
+pythia      0.0017%   0.0030%       0       0.001      0.07      0.07   1.00
+qwen        0.0094%   0.0001%       0       0.001      0.04      0.04   1.00
+
+  PASS  the round trip is affordable: recalibrating through it restores the
+        false-positive budget and leaves detection power intact.
+
+Build the transport. Calibrate bands THROUGH the round trip and store them
+in the .seal.npz at snapshot time -- that is the mitigation this run measured.

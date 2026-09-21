@@ -1,0 +1,44 @@
+========================================================================================
+install, before anything imports what it checks for
+========================================================================================
+$ /usr/bin/python3 -m pip install -q -c /kaggle/working/constraints.txt servseal>=0.2.1 transformers>=4.50,<5 accelerate bitsandbytes gguf>=0.10.0 datasets huggingface_hub safetensors llmcompressor
+$ git clone --depth 1 https://github.com/turboderp-org/exllamav3 /kaggle/working/exllamav3
+Cloning into '/kaggle/working/exllamav3'...
+$ /usr/bin/python3 -m pip install -q -c /kaggle/working/constraints.txt /kaggle/working/exllamav3
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/cpp_extension.py", line 2693, in _run_ninja_build
+    subprocess.run(
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 255.
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "/kaggle/src/script.py", line 117, in <module>
+    import exllamav3                                   # noqa: F401
+    ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/exllamav3/__init__.py", line 41, in <module>
+    from .model.config import Config
+  File "/usr/local/lib/python3.12/dist-packages/exllamav3/model/__init__.py", line 1, in <module>
+    from .config import Config
+  File "/usr/local/lib/python3.12/dist-packages/exllamav3/model/config.py", line 5, in <module>
+    from ..util.rope import RopeSettings, RopeStyle
+  File "/usr/local/lib/python3.12/dist-packages/exllamav3/util/rope.py", line 6, in <module>
+    from ..ext import exllamav3_ext as ext
+  File "/usr/local/lib/python3.12/dist-packages/exllamav3/ext.py", line 147, in <module>
+    exllamav3_ext = load(
+                    ^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/cpp_extension.py", line 1767, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/cpp_extension.py", line 2207, in _jit_compile
+    _write_ninja_file_and_build_library(
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/cpp_extension.py", line 2362, in _write_ninja_file_and_build_library
+    _run_ninja_build(
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/cpp_extension.py", line 2710, in _run_ninja_build
+    raise RuntimeError(message) from e
+RuntimeError: Error building extension 'exllamav3_ext': [1/164] c++ -MMD -MF avx512_target.o.d -DTORCH_EXTENSION_NAME=exllamav3_ext -DTORCH_API_INCLUDE_EXTENSION_H -I/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext -isystem /usr/local/lib/python3.12/dist-packages/torch/include -isystem /usr/local/lib/python3.12/dist-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -fPIC -std=c++17 -Ofast -c /usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/avx512_target.cpp -o avx512_target.o 
+FAILED: [code=255] hgemm_f16acc.cuda.o 
+/usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output hgemm_f16acc.cuda.o.d -DTORCH_EXTENSION_NAME=exllamav3_ext -DTORCH_API_INCLUDE_EXTENSION_H -I/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext -isystem /usr/local/lib/python3.12/dist-packages/torch/include -isystem /usr/local/lib/python3.12/dist-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -isystem /usr/include/python3.12 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 --compiler-options '-fPIC' -lineinfo -O3 --use_fast_math -Xcudafe --diag_suppress=177 -Xcudafe --diag_suppress=20012 -std=c++17 -c /usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/hgemm_f16acc.cu -o hgemm_f16acc.cuda.o 
+ptxas /tmp/tmpxft_00000066_00000000-6_hgemm_f16acc.ptx, line 100; error   : Feature '.m16n8k16' requires .target sm_80 or higher    [... the same error on 2000+ lines, elided]
+/usr/local/lib/python3.12/dist-packages/exllamav3/exllamav3_ext/graph.cu: In member function ‘void Graph::inspect_graph()’:
+ninja: build stopped: subcommand failed.

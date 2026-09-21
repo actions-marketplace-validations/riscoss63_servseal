@@ -76,6 +76,77 @@ natively bf16, the "change" is an exact no-op, and the verdict is SEALED at exac
 zero. And the last line is the silent-upgrade scenario providers actually perform —
 the next model generation behind the same tokenizer, caught at 0.35.
 
+## What it found: quantisation costs more than perplexity reports
+
+The tool exists because perplexity is blind to most of a distribution — it reads the
+probability assigned to the token that actually appeared and nothing else. That is an
+argument until it is a measurement, so here is the measurement, on the decision teams
+make most often.
+
+Quantise a model to cut serving costs, and judge the result the usual way. Then judge
+it on the full distribution and compare the two verdicts.
+
+**Qwen2.5-0.5B, 500 probe positions, every row in one session under transformers
+4.57.6 on a T4** (`experiments/kaggle/quant_real.py`, committed output and per-row
+provenance in `experiments/outputs/quant_real_results.json`):
+
+| deployment | distribution moved | top-1 agreement | Δ perplexity |
+|---|---:|---:|---:|
+| control: re-run, nothing changed | **0.0000** | 1.000 | +0.00 % |
+| control: float32 on GPU vs on CPU | **0.0000** | 1.000 | +0.00 % |
+| GGUF Q8_0 | 0.0138 | 0.980 | −0.03 % |
+| int8 per-channel | 0.0306 | 0.956 | −0.71 % |
+| bitsandbytes int8 (LLM.int8) | 0.0439 | 0.936 | +0.91 % |
+| GGUF Q4_K_M | 0.0951 | 0.906 | +5.02 % |
+| bitsandbytes NF4 | 0.1756 | 0.810 | +18.74 % |
+| GPTQ W4A16 | 0.2076 | 0.762 | +21.46 % |
+| AWQ W4A16 | 0.2478 | 0.754 | +33.52 % |
+| 4-bit group-128, **no calibration** | 0.2876 | 0.674 | +47.41 % |
+
+The last row is the same grid AWQ and GPTQ use, with none of the search that makes
+them methods — AWQ's grid was read back out of the produced checkpoint (`4-bit, group
+128, symmetric`) rather than inferred from the scheme name, so the subtraction is
+exact:
+
+| method | of the damage removed | of the perplexity gap removed |
+|---|---:|---:|
+| AWQ | 14 % | 29 % |
+| GPTQ | 28 % | 55 % |
+| bitsandbytes NF4 | 39 % | 60 % |
+| GGUF Q4_K_M | **67 %** | **89 %** |
+
+**Four independent methods, all overstating, in the same direction, by 15 to 27
+points.** Accepting a quantisation because perplexity barely moved accepts more change
+than it looks like — reliably, not occasionally. And two rankings invert: LLM.int8
+improves perplexity while being the worst of the three 8-bit schemes on the
+distribution.
+
+A second run on CPU (`experiments/quantisation_cost.py`, four models × five schemes)
+adds the part that stops you reading someone else's numbers instead of measuring your
+own: **the cost is not a property of the scheme.** Rounding to bfloat16 is an exact
+no-op on Qwen2.5, whose weights are natively bf16, and measures 0.0332 on GPT-2.
+Per-channel int8 spans 3.4× across four models.
+
+The counterintuitive half is the useful one. Per-tensor int8 is the *closest* to flat
+across models (1.6×) because one outlier weight sets the scale and every transformer
+has one; per-channel and group-wise schemes follow each model's own structure, and
+that is what differs. **The better the scheme, the less its cost transfers.**
+
+Two caveats, because they bound what the table supports. Qwen2.5-0.5B is small and
+AWQ and GPTQ are tuned for far larger models, so their *ranking* here should not be
+generalised — what survives model size is the gap between the two columns, which four
+methods built on different principles agree on. And within any one model perplexity
+ranks the schemes perfectly (Spearman 1.000 on all four): it tells you which option is
+worse, not how much worse. The exchange rate is what does not transfer, and it varies
+1597× across the eighteen cells measured.
+
+Run it on your own model — that is the point, and it needs no GPU for the dtype half:
+
+```bash
+pip install servseal[model]
+python experiments/quantisation_cost.py          # or just snapshot/verify your own pair
+```
+
 ## API mode: endpoints you can only sample from
 
 Against a black-box API the full distribution is unavailable; the endpoint returns
@@ -98,6 +169,98 @@ pushes the statistic up) and a pooled corpus-aggregate statistic (power 0.03 —
 position's tail is another's head; pooling erases the evidence). The shipped statistic
 is per-position, against the per-position sketches the snapshot already stores, and the
 power sweep asserts bit-equality with the product code path before measuring.
+
+### Running it
+
+The bands can only be computed while the reference distributions exist, so they are
+made at snapshot time and travel inside the `.seal.npz`. A reference sealed without
+`--api-budget` is refused for API mode rather than given an invented threshold.
+
+Sealing runs the model, so it needs the weights; verifying an endpoint never does, and
+the two halves can live on different machines years apart.
+
+```bash
+# once, wherever the weights are
+pip install servseal[model]
+servseal snapshot Qwen/Qwen2.5-0.5B -o reference.seal.npz --api-budget 5000
+
+# from anywhere, for as long as you keep the seal: tokeniser only, no torch
+pip install servseal[api]
+servseal verify reference.seal.npz \
+    --endpoint https://your-provider/v1 --served-model qwen2.5-0.5b \
+    --budget 5000 --report attestation.html
+echo $?      # 0 sealed | 3 changed
+```
+
+A sealed GPT-2 reference is published in [`reference-seals/`](reference-seals/) if
+you want to see the endpoint path work before spending a forward pass of your own.
+
+`SERVSEAL_API_KEY` carries the bearer token. The client sends `max_tokens=1` and
+`temperature=1`, and **never sends `top_p`** — sending `top_p=1.0` would switch off a
+server-side nucleus filter, which is the single change this mode exists to catch.
+
+### Measured against vLLM
+
+Not against a mock: a real vLLM serving GPT-2 in float32, reached through the shipped
+CLI over HTTP, with the reference snapshotted separately on CPU
+(`experiments/kaggle/vllm_probe.py`, committed attestations in
+`experiments/outputs/`). 5,000 sampled tokens over 1,500 probe positions in 48
+requests, batched 32 prompts at a time with no retries.
+
+| deployment served by vLLM | S1 (band 0.4823–0.4975) | S2 (band 0.3568–0.3815) | verdict |
+|---|---:|---:|---|
+| gpt2 float32, unchanged | **0.4903** | **0.3681** | **SEALED** |
+| gpt2, provider `top_p 0.95` | 0.5091 | **0.3840** ↑ | CHANGED — serving-layer filter |
+| distilgpt2 silently substituted | 0.4308 | **0.3099** ↓ | CHANGED — head-level |
+
+The first row is the true negative that makes the rest worth reading: a float32
+reference computed on a CPU and a float32 deployment computed on a T4 land inside the
+band, so the verdict is about the deployment and not about the hardware it was sealed
+on.
+
+The two changed rows differ in the *direction* of the S2 excursion, and that is the
+whole signature. S2 is not agreement between two argmaxes — it is how often the
+endpoint emits the reference's most likely token. A nucleus filter cuts the tail,
+which concentrates the sample on the head and pushes S2 **up**; changed weights
+scatter the head and push it **down**. Reading the excursion as a magnitude rather
+than a direction names the nucleus filter as a weight change, which is the one error
+this tool cannot afford, so `tests/test_wire_and_endpoint.py` pins both directions.
+
+Note how thin the top-p margin is: 0.3840 against a bound of 0.3815. Five thousand
+tokens is the *minimum* for that filter at this vocabulary, not a comfortable budget.
+Snapshot a second, larger budget if you intend to act on a single run.
+
+### Getting the token back: ask for ids
+
+The endpoint returns text; the statistics need ids in the reference vocabulary. Three
+conventions are detected on the first response rather than configured, and one of them
+costs nothing:
+
+| what the endpoint returns | recovery | cost |
+|---|---|---|
+| `token_id:1234` (`vllm serve --return-tokens-as-token-ids`) | exact | none |
+| the raw token piece | exact — measured collision-free on GPT-2, pythia-160m, Qwen2.5 | none |
+| decoded text (**vLLM's default**) | re-encode; drop what does not resolve to one id | 0.01 % of the sampled mass on English probes |
+
+**Serve with `--return-tokens-as-token-ids` where you can.** vLLM populates
+`logprobs.tokens` from `logprob.decoded_token`, which is the *decoded text*, not the
+piece — so the default path is the third row, and the run above measured it at 0.04 %
+of returned tokens unresolved, two out of five thousand.
+
+That 0.01 % is a property of the *probe set*, not of the tokeniser: the ambiguity
+lives in byte fragments of multi-byte characters, runs of whitespace, and non-Latin
+scripts (39.9 % / 52.2 % of the ambiguous entries on Qwen2.5). So it is measured on
+your probes at snapshot time and stored in the seal, and `snapshot` prints it:
+
+```
+api_text   corrupted mass 0.0102 %  worst position 2.142 %   OK
+```
+
+On code or a non-Latin script it will be larger, the line says so, and the answer is
+an endpoint that returns ids. The full price list — vocabulary collisions, mass
+weighting, the shift in (S1, S2) against the band width, and the false-positive and
+power checks that follow — is `experiments/token_recovery.py`, whose committed output
+covers three tokenisers.
 
 ## What a verdict gives you
 
@@ -161,6 +324,12 @@ Exit codes gate the job: `0` sealed, `3` changed (job fails, attestation attache
 - **See what the probes never touch.** Coverage is the probe set's; snapshot your own
   traffic domain too (`--probes yourfile.txt`). Snapshots refuse comparison across
   probe sets by hash.
+- **Test a model whose weights you never had.** API mode calibrates its bands by
+  simulating the unchanged endpoint, which needs the reference distributions and
+  therefore the weights — available exactly once, when the reference is sealed. That
+  makes this a tool for open-weights deployments: your own serving stack, or a
+  provider you buy Llama/Qwen/Mistral inference from. A model that was never yours to
+  snapshot cannot be sealed.
 - **Weights-mode determinism is CPU-grade.** Reference snapshots here are computed in
   float32 on CPU, where re-running the same model reproduces distance exactly 0.0000.
   GPU inference can be nondeterministic; snapshot on CPU for the reference of record.
@@ -184,10 +353,12 @@ Everything above is one command each, on models small enough for a laptop CPU:
 
 ```bash
 pip install -e .[model,dev]
-pytest                                    # 24 unit + 5 CLI end-to-end tests
+pytest                                    # 71 tests: units, CLI, HTTP transport
 cd experiments
 python e2e_real_models.py                 # the verdict battery, ~12 min CPU
 python sampling_power.py                  # the API-mode power table, ~1 min
+python token_recovery.py                  # what recovering a token costs, ~2 min
+python e2e_endpoint.py                    # API mode end to end over HTTP, ~2 min
 ```
 
 The battery *asserts* every verdict against its ground truth and exits non-zero on any

@@ -1,0 +1,31 @@
+prefixes   1500 rebuilt from the probe set, matching the seal
+calibrated 10s   corrupted mass 0.0101 %   s1 band 0.4818-0.4977
+
+--- unchanged ---
+verdict    SEALED
+signature  behaviour within the unchanged endpoint's band
+s1         0.4889  band 0.4818-0.4977  (distributional, sees the tail)
+s2         0.3690  band 0.3568-0.3815  (how often the reference argmax is emitted)
+wire       convention=piece logprobs=yes unresolved=0.0000%
+sampling   5000/5000 tokens over 1500 positions, 48 requests, 0 retries, 1s
+report     C:\Users\abdel\Documents\Project_search\servseal\experiments\outputs\attestation_unchanged.html
+
+--- serve: top-p 0.95 ---
+verdict    CHANGED  severity=major
+signature  serving-layer sampling filter (head concentrated)
+s1         0.5611  band 0.4818-0.4977  (distributional, sees the tail)
+s2         0.8106  band 0.3568-0.3815  (how often the reference argmax is emitted)
+wire       convention=piece logprobs=yes unresolved=0.0000%
+sampling   5000/5000 tokens over 1500 positions, 48 requests, 0 retries, 1s
+report     C:\Users\abdel\Documents\Project_search\servseal\experiments\outputs\attestation_serve.html
+
+==============================================================================
+API MODE, END TO END (gpt2, 5000 sampled tokens, 1500 positions)
+==============================================================================
+deployment event           S1       S2  exit     signature
+unchanged              0.4889   0.3690     0   OK behaviour within the unchanged endpoint's band
+serve: top-p 0.95      0.5611   0.8106     3   OK serving-layer sampling filter (head concentrated)
+
+  PASS  the sampled endpoint is sealed when unchanged and caught when a
+        serving-layer filter is switched on -- with no logprobs inspected,
+        no distribution available, and the reference months old.

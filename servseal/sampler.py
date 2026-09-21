@@ -37,7 +37,15 @@ import numpy as np
 
 from sqsketch.hashing import mix64
 
-__all__ = ["sample_stream", "statistics", "calibrate", "detect"]
+__all__ = ["sample_stream", "statistics", "calibrate", "calibrate_bands", "detect",
+           "allocate"]
+
+
+def allocate(total, n_pos):
+    """How many samples each position gets. One definition, used by every path."""
+    per = np.full(n_pos, total // n_pos, dtype=np.int64)
+    per[: total - int(per.sum())] += 1
+    return per
 
 
 def sample_stream(P, total, rng):
@@ -108,6 +116,63 @@ def calibrate(P_ref, snapshot, total, reps=200, alpha=0.05, seed=1234):
         "total": int(total), "reps": int(reps), "alpha": float(alpha),
     }
     return bands, (np.array(s1s), np.array(s2s))
+
+
+def calibrate_bands(P, snapshot, *, total=5000, reps=200, alpha=0.05, seed=1234,
+                    wiremap=None):
+    """Acceptance bands for one budget, computed where the reference still exists.
+
+    Same construction as `calibrate`, reorganised so it can run at snapshot time on a
+    real vocabulary: draws are made position-major, one cumulative distribution per
+    position reused across every repetition, instead of rebuilding all of them once
+    per repetition. That is 1500 cumulative sums rather than 300000, and it never
+    holds more than one row -- the rep-major form needs the whole CDF resident, which
+    is 1.8 GB at Qwen's vocabulary. The streams are not the same streams `calibrate`
+    would draw (the generator is consumed in another order) but they are draws from
+    the same distribution, which is all a quantile needs.
+
+    With `wiremap`, the round trip an endpoint's text convention imposes is applied
+    inside the loop, so the bands absorb whatever systematic component it has. That
+    correction is small -- measured at 0.001 of a band half-width in
+    experiments/token_recovery.py -- and calibrating through it costs nothing, which
+    is the only reason to prefer it over hoping.
+    """
+    P = np.asarray(P)
+    n_pos, vocab = P.shape
+    per = allocate(total, n_pos)
+    off = np.concatenate([[0], np.cumsum(per)])
+    pos = np.repeat(np.arange(n_pos, dtype=np.int64), per)
+    rng = np.random.default_rng(seed)
+
+    tok = np.empty((reps, total), dtype=np.int64)
+    for i in range(n_pos):
+        k = int(per[i])
+        if k == 0:
+            continue
+        cum = np.cumsum(P[i], dtype=np.float64)
+        cum /= cum[-1]
+        u = rng.random((reps, k))
+        tok[:, off[i]:off[i + 1]] = np.minimum(
+            np.searchsorted(cum, u.ravel(), side="right").reshape(reps, k), vocab - 1)
+
+    s1s, s2s, dropped = [], [], 0
+    for r in range(reps):
+        p, t = pos, tok[r]
+        if wiremap is not None:
+            m = wiremap.remap[t]
+            keep = m >= 0
+            dropped += int((~keep).sum())
+            p, t = pos[keep], m[keep]
+        a, b = statistics(p, t, snapshot)
+        s1s.append(a)
+        s2s.append(b)
+
+    q = alpha / 4.0                       # two statistics x two tails
+    return {"s1": (float(np.quantile(s1s, q)), float(np.quantile(s1s, 1 - q))),
+            "s2": (float(np.quantile(s2s, q)), float(np.quantile(s2s, 1 - q))),
+            "total": int(total), "reps": int(reps), "alpha": float(alpha),
+            "through_wire": wiremap is not None,
+            "dropped_per_run": dropped / reps}
 
 
 def detect(s1, s2, bands):

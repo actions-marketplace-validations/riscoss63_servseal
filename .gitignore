@@ -6,4 +6,7 @@ dist/
 # snapshots and verification runs made while trying things out; the committed
 # experiment outputs under experiments/outputs/ ARE tracked, deliberately
 *.seal.npz
+# ...except the published reference, which is the half of the product that travels:
+# verifying an endpoint needs no weights, so the seal is what someone else needs
+!reference-seals/*.seal.npz
 scratch/

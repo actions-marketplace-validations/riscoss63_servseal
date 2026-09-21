@@ -1,0 +1,4 @@
+# staging areas the pusher builds on the way out, and whatever it pulls back
+_build/
+_kernel/
+_pulled/

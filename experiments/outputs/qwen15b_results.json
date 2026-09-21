@@ -1,0 +1,89 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B",
+  "positions": 500,
+  "probe": "0622744ec759498ab157735adc7e945c",
+  "ppl_fp32_cpu": 7.971922397613525,
+  "ppl_fp32_gpu": 7.972037315368652,
+  "servseal": "0.2.1",
+  "transformers": "4.57.6",
+  "gpu": "Tesla T4",
+  "exllamav3": false,
+  "results": [
+    {
+      "method": "control: fp32 gpu vs cpu",
+      "h": 3.5056838330608062e-06,
+      "top1": 1.0,
+      "ppl": 7.972037315368652,
+      "dppl": 0.0014415312818568692,
+      "status": "sealed",
+      "severity": "none",
+      "signature": "hardware",
+      "device": "cuda",
+      "note": "the floor below which no verdict here means anything"
+    },
+    {
+      "method": "naive int4 g128",
+      "h": 0.22106502984337736,
+      "top1": 0.74,
+      "ppl": 9.633100509643555,
+      "dppl": 20.83786104750994,
+      "status": "changed",
+      "severity": "major",
+      "signature": "weight-level change (quantisation, fine-tune, or related model)",
+      "device": "cpu",
+      "note": "4-bit, group 128, no calibration",
+      "seconds": 31.2
+    },
+    {
+      "method": "GGUF Q4_K_M",
+      "h": 0.09132122942437464,
+      "top1": 0.904,
+      "ppl": 8.356036186218262,
+      "dppl": 4.818333263250588,
+      "status": "changed",
+      "severity": "moderate",
+      "signature": "weight-level change (quantisation, fine-tune, or related model)",
+      "device": "cpu",
+      "note": "llama.cpp Q4_K_M, dequantised to fp32",
+      "seconds": 396.0
+    },
+    {
+      "method": "bnb NF4",
+      "h": 0.1378606892024851,
+      "top1": 0.85,
+      "ppl": 8.983652114868164,
+      "dppl": 12.689539191560238,
+      "status": "changed",
+      "severity": "major",
+      "signature": "weight-level change (quantisation, fine-tune, or related model)",
+      "device": "cuda",
+      "note": "NF4, double quantisation, float32 compute",
+      "seconds": 6.2
+    },
+    {
+      "method": "EXL3 4.0 bpw",
+      "h": null,
+      "error": "RuntimeError: exllamav3 did not install on this image"
+    },
+    {
+      "method": "EXL3 3.0 bpw",
+      "h": null,
+      "error": "RuntimeError: exllamav3 did not install on this image"
+    },
+    {
+      "method": "EXL3 5.0 bpw",
+      "h": null,
+      "error": "RuntimeError: exllamav3 did not install on this image"
+    },
+    {
+      "method": "AWQ W4A16",
+      "h": null,
+      "error": "ImportError: cannot import name 'XPU_KERNEL_FORMAT' from 'torch._inductor.utils' (/usr/local/lib/python3.12/dist-packages/torch/_inductor/utils.py)"
+    },
+    {
+      "method": "GPTQ W4A16",
+      "h": null,
+      "error": "ImportError: cannot import name 'XPU_KERNEL_FORMAT' from 'torch._inductor.utils' (/usr/local/lib/python3.12/dist-packages/torch/_inductor/utils.py)"
+    }
+  ]
+}

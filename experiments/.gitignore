@@ -1,1 +1,22 @@
 cache/
+
+# Model weights pulled down by a remote run. The Kaggle probe's output archive
+# carries a whole copy of the gpt2 repo per case -- onnx, tf, flax, rust, tflite --
+# which is 7 GB of files this repository has no reason to hold. Keep the
+# attestations it produced; they are a few kilobytes each and are tracked above.
+outputs/latest/
+outputs/kaggle_vllm_probe/
+outputs/**/*.safetensors
+outputs/**/*.bin
+outputs/**/*.onnx
+outputs/**/*.h5
+outputs/**/*.msgpack
+outputs/**/*.tflite
+outputs/**/*.ot
+
+# Where push.py --fetch lands a kernel's raw output, and where it archives the
+# previous one. These are working directories: they hold whole cloned repos, model
+# copies and duplicate logs. The evidence is what gets copied out of them under a
+# name that says which run it is -- quant_real_results.json, qwen15b_results.json,
+# archive/*.json.
+outputs/kaggle_*/
